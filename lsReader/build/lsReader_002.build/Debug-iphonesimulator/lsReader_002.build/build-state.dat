@@ -1,0 +1,978 @@
+TlsReader_002
+v7
+r0
+t338916515.094628
+cCheck dependencies
+cProcessInfoPlistFile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/Info.plist lsReader_002-Info.plist
+cCompileXIB /projects/lsReader_002/MainWindow.xib
+cCompileXIB /projects/lsReader_002/RootViewController.xib
+cCompileXIB /projects/lsReader_002/Classes/SiteParamsViewController.xib
+cCompileXIB /projects/lsReader_002/Classes/BlogsViewController.xib
+cCompileXIB /projects/lsReader_002/Classes/FavoritesViewController.xib
+cCompileXIB /projects/lsReader_002/Classes/PeoplesViewController.xib
+cCompileXIB /projects/lsReader_002/Classes/ProfileViewController.xib
+cCompileXIB /projects/lsReader_002/Classes/PublicationViewController.xib
+cCpResource build/Debug-iphonesimulator/lsReader_002.app/checkmarkControllerIcon.png Classes/checkmarkControllerIcon.png
+cCompileXIB /projects/lsReader_002/Classes/PublicationDetailViewController.xib
+cCompileXIB /projects/lsReader_002/Classes/TopicViewController.xib
+cProcessPCH /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch.gch lsReader_002_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/main.o /projects/lsReader_002/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/lsReader_002AppDelegate.o /projects/lsReader_002/Classes/lsReader_002AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/RootViewController.o /projects/lsReader_002/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/SiteParamsViewController.o /projects/lsReader_002/Classes/SiteParamsViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/BlogsViewController.o /projects/lsReader_002/Classes/BlogsViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/FavoritesViewController.o /projects/lsReader_002/Classes/FavoritesViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PeoplesViewController.o /projects/lsReader_002/Classes/PeoplesViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/ProfileViewController.o /projects/lsReader_002/Classes/ProfileViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PublicationViewController.o /projects/lsReader_002/Classes/PublicationViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/S7ViewSlider.o /projects/lsReader_002/Classes/S7ViewSlider.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/JSONKit.o /projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/Communicator.o /projects/lsReader_002/Classes/Communicator.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PublicationDetailViewController.o /projects/lsReader_002/Classes/PublicationDetailViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/TopicViewController.o /projects/lsReader_002/Classes/TopicViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/lsReader_002 normal i386
+cGenerateDSYMFile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app.dSYM /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/lsReader_002
+cTouch /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk
+c000000004D5C9B4E0000000000000110
+t1297914702
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFArray.h
+c000000004D54CEB30000000000007AC8
+t1297403571
+s31432
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFDictionary.h
+c000000004D54CEB300000000000080D0
+t1297403571
+s32976
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFNumber.h
+c000000004D54CEB30000000000000EDF
+t1297403571
+s3807
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFString.h
+c000000004D54CEB4000000000000B7CA
+t1297403572
+s47050
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004D54CFFA00000000002999B0
+t1297403898
+s2726320
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004D54CFE5000000000029DA70
+t1297403877
+s2742896
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004D54CFB80000000000001466
+t1297403832
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSArray.h
+c000000004D54CFB80000000000001B27
+t1297403832
+s6951
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAutoreleasePool.h
+c000000004D54CFB800000000000001CB
+t1297403832
+s459
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSData.h
+c000000004D54CFB90000000000001777
+t1297403833
+s6007
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDictionary.h
+c000000004D54CFBA0000000000000E3B
+t1297403834
+s3643
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSError.h
+c000000004D54CFBA0000000000001DE5
+t1297403834
+s7653
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSException.h
+c000000004D54CFBA0000000000002033
+t1297403834
+s8243
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNull.h
+c000000004D54CFBC00000000000000B8
+t1297403836
+s184
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObjCRuntime.h
+c000000004D54CFBC0000000000002E87
+t1297403836
+s11911
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h
+c000000004D54CFBD0000000000006506
+t1297403837
+s25862
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004D5615B40000000000000AA1
+t1297487284
+s2721
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004D5616030000000000766870
+t1297487363
+s7759984
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/Availability.h
+c000000004D4F7A2B0000000000001B19
+t1297054251
+s6937
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/AvailabilityMacros.h
+c000000004D4F7A2B0000000000007A5E
+t1297054251
+s31326
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/TargetConditionals.h
+c000000004D4F7A2B00000000000031E9
+t1297054251
+s12777
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/assert.h
+c000000004D4F6E990000000000000F6E
+t1297051289
+s3950
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/math.h
+c000000004A5C14A000000000000004F1
+t1247548576
+s1265
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/objc/runtime.h
+c000000004D54CB4300000000000063AF
+t1297402691
+s25519
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/stdio.h
+c000000004D4F6E9A0000000000004763
+t1297051290
+s18275
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/stdlib.h
+c000000004D4F6E9A00000000000030A7
+t1297051290
+s12455
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/string.h
+c000000004D4F6E9A0000000000001A3A
+t1297051290
+s6714
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/sys/errno.h
+c000000004D54D0E90000000000002A36
+t1297404137
+s10806
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+c000000004A1198340000000000000C7E
+t1242667060
+s3198
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+c000000004A1198340000000000003197
+t1242667060
+s12695
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdint.h
+c00000000000000000000000000000000
+t2
+s0
+
+N/projects/libs/johnezang-JSONKit-c2146ff/JSONKit.h
+c000000004DFA6CC10000000000002DBE
+t1308257473
+s11710
+i<stddef.h>
+i<stdint.h>
+i<limits.h>
+i<TargetConditionals.h>
+i<AvailabilityMacros.h>
+i<Foundation/NSArray.h>
+i<Foundation/NSData.h>
+i<Foundation/NSDictionary.h>
+i<Foundation/NSError.h>
+i<Foundation/NSObjCRuntime.h>
+i<Foundation/NSString.h>
+
+N/projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.h
+c000000004DFA6CC10000000000002DBE
+t1308257473
+s11710
+i<stddef.h>
+i<stdint.h>
+i<limits.h>
+i<TargetConditionals.h>
+i<AvailabilityMacros.h>
+i<Foundation/NSArray.h>
+i<Foundation/NSData.h>
+i<Foundation/NSDictionary.h>
+i<Foundation/NSError.h>
+i<Foundation/NSObjCRuntime.h>
+i<Foundation/NSString.h>
+
+N/projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.m
+c000000004DFA6CC1000000000002A5A3
+t1308257473
+s173475
+i<stdio.h>
+i<stdlib.h>
+i<stdint.h>
+i<string.h>
+i<assert.h>
+i<sys/errno.h>
+i<math.h>
+i<limits.h>
+i<objc/runtime.h>
+i"JSONKit.h"
+i<CoreFoundation/CFString.h>
+i<CoreFoundation/CFArray.h>
+i<CoreFoundation/CFDictionary.h>
+i<CoreFoundation/CFNumber.h>
+i<Foundation/NSArray.h>
+i<Foundation/NSAutoreleasePool.h>
+i<Foundation/NSData.h>
+i<Foundation/NSDictionary.h>
+i<Foundation/NSException.h>
+i<Foundation/NSNull.h>
+i<Foundation/NSObjCRuntime.h>
+
+N/projects/lsReader_002/Classes/BlogsViewController.h
+c000000004E5A29280000000000000102
+t1314531624
+s258
+i<UIKit/UIKit.h>
+
+N/projects/lsReader_002/Classes/BlogsViewController.m
+c000000004E5A292800000000000005C7
+t1314531624
+s1479
+i"BlogsViewController.h"
+
+N/projects/lsReader_002/Classes/BlogsViewController.xib
+c000000004E5A29280000000000001874
+t1314531624
+s6260
+
+N/projects/lsReader_002/Classes/Communicator.h
+c000000004E8321AD00000000000002F9
+t1317216685
+s761
+i<Foundation/Foundation.h>
+
+N/projects/lsReader_002/Classes/Communicator.m
+c000000004E8323DA0000000000000CCE
+t1317217242
+s3278
+i"Communicator.h"
+i"JSONKit.h"
+
+N/projects/lsReader_002/Classes/FavoritesViewController.h
+c000000004E5A29B1000000000000010A
+t1314531761
+s266
+i<UIKit/UIKit.h>
+
+N/projects/lsReader_002/Classes/FavoritesViewController.m
+c000000004E5A29B100000000000005D3
+t1314531761
+s1491
+i"FavoritesViewController.h"
+
+N/projects/lsReader_002/Classes/FavoritesViewController.xib
+c000000004E5A29B10000000000001880
+t1314531761
+s6272
+
+N/projects/lsReader_002/Classes/PeoplesViewController.h
+c000000004E5A29440000000000000106
+t1314531652
+s262
+i<UIKit/UIKit.h>
+
+N/projects/lsReader_002/Classes/PeoplesViewController.m
+c000000004E5A294400000000000005CD
+t1314531652
+s1485
+i"PeoplesViewController.h"
+
+N/projects/lsReader_002/Classes/PeoplesViewController.xib
+c000000004E5A2944000000000000187A
+t1314531652
+s6266
+
+N/projects/lsReader_002/Classes/ProfileViewController.h
+c000000004E5A296A0000000000000106
+t1314531690
+s262
+i<UIKit/UIKit.h>
+
+N/projects/lsReader_002/Classes/ProfileViewController.m
+c000000004E6CA4B400000000000005CD
+t1315742900
+s1485
+i"ProfileViewController.h"
+
+N/projects/lsReader_002/Classes/ProfileViewController.xib
+c000000004E5A296A000000000000187A
+t1314531690
+s6266
+
+N/projects/lsReader_002/Classes/PublicationDetailViewController.h
+c000000004E83226F0000000000000283
+t1317216879
+s643
+i<UIKit/UIKit.h>
+
+N/projects/lsReader_002/Classes/PublicationDetailViewController.m
+c000000004E832CB20000000000000EB9
+t1317219506
+s3769
+i"TopicViewController.h"
+i"PublicationDetailViewController.h"
+
+N/projects/lsReader_002/Classes/PublicationDetailViewController.xib
+c000000004E80A7630000000000004B03
+t1317054307
+s19203
+
+N/projects/lsReader_002/Classes/PublicationViewController.h
+c000000004E7F2B6B00000000000002B7
+t1316957035
+s695
+i<UIKit/UIKit.h>
+
+N/projects/lsReader_002/Classes/PublicationViewController.m
+c000000004E8324D30000000000000FE2
+t1317217491
+s4066
+i"PublicationViewController.h"
+i"JSONKit.h"
+i"PublicationDetailViewController.h"
+
+N/projects/lsReader_002/Classes/PublicationViewController.xib
+c000000004E7F35160000000000005327
+t1316959510
+s21287
+
+N/projects/lsReader_002/Classes/RootViewController.h
+c000000004E7EF39C0000000000000260
+t1316942748
+s608
+i<UIKit/UIKit.h>
+
+N/projects/lsReader_002/Classes/RootViewController.m
+c000000004E81DEAA0000000000001BEB
+t1317133994
+s7147
+i"RootViewController.h"
+i"SiteParamsViewController.h"
+i"JSONKit.h"
+
+N/projects/lsReader_002/Classes/S7ViewSlider.h
+c000000004E6314E80000000000000308
+t1315116264
+s776
+i<Foundation/Foundation.h>
+
+N/projects/lsReader_002/Classes/S7ViewSlider.m
+c000000004E631D080000000000000722
+t1315118344
+s1826
+i"S7ViewSlider.h"
+
+N/projects/lsReader_002/Classes/SiteParamsViewController.h
+c000000004E6CB3B40000000000000456
+t1315746740
+s1110
+i<UIKit/UIKit.h>
+i"S7ViewSlider.h"
+
+N/projects/lsReader_002/Classes/SiteParamsViewController.m
+c000000004E8088CA0000000000000D73
+t1317046474
+s3443
+i"SiteParamsViewController.h"
+i"JSONKit.h"
+
+N/projects/lsReader_002/Classes/SiteParamsViewController.xib
+c000000004E6CAD71000000000000AAA2
+t1315745137
+s43682
+
+N/projects/lsReader_002/Classes/TopicViewController.h
+c000000004E80A0EF00000000000001E6
+t1317052655
+s486
+i<UIKit/UIKit.h>
+
+N/projects/lsReader_002/Classes/TopicViewController.m
+c000000004E80A1A800000000000006B9
+t1317052840
+s1721
+i"TopicViewController.h"
+
+N/projects/lsReader_002/Classes/TopicViewController.xib
+c000000004E809C7D0000000000004553
+t1317051517
+s17747
+
+N/projects/lsReader_002/Classes/checkmarkControllerIcon.png
+c0000000049EF3BB20000000000000226
+t1240415154
+s550
+
+N/projects/lsReader_002/Classes/communicator.h
+c000000004E6CB48300000000000000F6
+t1315746947
+s246
+i<Foundation/Foundation.h>
+
+N/projects/lsReader_002/Classes/communicator.m
+c000000004E6CB4D100000000000000E2
+t1315747025
+s226
+i"communicator.h"
+
+N/projects/lsReader_002/Classes/lsReader_002AppDelegate.h
+c000000004E5F6DA100000000000001F5
+t1314876833
+s501
+i<UIKit/UIKit.h>
+
+N/projects/lsReader_002/Classes/lsReader_002AppDelegate.m
+c000000004E5F6DA10000000000000AE6
+t1314876833
+s2790
+i"lsReader_002AppDelegate.h"
+i"RootViewController.h"
+
+N/projects/lsReader_002/MainWindow.xib
+c000000004E5F7A190000000000007260
+t1314880025
+s29280
+
+N/projects/lsReader_002/RootViewController.xib
+c000000004E6CA2BE00000000000080E5
+t1315742398
+s32997
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app
+t1317219510
+s544
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app.dSYM
+t1317219510
+s102
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/BlogsViewController.nib
+t1314879565
+s1231
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/FavoritesViewController.nib
+t1314879565
+s1231
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/Info.plist
+t1314876836
+s611
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/MainWindow.nib
+t1314880034
+s3270
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/PeoplesViewController.nib
+t1314879565
+s1231
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/PkgInfo
+t1314876836
+s8
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/ProfileViewController.nib
+t1314879566
+s1231
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/PublicationDetailViewController.nib
+t1317132037
+s1849
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/PublicationViewController.nib
+t1316959515
+s1849
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/RootViewController.nib
+t1315742511
+s3670
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/SiteParamsViewController.nib
+t1315745148
+s6555
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/TopicViewController.nib
+t1317051873
+s1630
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/checkmarkControllerIcon.png
+t1316945644
+s550
+
+N/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/lsReader_002
+t1317219510
+s203492
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/BlogsViewController.o
+t1317217181
+s38072
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/Communicator.o
+t1317217248
+s17204
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/FavoritesViewController.o
+t1317217181
+s38156
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/JSONKit.o
+t1317217182
+s242536
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PeoplesViewController.o
+t1317217181
+s38116
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/ProfileViewController.o
+t1317217181
+s38116
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PublicationDetailViewController.o
+t1317219510
+s54576
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PublicationViewController.o
+t1317217493
+s54556
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/RootViewController.o
+t1317217181
+s59620
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/S7ViewSlider.o
+t1317217181
+s50388
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/SiteParamsViewController.o
+t1317217181
+s55768
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/TopicViewController.o
+t1317217181
+s43748
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/communicator.o
+t2
+s0
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/lsReader_002.LinkFileList
+c000000004E809DDE0000000000000723
+t1317051870
+s1827
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/lsReader_002AppDelegate.o
+t1317217181
+s53256
+
+N/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/main.o
+t1317217181
+s6280
+
+N/projects/lsReader_002/lsReader_002_Prefix.pch
+c000000004E6CB76C0000000000000164
+t1315747692
+s356
+i<Availability.h>
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+i"Communicator.h"
+
+N/projects/lsReader_002/main.m
+c000000004E5F6DA10000000000000181
+t1314876833
+s385
+i<UIKit/UIKit.h>
+
+N/var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch.gch
+t1317217181
+s15818192
+
+N/var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-fgpyuipfrhckfyhgzwhcozkzbwwo/lsReader_002_Prefix.pch.gch
+t1315747881
+s15814096
+
+NlsReader_002-Info.plist
+c000000004E5F6DA1000000000000038D
+t1314876833
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies338916514#338916515#0(0"0(0#1#0"8610740480#0"0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/BlogsViewController.o /projects/lsReader_002/Classes/BlogsViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909981.287824
+e338909981.365580
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/BlogsViewController.o
+x/projects/lsReader_002/Classes/BlogsViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /projects/lsReader_002/Classes/BlogsViewController.m338909981#338909981#0(0"0(0#0#52"/projects/lsReader_002/Classes/BlogsViewController.m8611762336#1876"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/BlogsViewController.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/BlogsViewController.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/Communicator.o /projects/lsReader_002/Classes/Communicator.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338910048.765395
+e338910048.912537
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/Communicator.o
+x/projects/lsReader_002/Classes/Communicator.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/projects/lsReader_002/Classes/Communicator.m: In function '-[Communicator login]':
+o/projects/lsReader_002/Classes/Communicator.m:43: warning: 'parseJSONData:' is deprecated (declared at /projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.h:155)
+o/projects/lsReader_002/Classes/Communicator.m: In function '-[Communicator commandByModule:site:method:params:]':
+o/projects/lsReader_002/Classes/Communicator.m:59: warning: format not a string literal and no format arguments
+o/projects/lsReader_002/Classes/Communicator.m:71: warning: 'parseJSONData:' is deprecated (declared at /projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.h:155)
+o/projects/lsReader_002/Classes/Communicator.m: In function '-[Communicator testConnectionBySite:login:password:]':
+o/projects/lsReader_002/Classes/Communicator.m:93: warning: return makes pointer from integer without a cast
+lSLF07#2@53"Compile /projects/lsReader_002/Classes/Communicator.m338910048#338910048#0(882"/projects/lsReader_002/Classes/Communicator.m: In function '-[Communicator login]':/projects/lsReader_002/Classes/Communicator.m:43: warning: 'parseJSONData:' is deprecated (declared at /projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.h:155)/projects/lsReader_002/Classes/Communicator.m: In function '-[Communicator commandByModule:site:method:params:]':/projects/lsReader_002/Classes/Communicator.m:59: warning: format not a string literal and no format arguments/projects/lsReader_002/Classes/Communicator.m:71: warning: 'parseJSONData:' is deprecated (declared at /projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.h:155)/projects/lsReader_002/Classes/Communicator.m: In function '-[Communicator testConnectionBySite:login:password:]':/projects/lsReader_002/Classes/Communicator.m:93: warning: return makes pointer from integer without a cast4(22@115"'parseJSONData:' is deprecated (declared at /projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.h:155)338910048#84#175#0(6@45"/projects/lsReader_002/Classes/Communicator.m338910042#43#0#43#0#33"'*' is deprecated (declared at *)0(22@51"Format not a string literal and no format arguments338910048#373#111#0(6@45"/projects/lsReader_002/Classes/Communicator.m338910042#59#0#59#0#51"format not a string literal and no format arguments0(22@115"'parseJSONData:' is deprecated (declared at /projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.h:155)338910048#484#175#0(6@45"/projects/lsReader_002/Classes/Communicator.m338910042#71#0#71#0#33"'*' is deprecated (declared at *)0(22@48"Return makes pointer from integer without a cast338910048#774#108#0(6@45"/projects/lsReader_002/Classes/Communicator.m338910042#93#0#93#0#0"0(0#0#45"/projects/lsReader_002/Classes/Communicator.m8611381536#1862"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/Communicator.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/Communicator.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/FavoritesViewController.o /projects/lsReader_002/Classes/FavoritesViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909981.301078
+e338909981.387258
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/FavoritesViewController.o
+x/projects/lsReader_002/Classes/FavoritesViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@64"Compile /projects/lsReader_002/Classes/FavoritesViewController.m338909981#338909981#0(0"0(0#0#56"/projects/lsReader_002/Classes/FavoritesViewController.m8611514240#1884"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/FavoritesViewController.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/FavoritesViewController.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/JSONKit.o /projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909981.563751
+e338909982.201894
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/JSONKit.o
+x/projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@74"Compile /projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.m338909981#338909982#0(0"0(0#0#66"/projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.m8615660640#1878"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/../libs/johnezang-JSONKit-c2146ff/JSONKit.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/JSONKit.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PeoplesViewController.o /projects/lsReader_002/Classes/PeoplesViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909981.365680
+e338909981.461808
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PeoplesViewController.o
+x/projects/lsReader_002/Classes/PeoplesViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@62"Compile /projects/lsReader_002/Classes/PeoplesViewController.m338909981#338909981#0(0"0(0#0#54"/projects/lsReader_002/Classes/PeoplesViewController.m8611288448#1880"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/PeoplesViewController.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PeoplesViewController.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/ProfileViewController.o /projects/lsReader_002/Classes/ProfileViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909981.387359
+e338909981.464662
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/ProfileViewController.o
+x/projects/lsReader_002/Classes/ProfileViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@62"Compile /projects/lsReader_002/Classes/ProfileViewController.m338909981#338909981#0(0"0(0#0#54"/projects/lsReader_002/Classes/ProfileViewController.m8611189920#1880"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/ProfileViewController.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/ProfileViewController.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PublicationDetailViewController.o /projects/lsReader_002/Classes/PublicationDetailViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338912310.582048
+e338912310.732719
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PublicationDetailViewController.o
+x/projects/lsReader_002/Classes/PublicationDetailViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /projects/lsReader_002/Classes/PublicationDetailViewController.m338912310#338912310#0(0"0(0#0#64"/projects/lsReader_002/Classes/PublicationDetailViewController.m8615696416#1900"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/PublicationDetailViewController.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PublicationDetailViewController.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PublicationViewController.o /projects/lsReader_002/Classes/PublicationViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338910293.144703
+e338910293.372917
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PublicationViewController.o
+x/projects/lsReader_002/Classes/PublicationViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@66"Compile /projects/lsReader_002/Classes/PublicationViewController.m338910293#338910293#0(0"0(0#0#58"/projects/lsReader_002/Classes/PublicationViewController.m8614113248#1888"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/PublicationViewController.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/PublicationViewController.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/RootViewController.o /projects/lsReader_002/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909981.155969
+e338909981.300976
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/RootViewController.o
+x/projects/lsReader_002/Classes/RootViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@59"Compile /projects/lsReader_002/Classes/RootViewController.m338909981#338909981#0(0"0(0#0#51"/projects/lsReader_002/Classes/RootViewController.m8612841952#1874"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/RootViewController.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/RootViewController.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/S7ViewSlider.o /projects/lsReader_002/Classes/S7ViewSlider.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909981.464756
+e338909981.563651
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/S7ViewSlider.o
+x/projects/lsReader_002/Classes/S7ViewSlider.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@53"Compile /projects/lsReader_002/Classes/S7ViewSlider.m338909981#338909981#0(0"0(0#0#45"/projects/lsReader_002/Classes/S7ViewSlider.m8603276832#1862"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/S7ViewSlider.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/S7ViewSlider.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/SiteParamsViewController.o /projects/lsReader_002/Classes/SiteParamsViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909981.180122
+e338909981.287723
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/SiteParamsViewController.o
+x/projects/lsReader_002/Classes/SiteParamsViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@65"Compile /projects/lsReader_002/Classes/SiteParamsViewController.m338909981#338909981#0(0"0(0#0#57"/projects/lsReader_002/Classes/SiteParamsViewController.m8612563008#1886"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/SiteParamsViewController.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/SiteParamsViewController.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/TopicViewController.o /projects/lsReader_002/Classes/TopicViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909981.725276
+e338909981.803102
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/TopicViewController.o
+x/projects/lsReader_002/Classes/TopicViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /projects/lsReader_002/Classes/TopicViewController.m338909981#338909981#0(0"0(0#0#52"/projects/lsReader_002/Classes/TopicViewController.m8611482688#1876"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/TopicViewController.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/TopicViewController.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/communicator.o /projects/lsReader_002/Classes/communicator.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/lsReader_002AppDelegate.o /projects/lsReader_002/Classes/lsReader_002AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909981.093290
+e338909981.180019
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/lsReader_002AppDelegate.o
+x/projects/lsReader_002/Classes/lsReader_002AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@64"Compile /projects/lsReader_002/Classes/lsReader_002AppDelegate.m338909981#338909981#0(0"0(0#0#56"/projects/lsReader_002/Classes/lsReader_002AppDelegate.m8614174656#1884"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/Classes/lsReader_002AppDelegate.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/lsReader_002AppDelegate.o0#
+
+CCompileC build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/main.o /projects/lsReader_002/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909981.092301
+e338909981.155867
+r1
+xCompileC
+xbuild/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/main.o
+x/projects/lsReader_002/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@37"Compile /projects/lsReader_002/main.m338909981#338909981#0(0"0(0#0#29"/projects/lsReader_002/main.m8615297120#1838"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -include /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch -c /projects/lsReader_002/main.m -o /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /projects/lsReader_002/Classes/BlogsViewController.xib
+s336572364.977014
+e336572365.536296
+r1
+xCompileXIB
+x/projects/lsReader_002/Classes/BlogsViewController.xib
+lSLF07#2@42"CompileXIB Classes/BlogsViewController.xib336572364#336572365#0(0"0(0#0#54"/projects/lsReader_002/Classes/BlogsViewController.xib8615458912#553"    cd /projects/lsReader_002    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/BlogsViewController.nib /projects/lsReader_002/Classes/BlogsViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCompileXIB /projects/lsReader_002/Classes/FavoritesViewController.xib
+s336572365.536387
+e336572365.925265
+r1
+xCompileXIB
+x/projects/lsReader_002/Classes/FavoritesViewController.xib
+lSLF07#2@46"CompileXIB Classes/FavoritesViewController.xib336572365#336572365#0(0"0(0#0#58"/projects/lsReader_002/Classes/FavoritesViewController.xib8617419840#561"    cd /projects/lsReader_002    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/FavoritesViewController.nib /projects/lsReader_002/Classes/FavoritesViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCompileXIB /projects/lsReader_002/Classes/PeoplesViewController.xib
+s336572365.598769
+e336572365.967305
+r1
+xCompileXIB
+x/projects/lsReader_002/Classes/PeoplesViewController.xib
+lSLF07#2@44"CompileXIB Classes/PeoplesViewController.xib336572365#336572365#0(0"0(0#0#56"/projects/lsReader_002/Classes/PeoplesViewController.xib8617120192#557"    cd /projects/lsReader_002    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/PeoplesViewController.nib /projects/lsReader_002/Classes/PeoplesViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCompileXIB /projects/lsReader_002/Classes/ProfileViewController.xib
+s336572365.925357
+e336572366.297302
+r1
+xCompileXIB
+x/projects/lsReader_002/Classes/ProfileViewController.xib
+lSLF07#2@44"CompileXIB Classes/ProfileViewController.xib336572365#336572366#0(0"0(0#0#56"/projects/lsReader_002/Classes/ProfileViewController.xib8616794368#557"    cd /projects/lsReader_002    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/ProfileViewController.nib /projects/lsReader_002/Classes/ProfileViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCompileXIB /projects/lsReader_002/Classes/PublicationDetailViewController.xib
+s338824832.079591
+e338824837.570629
+r1
+xCompileXIB
+x/projects/lsReader_002/Classes/PublicationDetailViewController.xib
+lSLF07#2@54"CompileXIB Classes/PublicationDetailViewController.xib338824832#338824837#0(0"0(0#0#66"/projects/lsReader_002/Classes/PublicationDetailViewController.xib32088581143789676#577"    cd /projects/lsReader_002    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/PublicationDetailViewController.nib /projects/lsReader_002/Classes/PublicationDetailViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCompileXIB /projects/lsReader_002/Classes/PublicationViewController.xib
+s338652314.830667
+e338652315.826464
+r1
+xCompileXIB
+x/projects/lsReader_002/Classes/PublicationViewController.xib
+lSLF07#2@48"CompileXIB Classes/PublicationViewController.xib338652314#338652315#0(0"0(0#0#60"/projects/lsReader_002/Classes/PublicationViewController.xib8617267936#565"    cd /projects/lsReader_002    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/PublicationViewController.nib /projects/lsReader_002/Classes/PublicationViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCompileXIB /projects/lsReader_002/Classes/SiteParamsViewController.xib
+s337437947.931252
+e337437948.792735
+r1
+xCompileXIB
+x/projects/lsReader_002/Classes/SiteParamsViewController.xib
+lSLF07#2@47"CompileXIB Classes/SiteParamsViewController.xib337437947#337437948#0(0"0(0#0#59"/projects/lsReader_002/Classes/SiteParamsViewController.xib8614418880#563"    cd /projects/lsReader_002    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/SiteParamsViewController.nib /projects/lsReader_002/Classes/SiteParamsViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCompileXIB /projects/lsReader_002/Classes/TopicViewController.xib
+s338744670.919126
+e338744673.363525
+r1
+xCompileXIB
+x/projects/lsReader_002/Classes/TopicViewController.xib
+lSLF07#2@42"CompileXIB Classes/TopicViewController.xib338744670#338744673#0(0"0(0#0#54"/projects/lsReader_002/Classes/TopicViewController.xib8615677728#553"    cd /projects/lsReader_002    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/TopicViewController.nib /projects/lsReader_002/Classes/TopicViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCompileXIB /projects/lsReader_002/MainWindow.xib
+s336572833.734367
+e336572834.138572
+r1
+xCompileXIB
+x/projects/lsReader_002/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib336572833#336572834#0(0"0(0#0#37"/projects/lsReader_002/MainWindow.xib8617473088#527"    cd /projects/lsReader_002    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/MainWindow.nib /projects/lsReader_002/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCompileXIB /projects/lsReader_002/RootViewController.xib
+s337435310.881327
+e337435311.397659
+r1
+xCompileXIB
+x/projects/lsReader_002/RootViewController.xib
+lSLF07#2@33"CompileXIB RootViewController.xib337435310#337435311#0(0"0(0#0#45"/projects/lsReader_002/RootViewController.xib8606279488#543"    cd /projects/lsReader_002    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/RootViewController.nib /projects/lsReader_002/RootViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
+
+CCpResource build/Debug-iphonesimulator/lsReader_002.app/checkmarkControllerIcon.png Classes/checkmarkControllerIcon.png
+s338638444.042933
+e338638444.067544
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/lsReader_002.app/checkmarkControllerIcon.png
+xClasses/checkmarkControllerIcon.png
+lSLF07#2@40"Copy Classes/checkmarkControllerIcon.png338638444#338638444#0(0"0(0#0#58"/projects/lsReader_002/Classes/checkmarkControllerIcon.png8603066976#450"    cd /projects/lsReader_002    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /projects/lsReader_002/Classes/checkmarkControllerIcon.png /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app0#
+
+CGenerateDSYMFile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app.dSYM /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/lsReader_002
+s338912310.777514
+e338912310.832286
+r1
+xGenerateDSYMFile
+x/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app.dSYM
+x/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/lsReader_002
+lSLF07#2@124"GenerateDSYMFile build/Debug-iphonesimulator/lsReader_002.app.dSYM build/Debug-iphonesimulator/lsReader_002.app/lsReader_002338912310#338912310#0(0"0(0#0#80"/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/lsReader_0028612718720#350"    cd /projects/lsReader_002    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/lsReader_002 -o /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app.dSYM0#
+
+CLd /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/lsReader_002 normal i386
+s338912310.732815
+e338912310.777403
+r1
+xLd
+x/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/lsReader_002
+xnormal
+xi386
+lSLF07#2@85"Link /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/lsReader_002338912310#338912310#0(0"0(0#0#0"8614967264#845"    cd /projects/lsReader_002    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -L/projects/lsReader_002/build/Debug-iphonesimulator -F/projects/lsReader_002/build/Debug-iphonesimulator -filelist /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/Objects-normal/i386/lsReader_002.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/lsReader_0020#
+
+CProcessInfoPlistFile /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/Info.plist lsReader_002-Info.plist
+s336569636.949347
+e336569636.965074
+r1
+xProcessInfoPlistFile
+x/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/Info.plist
+xlsReader_002-Info.plist
+lSLF07#2@31"Process lsReader_002-Info.plist336569636#336569636#0(0"0(0#0#46"/projects/lsReader_002/lsReader_002-Info.plist28429324842631276#446"    cd /projects/lsReader_002    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility lsReader_002-Info.plist -genpkginfo /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app/Info.plist0#
+
+CProcessPCH /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch.gch lsReader_002_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s338909980.287652
+e338909981.091976
+r1
+xProcessPCH
+x/var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch.gch
+xlsReader_002_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@34"Precompile lsReader_002_Prefix.pch338909980#338909981#0(0"0(0#0#46"/projects/lsReader_002/lsReader_002_Prefix.pch8614344704#1741"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -c /projects/lsReader_002/lsReader_002_Prefix.pch -o /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-dltefszahiiuoledpncqlgcqqngs/lsReader_002_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-fgpyuipfrhckfyhgzwhcozkzbwwo/lsReader_002_Prefix.pch.gch lsReader_002_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s337440681.141643
+e337440681.919746
+r1
+xProcessPCH
+x/var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-fgpyuipfrhckfyhgzwhcozkzbwwo/lsReader_002_Prefix.pch.gch
+xlsReader_002_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@34"Precompile lsReader_002_Prefix.pch337440681#337440681#0(0"0(0#0#46"/projects/lsReader_002/lsReader_002_Prefix.pch8607404704#1741"    cd /projects/lsReader_002    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-generated-files.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-own-target-headers.hmap -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-all-target-headers.hmap -iquote /projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/lsReader_002-project-headers.hmap -F/projects/lsReader_002/build/Debug-iphonesimulator -I/projects/lsReader_002/build/Debug-iphonesimulator/include -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources/i386 -I/projects/lsReader_002/build/lsReader_002.build/Debug-iphonesimulator/lsReader_002.build/DerivedSources -c /projects/lsReader_002/lsReader_002_Prefix.pch -o /var/folders/QU/QU7Au--CF+C0S60jWhGST++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/lsReader_002_Prefix-fgpyuipfrhckfyhgzwhcozkzbwwo/lsReader_002_Prefix.pch.gch0#
+
+CTouch /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app
+s338912310.832364
+e338912310.853421
+r1
+xTouch
+x/projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app
+lSLF07#2@73"Touch /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app338912310#338912310#0(0"0(0#0#0"8611428704#251"    cd /projects/lsReader_002    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /projects/lsReader_002/build/Debug-iphonesimulator/lsReader_002.app0#
+
