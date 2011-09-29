@@ -1,9 +1,7 @@
 //
 //  S7ViewSlider.h
-//  lsReader_002
+//  lsReader
 //
-//  Created by Сергей Усов on 04.09.11.
-//  Copyright 2011 Стройкомплект. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -1,9 +1,9 @@
 //
 //  SiteParamsViewController.m
-//  lsReader_001
+//  lsReader
 //
-//  Created by Сергей Усов on 26.08.11.
-//  Copyright 2011 Стройкомплект. All rights reserved.
+//  Created by Usov Sergei on 26.08.11.
+//  Copyright 2011 LiveStreet Developers Team. All rights reserved.
 //
 
 #import "SiteParamsViewController.h"

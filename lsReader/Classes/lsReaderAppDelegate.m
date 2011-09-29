@@ -1,16 +1,16 @@
 //
-//  lsReader_002AppDelegate.m
-//  lsReader_002
+//  lsReaderAppDelegate.m
+//  lsReader
 //
-//  Created by Сергей Усов on 01.09.11.
-//  Copyright 2011 Стройкомплект. All rights reserved.
+//  Created by Usov Sergei on 01.09.11.
+//  Copyright 2011 LiveStreet Developers Team. All rights reserved.
 //
 
-#import "lsReader_002AppDelegate.h"
+#import "lsReaderAppDelegate.h"
 #import "RootViewController.h"
 
 
-@implementation lsReader_002AppDelegate
+@implementation lsReaderAppDelegate
 
 @synthesize window;
 @synthesize navigationController;

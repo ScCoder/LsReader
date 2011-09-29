@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* lsReader_002AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* lsReader_002AppDelegate.m */; };
+		1D3623260D0F684500981E51 /* lsReaderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* lsReaderAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -39,18 +39,18 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* lsReader_002AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lsReader_002AppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* lsReader_002AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lsReader_002AppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* lsReader_002.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lsReader_002.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D3623240D0F684500981E51 /* lsReaderAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lsReaderAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* lsReaderAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lsReaderAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* lsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28A0AAE50D9B0CCF005BE974 /* lsReader_002_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lsReader_002_Prefix.pch; sourceTree = "<group>"; };
+		28A0AAE50D9B0CCF005BE974 /* lsReader_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lsReader_Prefix.pch; sourceTree = "<group>"; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28C286DF0D94DF7D0034E888 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* lsReader_002-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "lsReader_002-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* lsReader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "lsReader-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		BE759D09140FA8C0003D8A75 /* SiteParamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteParamsViewController.h; sourceTree = "<group>"; };
 		BE759D0A140FA8C0003D8A75 /* SiteParamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteParamsViewController.m; sourceTree = "<group>"; };
 		BE759D0B140FA8C0003D8A75 /* SiteParamsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SiteParamsViewController.xib; path = Classes/SiteParamsViewController.xib; sourceTree = "<group>"; };
@@ -115,8 +115,8 @@
 				BE759D0A140FA8C0003D8A75 /* SiteParamsViewController.m */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
-				1D3623240D0F684500981E51 /* lsReader_002AppDelegate.h */,
-				1D3623250D0F684500981E51 /* lsReader_002AppDelegate.m */,
+				1D3623240D0F684500981E51 /* lsReaderAppDelegate.h */,
+				1D3623250D0F684500981E51 /* lsReaderAppDelegate.m */,
 				BE867EC7141CEC03001DAD18 /* Communicator.h */,
 				BE867EC8141CEC03001DAD18 /* Communicator.m */,
 				BEC2BE22142F36E400244915 /* PublicationDetailViewController.h */,
@@ -130,7 +130,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* lsReader_002.app */,
+				1D6058910D05DD3D006BFB54 /* lsReader.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,7 +155,7 @@
 				BE81E70B14134BF80097D271 /* S7ViewSlider.m */,
 				BE8984211417AE3300065DCB /* JSONKit.h */,
 				BE8984221417AE3300065DCB /* JSONKit.m */,
-				28A0AAE50D9B0CCF005BE974 /* lsReader_002_Prefix.pch */,
+				28A0AAE50D9B0CCF005BE974 /* lsReader_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -174,7 +174,7 @@
 				BE759D4D140FAFB4003D8A75 /* PublicationViewController.xib */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
-				8D1107310486CEB800E47090 /* lsReader_002-Info.plist */,
+				8D1107310486CEB800E47090 /* lsReader-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -192,9 +192,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* lsReader_002 */ = {
+		1D6058900D05DD3D006BFB54 /* lsReader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "lsReader_002" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "lsReader" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -204,9 +204,9 @@
 			);
 			dependencies = (
 			);
-			name = lsReader_002;
+			name = lsReader;
 			productName = lsReader_002;
-			productReference = 1D6058910D05DD3D006BFB54 /* lsReader_002.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* lsReader.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -214,7 +214,7 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "lsReader_002" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "lsReader" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -229,7 +229,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* lsReader_002 */,
+				1D6058900D05DD3D006BFB54 /* lsReader */,
 			);
 		};
 /* End PBXProject section */
@@ -261,7 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* lsReader_002AppDelegate.m in Sources */,
+				1D3623260D0F684500981E51 /* lsReaderAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
 				BE759D0C140FA8C0003D8A75 /* SiteParamsViewController.m in Sources */,
 				BE759D4E140FAFB4003D8A75 /* BlogsViewController.m in Sources */,
@@ -288,9 +288,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = lsReader_002_Prefix.pch;
-				INFOPLIST_FILE = "lsReader_002-Info.plist";
-				PRODUCT_NAME = lsReader_002;
+				GCC_PREFIX_HEADER = lsReader_Prefix.pch;
+				INFOPLIST_FILE = "lsReader-Info.plist";
+				PRODUCT_NAME = lsReader;
 			};
 			name = Debug;
 		};
@@ -300,9 +300,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = lsReader_002_Prefix.pch;
-				INFOPLIST_FILE = "lsReader_002-Info.plist";
-				PRODUCT_NAME = lsReader_002;
+				GCC_PREFIX_HEADER = lsReader_Prefix.pch;
+				INFOPLIST_FILE = "lsReader-Info.plist";
+				PRODUCT_NAME = lsReader;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -337,7 +337,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "lsReader_002" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "lsReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -346,7 +346,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "lsReader_002" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "lsReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

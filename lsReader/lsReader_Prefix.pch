@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'lsReader_002' target in the 'lsReader_002' project
+// Prefix header for all source files of the 'lsReader' target in the 'lsReader' project
 //
 #import <Availability.h>
 

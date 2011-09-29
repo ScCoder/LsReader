@@ -1,9 +1,9 @@
 //
 //  PublicationViewController.h
-//  lsReader_001
+//  lsReader
 //
-//  Created by Сергей Усов on 28.08.11.
-//  Copyright 2011 Стройкомплект. All rights reserved.
+//  Created by Usov Sergei on 28.08.11.
+//  Copyright 2011 LiveStreet Developers Team. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,9 +1,9 @@
 //
 //  RootViewController.m
-//  lsReader_002
+//  lsReader
 //
-//  Created by Сергей Усов on 01.09.11.
-//  Copyright 2011 Стройкомплект. All rights reserved.
+//  Created by Usov Sergei on 01.09.11.
+//  Copyright 2011 LiveStreet Developers Team. All rights reserved.
 //
 
 #import "RootViewController.h"
@@ -35,6 +35,7 @@
 
 
 -(void) viewWillAppear:(BOOL)animated{
+	
 	
 	self.siteParams = [NSMutableDictionary dictionaryWithContentsOfFile:@"settings.txt"];
 	

@@ -1,9 +1,9 @@
 //
 //  communicator.h
-//  lsReader_002
+//  lsReader
 //
-//  Created by Сергей Усов on 11.09.11.
-//  Copyright 2011 Стройкомплект. All rights reserved.
+//  Created by Usov Sergei on 11.09.11.
+//  Copyright 2011 LiveStreet Developers Team. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
