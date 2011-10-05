@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "lsReaderAppDelegate.h"
 
 
 @interface PublicationViewController : UIViewController<UITableViewDataSource> {
@@ -16,13 +16,15 @@
 	IBOutlet UITableView *myTable;
 	NSArray *publicTypes;
 	UIActivityIndicatorView *activityIndicator;
-}
+	UINavigationController *parentNav;
 
+}
 @property (nonatomic, retain) IBOutlet UILabel *testLabel;
 @property (nonatomic, retain) IBOutlet UITableView *myTable;
 @property (nonatomic, retain) NSArray *publicTypes;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
--(IBAction) testJSON;
+@property (nonatomic, retain) UINavigationController *parentNav;
+
 
 
 

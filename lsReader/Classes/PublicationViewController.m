@@ -11,12 +11,14 @@
 #import "PublicationDetailViewController.h"
 
 
+
 @implementation PublicationViewController
 
 @synthesize testLabel;
 @synthesize myTable;
 @synthesize publicTypes;
 @synthesize activityIndicator;
+@synthesize parentNav;
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -62,6 +64,8 @@
 	
 	PublicationDetailViewController *pdVC = [[PublicationDetailViewController alloc] initWithNibName:@"PublicationDetailViewController" bundle:nil];
 	
+	
+	
 	pdVC.publication_type = [self.publicTypes objectAtIndex:indexPath.row];
 	
 	[self.navigationController pushViewController:pdVC animated:YES];
@@ -69,36 +73,13 @@
 	[pdVC release];
 	
 	
+	
+    
+	
+	
 }
 
 
--(IBAction) testJSON{
-	/*	
-	NSLog(@"log: ");
-	
-	NSString *api_command = [NSString stringWithFormat:@"http://new.livestreet.ru/api/topic/read/?id=8149&response_type=json"];
-	
-	NSURL *url = [NSURL URLWithString:api_command];
-	
-	NSURLRequest *request = [NSURLRequest requestWithURL:url];
-	
-	NSData *tmpContainer = [NSURLConnection sendSynchronousRequest:request 
-												 returningResponse:nil 
-															 error:nil];
-	
-	JSONDecoder *decoder = [JSONDecoder decoder];
-	
-	NSDictionary *params = [decoder parseJSONData:tmpContainer];
-	
-	NSLog(@"test data %@",params);
-	
-	NSLog(@"topic_text = %@",[[params objectForKey:@"response"] objectForKey:@"topic_text"]);
-	
-	testLabel.text = [[params objectForKey:@"response"] objectForKey:@"topic_text"];
-	
-*/
-		
-}
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -107,9 +88,21 @@
 	NSLog(@" viewDidLoad: ");	
 	self.title = @"Публикации";
 	
+	
+	//[self.navigationController.navigationBar setHidden:NO];
 	self.publicTypes = [NSArray arrayWithObjects:@"Лучшие", @"Новые", @"Коллективные", @"Персональные",@"Лента",@"Активность",nil];
 }
 
+- (void) viewWillAppear:(BOOL)animated{
+	
+  [self.navigationController.navigationBar setHidden:YES]; 
+	
+  lsReaderAppDelegate *appDeligate;
+  appDeligate = (lsReaderAppDelegate *) [[UIApplication sharedApplication] delegate];
+  [appDeligate.navigationController.navigationBar setHidden:NO];
+	
+   //[self.parentNav.navigationBar setHidden:NO];
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.

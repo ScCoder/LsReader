@@ -8,6 +8,7 @@
 
 #import "TopicViewController.h"
 #import "PublicationDetailViewController.h"
+#import "lsReaderAppDelegate.h"
 
 
 @implementation PublicationDetailViewController
@@ -16,6 +17,7 @@
 @synthesize keys;
 @synthesize topics_collection;
 @synthesize publication_type;
+
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -33,7 +35,18 @@
 	
     [super viewDidLoad];
 	
-
+	//Смена видимости контроллеровы
+	
+    [self.navigationController.navigationBar setHidden:NO];
+	
+	
+	lsReaderAppDelegate *appDeligate;
+	appDeligate = (lsReaderAppDelegate *) [[UIApplication sharedApplication] delegate];
+	
+	[appDeligate.navigationController.navigationBar setHidden:YES];
+	
+	// Получение данных
+	
 	NSDictionary *response = [[Communicator sharedCommunicator] newPublications];
 
 	
@@ -83,8 +96,10 @@
 	
 	NSDictionary *topic = [self.topics_collection objectForKey: [self.keys objectAtIndex:indexPath.row]];
 		
-	cell.textLabel.text = [topic objectForKey: @"topic_title"];
-	cell.detailTextLabel.text = [topic objectForKey:@"topic_text_short"];
+	cell.textLabel.text = [topic objectForKey: @"topic_title"] ;
+	cell.detailTextLabel.text = @"test";//[topic objectForKey:@"topic_text_short"];
+	
+	
 	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
@@ -93,11 +108,13 @@
 	
 }
 
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	// TODO читать топик
 	
-	
+	NSLog(@"read topic");
 	
 	TopicViewController *topicVC = [[TopicViewController alloc] initWithNibName:@"TopicViewController" bundle:nil];
 	

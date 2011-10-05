@@ -16,11 +16,17 @@
 @synthesize sites;
 @synthesize tabBarController;
 @synthesize siteParams;
+@synthesize innerNavController;
 
 
 #pragma mark -
 #pragma mark View lifecycle
 
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+	
+
+}
 
 - (void)viewDidLoad {
     
@@ -208,10 +214,11 @@
 		
 		}
 		
+		
 		//Запоминаем урл выбранного сайта в коммуникаторе
 		
 		[Communicator sharedCommunicator].siteURL = [[self.siteParams objectForKey:[keys objectAtIndex:indexPath.row]] objectForKey:@"url"];
-	
+		
 		//Переход к основному виду
 		[self.navigationController pushViewController:self.tabBarController animated: YES ];
 	}
@@ -232,9 +239,13 @@
 		[self.siteParams writeToFile:@"settings.txt" atomically:YES]; 
 	}
 	
+
 }
 
+
+
 -(IBAction) addSite{
+	
 
 	SiteParamsViewController *siteParamsVC = [[SiteParamsViewController alloc] 
 											  initWithNibName:@"SiteParamsViewController" 
@@ -250,8 +261,14 @@
 	
 	[siteParamsVC release];
 	 
-	
+
 }
+
+
+-(IBAction) barItemClick{
+	NSLog(@"test");
+}
+
 
 
 
@@ -270,6 +287,10 @@
     // For example: self.myOutlet = nil;
 	self.sites = nil;
 	self.tabBarController = nil;
+}
+
+-(void) viewWillDisappear{
+	
 }
 
 
