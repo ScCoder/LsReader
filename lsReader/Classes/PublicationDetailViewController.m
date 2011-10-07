@@ -35,16 +35,7 @@
 	
     [super viewDidLoad];
 	
-	//Смена видимости контроллеровы
-	
-    [self.navigationController.navigationBar setHidden:NO];
-	
-	
-	lsReaderAppDelegate *appDeligate;
-	appDeligate = (lsReaderAppDelegate *) [[UIApplication sharedApplication] delegate];
-	
-	[appDeligate.navigationController.navigationBar setHidden:YES];
-	
+		
 	// Получение данных
 	
 	NSDictionary *response = [[Communicator sharedCommunicator] newPublications];
@@ -68,10 +59,21 @@
 	
     self.keys = [topics_collection allKeys];
 	
+}
 
+-(void)viewWillAppear:(BOOL)animated{
 	
-		
+	//Смена видимости контроллеров
 	
+	lsReaderAppDelegate *appDeligate;
+	
+	appDeligate = (lsReaderAppDelegate *) [[UIApplication sharedApplication] delegate];
+	
+	[appDeligate.navigationController setNavigationBarHidden:YES];
+	
+	
+	[self.navigationController setNavigationBarHidden: NO];
+
 }
 
 

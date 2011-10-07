@@ -95,11 +95,10 @@
 
 - (void) viewWillAppear:(BOOL)animated{
 	
-  [self.navigationController.navigationBar setHidden:YES]; 
-	
+  [self.navigationController setNavigationBarHidden:YES];	
   lsReaderAppDelegate *appDeligate;
   appDeligate = (lsReaderAppDelegate *) [[UIApplication sharedApplication] delegate];
-  [appDeligate.navigationController.navigationBar setHidden:NO];
+  [appDeligate.navigationController setNavigationBarHidden:NO];
 	
    //[self.parentNav.navigationBar setHidden:NO];
 }
