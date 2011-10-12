@@ -12,8 +12,7 @@
 @implementation TopicViewController
 
 @synthesize webView;
-@synthesize topicContent;
-@synthesize topicURL;
+@synthesize topicId;
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -28,16 +27,49 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	
     [super viewDidLoad];
-    
-	NSLog(@"st");
-	[webView loadHTMLString:self.topicContent baseURL:[NSURL URLWithString:@"http://www.new.livestreet.ru"]];// baseURL:<#(NSURL *)baseURL#>
-    NSLog(@"end");
+	
 }
 
 
+-(void) viewWillAppear:(BOOL)animated{
+
+	NSDictionary *topic_data = [[Communicator sharedCommunicator] readTopicById:self.topicId];
+		
+	NSString *topicContent =	[topic_data objectForKey: @"topic_text" ];
+	
+	NSURL *base_url = [NSURL URLWithString: [@"http://www." stringByAppendingString: [Communicator sharedCommunicator].siteURL ]];	
+		
+	[webView loadHTMLString:topicContent baseURL:base_url];//
+	
+	
+	
+	//[[UIApplication sharedApplication] openURL:base_url];
+    	
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+	
+	// 
+	
+	if (navigationType != UIWebViewNavigationTypeLinkClicked) {
+	
+		return YES;
+	}
+    else {
+
+		// Запус сафариы
+		[[UIApplication sharedApplication] openURL:request.URL ];
+	
+	return NO;
+	}
+}
+
+
+
 /*
-// Override to allow orientations other than the default portrait orientation.
+ // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations.
     return (interfaceOrientation == UIInterfaceOrientationPortrait);

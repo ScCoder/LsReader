@@ -9,17 +9,14 @@
 #import <UIKit/UIKit.h>
 
 
-@interface TopicViewController : UIViewController {
+@interface TopicViewController : UIViewController<UIWebViewDelegate>{
 
 	UIWebView *webView;
-	NSString *topicContent;
-	NSURL *topicURL;
+	NSString *tiopicId;
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView *webView; 
 
-@property (nonatomic, retain) NSString *topicContent;
-
-@property (nonatomic, retain) NSURL *topicURL;
+@property (nonatomic, retain) NSString *topicId;
 
 @end

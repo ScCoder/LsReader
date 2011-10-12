@@ -219,6 +219,7 @@
 		
 		[Communicator sharedCommunicator].siteURL = [[self.siteParams objectForKey:[keys objectAtIndex:indexPath.row]] objectForKey:@"url"];
 		
+		NSLog([Communicator sharedCommunicator].siteURL);
 		//Переход к основному виду
 		[self.navigationController pushViewController:self.tabBarController animated: YES ];
 	}

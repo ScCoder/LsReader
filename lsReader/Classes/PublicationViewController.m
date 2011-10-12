@@ -60,21 +60,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-	// TODO Зделать что бы выбиралось в зависимости от publicTypes
 	
 	PublicationDetailViewController *pdVC = [[PublicationDetailViewController alloc] initWithNibName:@"PublicationDetailViewController" bundle:nil];
-	
-	
 	
 	pdVC.publication_type = [self.publicTypes objectAtIndex:indexPath.row];
 	
 	[self.navigationController pushViewController:pdVC animated:YES];
 	
 	[pdVC release];
-	
-	
-	
-    
 	
 	
 }
@@ -95,12 +88,14 @@
 
 - (void) viewWillAppear:(BOOL)animated{
 	
+	
   [self.navigationController setNavigationBarHidden:YES];	
   lsReaderAppDelegate *appDeligate;
+ 
   appDeligate = (lsReaderAppDelegate *) [[UIApplication sharedApplication] delegate];
   [appDeligate.navigationController setNavigationBarHidden:NO];
 	
-   //[self.parentNav.navigationBar setHidden:NO];
+ 
 }
 
 /*

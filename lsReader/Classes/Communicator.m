@@ -70,8 +70,10 @@ static Communicator * communicator =  NULL;
 	
 	NSDictionary *response = [decoder parseJSONData:tmpContainer];
 	
-	return [response objectForKey:@"response"] ;
+	response = [response objectForKey:@"response"];	
 	
+	return response;
+		
 
 }
 
@@ -112,7 +114,42 @@ static Communicator * communicator =  NULL;
 	
 	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"new" params:tmpParams]; 
 	
-    return response;
+	NSString *tmp = [response objectForKey:@"count"];
+	
+	
+	if ( [tmp isEqualToString: @"0" ]) {
+	 
+		NSLog(@"good");
+		return nil;
+	 
+	 }
+	 else {
+	 
+		 return response;
+	 }
+	
+}
+
+-(NSDictionary *) personalPublications:(NSString *) showType{
+	
+	
+	NSString *tmpParams = [NSString stringWithFormat:@"show_type=%@&fields=topic_title,topic_id,topic_text_short",showType];
+	
+	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"personal" params:tmpParams]; 
+	
+	NSString *tmp = [response objectForKey:@"count"];
+	
+	
+	if ( [tmp isEqualToString: @"0" ]) {
+		
+		return nil;
+		
+	}
+	else {
+		
+		return response;
+	}
+	
 	
 }
 

@@ -30,6 +30,8 @@
 
 -(NSDictionary *) newPublications;
 
+-(NSDictionary *) personalPublications:(NSString *)showType;
+
 -(NSDictionary *) readTopicById:(NSString*) topic_id;
 
 @end

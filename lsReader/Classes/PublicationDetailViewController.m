@@ -35,26 +35,37 @@
 	
     [super viewDidLoad];
 	
-		
+	NSLog(@"pub detail");
+	NSLog(self.publication_type);
+	
 	// Получение данных
 	
-	NSDictionary *response = [[Communicator sharedCommunicator] newPublications];
-
+	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
 	
-	if (self.publication_type == @"Лучшие") {
+	if ([self.publication_type isEqualToString: @"Лучшие"]) {
 	
 		response = [[Communicator sharedCommunicator] topPublicationsByPeriod:@"all"];
 	
 	}
-	else if (self.publication_type == @"Новые"){
-	    NSLog(@"new");
+	else if ( [self.publication_type isEqualToString: @"Новые"]){
+	 
 		response = [[Communicator sharedCommunicator] newPublications];
 		
 	}
-	
-	
+	else if ( [self.publication_type isEqualToString: @"Персональные"]){
 		
+	    response = [[Communicator sharedCommunicator] personalPublications:@"good"];
+	}
+	else {
+		NSLog(@"other");
+	}
 
+	
+	NSLog(@"response = ");
+	NSLog(@" %@",response);
+		
+    if (response == nil) { NSLog(@"nIIIL");  }; 
+		
 	self.topics_collection = [response objectForKey:@"collection"];
 	
     self.keys = [topics_collection allKeys];
@@ -63,15 +74,14 @@
 
 -(void)viewWillAppear:(BOOL)animated{
 	
-	//Смена видимости контроллеров
+	//Смена видимости контроллеров навгации
 	
 	lsReaderAppDelegate *appDeligate;
 	
 	appDeligate = (lsReaderAppDelegate *) [[UIApplication sharedApplication] delegate];
 	
 	[appDeligate.navigationController setNavigationBarHidden:YES];
-	
-	
+		
 	[self.navigationController setNavigationBarHidden: NO];
 
 }
@@ -125,11 +135,12 @@
 
     NSString *topic_id =  [topic objectForKey:@"topic_id"];
 
-	NSDictionary *topic_data = [[Communicator sharedCommunicator] readTopicById:topic_id];
+	//NSDictionary *topic_data = [[Communicator sharedCommunicator] readTopicById:topic_id];
 
-	NSLog(@"topic = %@",topic_data)	;
+	//NSLog(@"topic = %@",topic_data)	;
 	
-	topicVC.topicContent =	[topic_data objectForKey: @"topic_text" ];
+	//topicVC.topicContent =	[topic_data objectForKey: @"topic_text" ];
+	topicVC.topicId = topic_id;
 	
 	[self.navigationController pushViewController:topicVC animated:YES];
 	
