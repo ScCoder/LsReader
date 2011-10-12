@@ -318,7 +318,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TopicViewController.m</string>
+								<string>RootViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,11 +326,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TopicViewController.m</string>
+										<string>RootViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BE8CCD161445F0720049AC52</string>
+										<string>BE8CCD451445FDF60049AC52</string>
 										<key>history</key>
 										<array>
 											<string>BE867EBA141CEB1F001DAD18</string>
@@ -338,7 +338,6 @@
 											<string>BE1DE5891434D0930059C988</string>
 											<string>BEA3F3681439DEA10077D34F</string>
 											<string>BEA3F3691439DEA10077D34F</string>
-											<string>BEA3F36D1439DEA10077D34F</string>
 											<string>BEAA88CC143B4FE100BBB73D</string>
 											<string>BEFBE937143C0CA500B597DD</string>
 											<string>BEFBE962143C109300B597DD</string>
@@ -348,23 +347,25 @@
 											<string>BE0D9F85143C5BCD00EAF5ED</string>
 											<string>BE0D9F86143C5BCD00EAF5ED</string>
 											<string>BE0D9F87143C5BCD00EAF5ED</string>
-											<string>BE0D9FA4143C872000EAF5ED</string>
 											<string>BE0F249F143EA66000FF2217</string>
-											<string>BE0F24A1143EA66000FF2217</string>
-											<string>BE0F24A2143EA66000FF2217</string>
-											<string>BE0F24A3143EA66000FF2217</string>
-											<string>BE8CCBA314458B8A0049AC52</string>
 											<string>BE8CCBD314458F4D0049AC52</string>
 											<string>BE8CCC29144597BF0049AC52</string>
 											<string>BE8CCC3A1445984D0049AC52</string>
-											<string>BE8CCCAF1445DC710049AC52</string>
 											<string>BE8CCCB21445DD050049AC52</string>
 											<string>BE8CCCB31445DD050049AC52</string>
 											<string>BE8CCCB41445DD050049AC52</string>
-											<string>BE8CCCBC1445E6DE0049AC52</string>
 											<string>BE8CCD0A1445EFBC0049AC52</string>
 											<string>BE8CCD0B1445EFBC0049AC52</string>
-											<string>BE8CCD0C1445EFBC0049AC52</string>
+											<string>BE8CCD191445F7E70049AC52</string>
+											<string>BE8CCD1B1445F7E70049AC52</string>
+											<string>BE8CCD301445FB9D0049AC52</string>
+											<string>BE8CCD311445FB9D0049AC52</string>
+											<string>BE8CCD3A1445FC560049AC52</string>
+											<string>BE8CCD3B1445FC560049AC52</string>
+											<string>BE8CCD3D1445FC560049AC52</string>
+											<string>BE8CCD431445FDF60049AC52</string>
+											<string>BE8CCD441445FDF60049AC52</string>
+											<string>BE8CCD3C1445FC560049AC52</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -564,8 +565,8 @@
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>BE759CEE140FA527003D8A75</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/sergejusov/github/LsReader/lsReader/lsReader.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>269 155 1504 835 0 0 1920 1058 </string>

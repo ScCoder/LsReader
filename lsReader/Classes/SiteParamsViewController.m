@@ -8,6 +8,7 @@
 
 #import "SiteParamsViewController.h"
 #import "JSONKit.h"
+#import "lsReaderAppDelegate.h"
 
 @implementation SiteParamsViewController
 
@@ -99,9 +100,9 @@
 
 	}
 
+	lsReaderAppDelegate *appDeligate = (lsReaderAppDelegate *) [[UIApplication sharedApplication] delegate];	
 	
-	
-	[self.siteParams writeToFile:@"settings.txt" atomically:YES];
+	[self.siteParams writeToFile:appDeligate.settingsFilePath atomically:YES];
 
 	
 	[self.navigationController popViewControllerAnimated:YES];

@@ -14,6 +14,7 @@
 
 @synthesize window;
 @synthesize navigationController;
+@synthesize settingsFilePath;
 
 
 #pragma mark -
@@ -23,6 +24,11 @@
     
     // Override point for customization after application launch.
     
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
+	NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+	self.settingsFilePath = [documentsDirectoryPath stringByAppendingString:@"/settings.txt"];
+	
+	
     // Set the navigation controller as the window's root view controller and display.
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];

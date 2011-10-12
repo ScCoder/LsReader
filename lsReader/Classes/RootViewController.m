@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "SiteParamsViewController.h"
 #import "JSONKit.h"
+#import "lsReaderAppDelegate.h"
 
 @implementation RootViewController
 
@@ -35,6 +36,7 @@
 	self.title = @"Ваши сайты";
 	
 
+	
 	// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -43,7 +45,9 @@
 -(void) viewWillAppear:(BOOL)animated{
 	
 	
-	self.siteParams = [NSMutableDictionary dictionaryWithContentsOfFile:@"settings.txt"];
+	lsReaderAppDelegate *appDeligate = (lsReaderAppDelegate *) [[UIApplication sharedApplication] delegate];
+	
+	self.siteParams = [NSMutableDictionary dictionaryWithContentsOfFile:appDeligate.settingsFilePath];
 	
     self.tableView.allowsSelectionDuringEditing = YES;
 	
@@ -236,8 +240,11 @@
 		[self.navigationItem.rightBarButtonItem setTitle:@"Done"];
 	}
 	else {
+		
+		lsReaderAppDelegate *appDeligate = (lsReaderAppDelegate *) [[UIApplication sharedApplication] delegate];		
+		
 		[self.navigationItem.rightBarButtonItem setTitle:@"Edit"];
-		[self.siteParams writeToFile:@"settings.txt" atomically:YES]; 
+		[self.siteParams writeToFile:appDeligate.settingsFilePath atomically:YES]; 
 	}
 	
 

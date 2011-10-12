@@ -14,6 +14,7 @@
 	NSMutableDictionary *siteParams;
 	IBOutlet UINavigationController * innerNavController; 
 	
+	
 
 
 }
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 @property (nonatomic, retain) IBOutlet UINavigationController * innerNavController;
 @property (nonatomic, retain) NSMutableDictionary *siteParams;
+
 -(IBAction) editParams;
 -(IBAction) addSite;
 -(IBAction) barItemClick;

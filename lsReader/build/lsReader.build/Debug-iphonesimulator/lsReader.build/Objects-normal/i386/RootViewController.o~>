@@ -1,0 +1,2 @@
+/Users/sergejusov/github/LsReader/lsReader/Classes/RootViewController.m: In function '-[RootViewController tableView:didSelectRowAtIndexPath:]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/RootViewController.m:226: warning: format not a string literal and no format arguments
