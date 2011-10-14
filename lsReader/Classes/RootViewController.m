@@ -10,6 +10,7 @@
 #import "SiteParamsViewController.h"
 #import "JSONKit.h"
 #import "lsReaderAppDelegate.h"
+#import "Consts.h"
 
 @implementation RootViewController
 
@@ -120,7 +121,7 @@
 
 	cell.textLabel.text = [tmpSiteNames objectAtIndex: indexPath.row];
 	
-	cell.detailTextLabel.text = [[siteParams objectForKey:cell.textLabel.text] objectForKey:@"url"];
+	cell.detailTextLabel.text = [[siteParams objectForKey:cell.textLabel.text] objectForKey:SITE_URL];
 
     cell.imageView.image = image;
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -219,11 +220,12 @@
 		}
 		
 		
-		//Запоминаем урл выбранного сайта в коммуникаторе
+		//Запоминаем урл выбранного сайта и колво на страницу в коммуникаторе
 		
-		[Communicator sharedCommunicator].siteURL = [[self.siteParams objectForKey:[keys objectAtIndex:indexPath.row]] objectForKey:@"url"];
+		[Communicator sharedCommunicator].siteURL = [[self.siteParams objectForKey:[keys objectAtIndex:indexPath.row]] objectForKey:SITE_URL];
+		[Communicator sharedCommunicator].countPerPage =[[self.siteParams objectForKey:[keys objectAtIndex:indexPath.row]] objectForKey:COUNT_PER_PAGE];
 		
-		NSLog([Communicator sharedCommunicator].siteURL);
+		//NSLog([Communicator sharedCommunicator].siteURL);
 		//Переход к основному виду
 		[self.navigationController pushViewController:self.tabBarController animated: YES ];
 	}
@@ -259,7 +261,7 @@
 											  initWithNibName:@"SiteParamsViewController" 
 											  bundle:nil];
 	
-	siteParamsVC.key = @"new";
+	siteParamsVC.key = NEW_KEY;
 	
 	siteParamsVC.siteParams = self.siteParams;
 	

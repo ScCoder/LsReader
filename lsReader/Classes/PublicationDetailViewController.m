@@ -34,9 +34,11 @@
 - (void)viewDidLoad {
 	
     [super viewDidLoad];
+	current_page = 0;
+	current_page++;
 	
 	NSLog(@"pub detail");
-	NSLog(self.publication_type);
+//	NSLog(self.publication_type);
 	
 	// Получение данных
 	
@@ -54,7 +56,7 @@
 	}
 	else if ( [self.publication_type isEqualToString: @"Персональные"]){
 		
-	    response = [[Communicator sharedCommunicator] personalPublications:@"good"];
+	    response = [[Communicator sharedCommunicator] personalPublications:@"good" page:current_page];
 	}
 	else {
 		NSLog(@"other");
@@ -65,10 +67,16 @@
 	NSLog(@" %@",response);
 		
     if (response == nil) { NSLog(@"nIIIL");  }; 
-		
-	self.topics_collection = [response objectForKey:@"collection"];
 	
-    self.keys = [topics_collection allKeys];
+	self.topics_collection = [[NSMutableDictionary alloc] initWithCapacity:1];
+		
+	[self.topics_collection addEntriesFromDictionary: [response objectForKey:@"collection"]];	
+	
+	//self.topics_collection = [response objectForKey:@"collection"];
+	
+	self.keys = [NSMutableArray arrayWithArray: [topics_collection allKeys]];	
+	
+//	self.keys = [self.topics_collection allKeys];
 	
 }
 
@@ -109,7 +117,7 @@
 	NSDictionary *topic = [self.topics_collection objectForKey: [self.keys objectAtIndex:indexPath.row]];
 		
 	cell.textLabel.text = [topic objectForKey: @"topic_title"] ;
-	cell.detailTextLabel.text = @"test";//[topic objectForKey:@"topic_text_short"];
+	cell.detailTextLabel.text = [topic objectForKey:@"topic_text_short"];
 	
 	
 	
@@ -150,6 +158,25 @@
 	
 }
 
+-(IBAction) addNext{
+
+	
+	current_page++;
+	
+	NSDictionary *response;
+
+	response = [[Communicator sharedCommunicator] personalPublications:@"good" page:current_page];
+	
+	
+	[self.topics_collection addEntriesFromDictionary: [response objectForKey:@"collection"]];
+	
+
+	
+    self.keys = [NSMutableArray arrayWithArray: [topics_collection allKeys]];	
+	
+	[self.myTable reloadData];	
+	
+}
 
 
 /*
@@ -169,6 +196,8 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
+	
+	[self.topics_collection release];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }

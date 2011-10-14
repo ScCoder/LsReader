@@ -11,10 +11,12 @@
 
 @interface Communicator : NSObject {
 	NSString *siteURL;
+	NSString *countPerPage;
 
 }
 
 @property (nonatomic, retain) NSString *siteURL;
+@property (nonatomic, retain) NSString *countPerPage;
 
 +(Communicator *)sharedCommunicator;
 
@@ -30,7 +32,7 @@
 
 -(NSDictionary *) newPublications;
 
--(NSDictionary *) personalPublications:(NSString *)showType;
+-(NSDictionary *) personalPublications:(NSString *)showType page:(NSInteger*)page;
 
 -(NSDictionary *) readTopicById:(NSString*) topic_id;
 

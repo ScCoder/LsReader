@@ -1,9 +1,0 @@
-/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator login]':
-/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:43: warning: 'parseJSONData:' is deprecated (declared at /Users/sergejusov/github/LsReader/lsReader/../libs/johnezang-JSONKit-c2146ff/JSONKit.h:155)
-/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator commandByModule:site:method:params:]':
-/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:59: warning: format not a string literal and no format arguments
-/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:71: warning: 'parseJSONData:' is deprecated (declared at /Users/sergejusov/github/LsReader/lsReader/../libs/johnezang-JSONKit-c2146ff/JSONKit.h:155)
-/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator testConnectionBySite:login:password:]':
-/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:95: warning: return makes pointer from integer without a cast
-/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator personalPublications:]':
-/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:136: warning: control reaches end of non-void function

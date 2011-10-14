@@ -12,15 +12,18 @@
 @interface PublicationDetailViewController : UIViewController<UITableViewDataSource> {
 
 	IBOutlet UITableView *myTable;
-	NSArray *keys;
-	NSDictionary *topics_collection;
+	NSMutableArray *keys;
+	NSMutableDictionary *topics_collection;
 	NSString *publication_type;
+	NSInteger *current_page;
+	
 	
 }
 @property (nonatomic, retain) IBOutlet UITableView *myTable;
-@property (nonatomic, retain) NSArray *keys;
-@property (nonatomic, retain) NSDictionary *topics_collection;
+@property (nonatomic, retain) NSMutableArray *keys;
+@property (nonatomic, retain) NSMutableDictionary *topics_collection;
 @property (nonatomic, retain) NSString *publication_type;
 
+-(IBAction) addNext;
 
 @end

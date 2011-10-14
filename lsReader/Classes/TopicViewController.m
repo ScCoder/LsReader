@@ -43,7 +43,7 @@
 		
 	[webView loadHTMLString:topicContent baseURL:base_url];//
 	
-	
+
 	
 	//[[UIApplication sharedApplication] openURL:base_url];
     	
@@ -53,17 +53,23 @@
 	
 	// 
 	
+	NSLog(@"url %@",request.URL);
 	if (navigationType != UIWebViewNavigationTypeLinkClicked) {
 	
 		return YES;
 	}
     else {
 
-		// Запус сафариы
+		// Запуск сафариы
 		[[UIApplication sharedApplication] openURL:request.URL ];
 	
 	return NO;
 	}
+	
+	 
+	
+	
+	
 }
 
 

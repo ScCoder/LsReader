@@ -18,6 +18,9 @@
 	UITextField *siteURL;
 	UITextField *siteLogin;
 	UITextField *sitePasswd;
+	UITextField *countPerPage;
+	
+	UISwitch *showPics;
 	
 	UIButton *applyButton;
 	
@@ -32,6 +35,8 @@
 @property (nonatomic, retain) IBOutlet UITextField *siteURL;
 @property (nonatomic, retain) IBOutlet UITextField *siteLogin;
 @property (nonatomic, retain) IBOutlet UITextField *sitePasswd;
+@property (nonatomic, retain) IBOutlet UITextField *countPerPage;
+@property (nonatomic, retain) IBOutlet UISwitch *showPics;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic, retain) NSMutableDictionary *siteParams;
 @property (nonatomic, retain) IBOutlet S7ViewSlider *viewSlider;

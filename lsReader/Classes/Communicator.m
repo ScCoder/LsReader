@@ -12,6 +12,7 @@
 @implementation Communicator
 
 @synthesize siteURL;
+@synthesize countPerPage;
 
 
 static Communicator * communicator =  NULL;
@@ -130,10 +131,10 @@ static Communicator * communicator =  NULL;
 	
 }
 
--(NSDictionary *) personalPublications:(NSString *) showType{
+-(NSDictionary *) personalPublications:(NSString *) showType page:(NSInteger *)page{
 	
 	
-	NSString *tmpParams = [NSString stringWithFormat:@"show_type=%@&fields=topic_title,topic_id,topic_text_short",showType];
+	NSString *tmpParams = [NSString stringWithFormat:@"show_type=%@&fields=topic_title,topic_id,topic_text_short&per_page=%@&page=%i",showType,self.countPerPage,page];
 	
 	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"personal" params:tmpParams]; 
 	

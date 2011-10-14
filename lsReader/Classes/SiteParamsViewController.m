@@ -9,6 +9,7 @@
 #import "SiteParamsViewController.h"
 #import "JSONKit.h"
 #import "lsReaderAppDelegate.h"
+#import "Consts.h"
 
 @implementation SiteParamsViewController
 
@@ -19,6 +20,8 @@
 @synthesize sitePasswd;
 @synthesize key;
 @synthesize siteParams;
+@synthesize countPerPage;
+@synthesize showPics;
 
 @synthesize viewSlider = _viewSlider;
 
@@ -44,19 +47,21 @@
 	
 		
 	self.viewSlider.hideKeyboardOnReturn = YES;
-	self.viewSlider.ySlideDistance = 70.0f;
+	self.viewSlider.ySlideDistance = 76.0f;
 	
 	
 	self.title = @"Настройки сайта";
 	
-	if (self.key != @"new") {
+	if (self.key != NEW_KEY) {
 		siteName.text = key;
 	}
 	
-	siteURL.text = [[siteParams objectForKey:key] objectForKey:@"url"];
-	siteLogin.text = [[siteParams objectForKey:key] objectForKey:@"login"];
-	sitePasswd.text = [[siteParams objectForKey:key] objectForKey:@"passwd"];
+	siteURL.text = [[siteParams objectForKey:key] objectForKey:SITE_URL];
+	siteLogin.text = [[siteParams objectForKey:key] objectForKey:SITE_LOGIN];
+	sitePasswd.text = [[siteParams objectForKey:key] objectForKey:SITE_PASSWD];
+	countPerPage.text = [[siteParams objectForKey:key] objectForKey:COUNT_PER_PAGE];
 	
+	showPics.on =  [[[siteParams objectForKey:key] objectForKey:SHOW_PICS] isEqualToString: @"YES"];
 	
 }
 
@@ -65,7 +70,7 @@
 -(IBAction) applyCahges{
 
 	
-	if (self.key == @"new") {
+	if (self.key == NEW_KEY) {
 		
 		self.key  = siteName.text;
 		
@@ -82,12 +87,16 @@
 	}
 	
 
-	
+	//NSLog(@" %@",showPics.on);
 	
 	NSDictionary *siteVals = [NSDictionary dictionaryWithObjectsAndKeys:
-							  siteURL.text,@"url",
-							  siteLogin.text,@"login",
-							  sitePasswd.text,@"passwd",nil]; 
+							  siteURL.text,SITE_URL,
+							  siteLogin.text,SITE_LOGIN,
+							  sitePasswd.text,SITE_PASSWD,
+							  countPerPage.text,COUNT_PER_PAGE,
+							  showPics.on ? @"YES":@"NO",SHOW_PICS,
+							  nil
+							  ]; 
 	 
 	
 	if ([self.siteParams count]<= 0) {
@@ -96,6 +105,7 @@
 		
 	}
 	else {
+		
 		[self.siteParams setObject:siteVals forKey:self.key];
 
 	}

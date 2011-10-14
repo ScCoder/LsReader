@@ -30,6 +30,7 @@
 		BE81E70C14134BF80097D271 /* S7ViewSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = BE81E70B14134BF80097D271 /* S7ViewSlider.m */; };
 		BE867EC9141CEC03001DAD18 /* Communicator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE867EC8141CEC03001DAD18 /* Communicator.m */; };
 		BE8984231417AE3300065DCB /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8984221417AE3300065DCB /* JSONKit.m */; };
+		BE8CCDE11447F2520049AC52 /* Consts.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8CCDE01447F2520049AC52 /* Consts.m */; };
 		BE9F67471430D2850038D619 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9F67451430D2850038D619 /* TopicViewController.m */; };
 		BE9F67481430D2850038D619 /* TopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9F67461430D2850038D619 /* TopicViewController.xib */; };
 		BEC2BE1E142F363F00244915 /* checkmarkControllerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC2BE1D142F363F00244915 /* checkmarkControllerIcon.png */; };
@@ -75,6 +76,8 @@
 		BE867EC8141CEC03001DAD18 /* Communicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Communicator.m; sourceTree = "<group>"; };
 		BE8984211417AE3300065DCB /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = "../libs/johnezang-JSONKit-c2146ff/JSONKit.h"; sourceTree = SOURCE_ROOT; };
 		BE8984221417AE3300065DCB /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = "../libs/johnezang-JSONKit-c2146ff/JSONKit.m"; sourceTree = SOURCE_ROOT; };
+		BE8CCDDF1447F2520049AC52 /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
+		BE8CCDE01447F2520049AC52 /* Consts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consts.m; sourceTree = "<group>"; };
 		BE9F67441430D2850038D619 /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
 		BE9F67451430D2850038D619 /* TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
 		BE9F67461430D2850038D619 /* TopicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TopicViewController.xib; path = Classes/TopicViewController.xib; sourceTree = "<group>"; };
@@ -150,7 +153,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BEC2BE1D142F363F00244915 /* checkmarkControllerIcon.png */,
+				BE8CCDDF1447F2520049AC52 /* Consts.h */,
+				BE8CCDE01447F2520049AC52 /* Consts.m */,
 				BE81E70A14134BF80097D271 /* S7ViewSlider.h */,
 				BE81E70B14134BF80097D271 /* S7ViewSlider.m */,
 				BE8984211417AE3300065DCB /* JSONKit.h */,
@@ -173,6 +177,7 @@
 				BE759D4A140FAFB4003D8A75 /* ProfileViewController.xib */,
 				BE759D4D140FAFB4003D8A75 /* PublicationViewController.xib */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
+				BEC2BE1D142F363F00244915 /* checkmarkControllerIcon.png */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* lsReader-Info.plist */,
 			);
@@ -274,6 +279,7 @@
 				BE867EC9141CEC03001DAD18 /* Communicator.m in Sources */,
 				BEC2BE25142F36E400244915 /* PublicationDetailViewController.m in Sources */,
 				BE9F67471430D2850038D619 /* TopicViewController.m in Sources */,
+				BE8CCDE11447F2520049AC52 /* Consts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
