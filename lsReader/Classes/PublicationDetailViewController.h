@@ -16,6 +16,7 @@
 	NSMutableDictionary *topics_collection;
 	NSString *publication_type;
 	NSInteger *current_page;
+	UIButton *addNextButton;
 	
 	
 }
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSMutableArray *keys;
 @property (nonatomic, retain) NSMutableDictionary *topics_collection;
 @property (nonatomic, retain) NSString *publication_type;
+@property (nonatomic, retain) IBOutlet UIButton *addNextButton;
 
 -(IBAction) addNext;
 

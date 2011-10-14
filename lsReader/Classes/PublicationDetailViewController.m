@@ -17,6 +17,7 @@
 @synthesize keys;
 @synthesize topics_collection;
 @synthesize publication_type;
+@synthesize addNextButton;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -37,6 +38,8 @@
 	current_page = 0;
 	current_page++;
 	
+	[addNextButton setHidden:NO]; 
+	
 	NSLog(@"pub detail");
 //	NSLog(self.publication_type);
 	
@@ -47,7 +50,8 @@
 	if ([self.publication_type isEqualToString: @"Лучшие"]) {
 	
 		response = [[Communicator sharedCommunicator] topPublicationsByPeriod:@"all"];
-	
+		
+		[addNextButton setHidden:YES]; 	
 	}
 	else if ( [self.publication_type isEqualToString: @"Новые"]){
 	 
@@ -57,26 +61,26 @@
 	else if ( [self.publication_type isEqualToString: @"Персональные"]){
 		
 	    response = [[Communicator sharedCommunicator] personalPublications:@"good" page:current_page];
+		
+		
 	}
 	else {
 		NSLog(@"other");
 	}
 
-	
-	NSLog(@"response = ");
-	NSLog(@" %@",response);
 		
-    if (response == nil) { NSLog(@"nIIIL");  }; 
 	
 	self.topics_collection = [[NSMutableDictionary alloc] initWithCapacity:1];
 		
 	[self.topics_collection addEntriesFromDictionary: [response objectForKey:@"collection"]];	
 	
-	//self.topics_collection = [response objectForKey:@"collection"];
 	
 	self.keys = [NSMutableArray arrayWithArray: [topics_collection allKeys]];	
 	
-//	self.keys = [self.topics_collection allKeys];
+	[self.keys sortUsingSelector:@selector(compare:) ];	
+	self.keys = [[ self.keys reverseObjectEnumerator] allObjects];
+
+
 	
 }
 
@@ -173,6 +177,10 @@
 
 	
     self.keys = [NSMutableArray arrayWithArray: [topics_collection allKeys]];	
+	
+	[self.keys sortUsingSelector:@selector(compare:)];
+	
+	self.keys = [[ self.keys reverseObjectEnumerator] allObjects];
 	
 	[self.myTable reloadData];	
 	

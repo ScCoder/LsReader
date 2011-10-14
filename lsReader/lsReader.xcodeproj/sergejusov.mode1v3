@@ -300,7 +300,7 @@
 							<real>331</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>269 155 1504 835 0 0 1920 1058 </string>
+						<string>204 149 1504 835 0 0 1920 1058 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -330,7 +330,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BE8CCEF4144824A60049AC52</string>
+										<string>BE8CCF1D144838DB0049AC52</string>
 										<key>history</key>
 										<array>
 											<string>BE1DE5841434D0600059C988</string>
@@ -358,7 +358,6 @@
 											<string>BE8CCE311447FED10049AC52</string>
 											<string>BE8CCE321447FED10049AC52</string>
 											<string>BE8CCE341447FED10049AC52</string>
-											<string>BE8CCE351447FED10049AC52</string>
 											<string>BE8CCE5F14480A980049AC52</string>
 											<string>BE8CCE6114480A980049AC52</string>
 											<string>BE8CCE6214480A980049AC52</string>
@@ -370,8 +369,12 @@
 											<string>BE8CCEBB14481EFE0049AC52</string>
 											<string>BE8CCEC714481FBC0049AC52</string>
 											<string>BE8CCEC814481FBC0049AC52</string>
-											<string>BE8CCECE144820F10049AC52</string>
-											<string>BE8CCECF144820F10049AC52</string>
+											<string>BE8CCF07144836770049AC52</string>
+											<string>BE8CCF08144836770049AC52</string>
+											<string>BE8CCF0A144836770049AC52</string>
+											<string>BE8CCF0C144836770049AC52</string>
+											<string>BE8CCF15144838290049AC52</string>
+											<string>BE8CCF16144838290049AC52</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -385,7 +388,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1151, 737}}</string>
 								<key>RubberWindowFrame</key>
-								<string>269 155 1504 835 0 0 1920 1058 </string>
+								<string>204 149 1504 835 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -405,7 +408,7 @@
 								<key>Frame</key>
 								<string>{{0, 742}, {1151, 52}}</string>
 								<key>RubberWindowFrame</key>
-								<string>269 155 1504 835 0 0 1920 1058 </string>
+								<string>204 149 1504 835 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -570,12 +573,12 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>BE759CEE140FA527003D8A75</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>BE759CEE140FA527003D8A75</string>
 		<string>/Users/sergejusov/github/LsReader/lsReader/lsReader.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>269 155 1504 835 0 0 1920 1058 </string>
+	<string>204 149 1504 835 0 0 1920 1058 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -667,7 +670,7 @@
 			<key>WindowToolGUID</key>
 			<string>BE759CEE140FA527003D8A75</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

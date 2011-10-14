@@ -278,6 +278,20 @@
 			BE8CCEEE144823E30049AC52 /* PBXTextBookmark */ = BE8CCEEE144823E30049AC52 /* PBXTextBookmark */;
 			BE8CCEF11448241F0049AC52 /* PBXTextBookmark */ = BE8CCEF11448241F0049AC52 /* PBXTextBookmark */;
 			BE8CCEF4144824A60049AC52 /* PBXTextBookmark */ = BE8CCEF4144824A60049AC52 /* PBXTextBookmark */;
+			BE8CCEFB1448329F0049AC52 /* PBXTextBookmark */ = BE8CCEFB1448329F0049AC52 /* PBXTextBookmark */;
+			BE8CCEFE144833250049AC52 /* PBXTextBookmark */ = BE8CCEFE144833250049AC52 /* PBXTextBookmark */;
+			BE8CCF07144836770049AC52 /* PBXTextBookmark */ = BE8CCF07144836770049AC52 /* PBXTextBookmark */;
+			BE8CCF08144836770049AC52 /* PBXTextBookmark */ = BE8CCF08144836770049AC52 /* PBXTextBookmark */;
+			BE8CCF0A144836770049AC52 /* PBXTextBookmark */ = BE8CCF0A144836770049AC52 /* PBXTextBookmark */;
+			BE8CCF0C144836770049AC52 /* PBXTextBookmark */ = BE8CCF0C144836770049AC52 /* PBXTextBookmark */;
+			BE8CCF0E144836770049AC52 /* PBXTextBookmark */ = BE8CCF0E144836770049AC52 /* PBXTextBookmark */;
+			BE8CCF0F144836770049AC52 /* PBXTextBookmark */ = BE8CCF0F144836770049AC52 /* PBXTextBookmark */;
+			BE8CCF12144837620049AC52 /* PBXTextBookmark */ = BE8CCF12144837620049AC52 /* PBXTextBookmark */;
+			BE8CCF15144838290049AC52 /* PBXTextBookmark */ = BE8CCF15144838290049AC52 /* PBXTextBookmark */;
+			BE8CCF16144838290049AC52 /* PBXTextBookmark */ = BE8CCF16144838290049AC52 /* PBXTextBookmark */;
+			BE8CCF17144838290049AC52 /* PBXTextBookmark */ = BE8CCF17144838290049AC52 /* PBXTextBookmark */;
+			BE8CCF1A144838500049AC52 /* PBXTextBookmark */ = BE8CCF1A144838500049AC52 /* PBXTextBookmark */;
+			BE8CCF1D144838DB0049AC52 /* PBXTextBookmark */ = BE8CCF1D144838DB0049AC52 /* PBXTextBookmark */;
 			BEA3F3681439DEA10077D34F = BEA3F3681439DEA10077D34F /* PBXTextBookmark */;
 			BEA3F3691439DEA10077D34F = BEA3F3691439DEA10077D34F /* PBXTextBookmark */;
 			BEAA88CC143B4FE100BBB73D = BEAA88CC143B4FE100BBB73D /* PBXTextBookmark */;
@@ -605,6 +619,12 @@
 		name = CFBinaryHeap.h;
 		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFBinaryHeap.h;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {888, 4030}}";
+			sepNavSelRange = "{2086, 18}";
+			sepNavVisRange = "{832, 2053}";
+			sepNavWindowFrame = "{{84, 233}, {947, 757}}";
+		};
 	};
 	BE8CCC3A1445984D0049AC52 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -725,7 +745,7 @@
 		fRef = BEC2BE22142F36E400244915 /* PublicationDetailViewController.h */;
 		name = "PublicationDetailViewController.h: 24";
 		rLen = 0;
-		rLoc = 702;
+		rLoc = 792;
 		rType = 0;
 		vrLen = 632;
 		vrLoc = 0;
@@ -735,7 +755,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 112";
 		rLen = 0;
-		rLoc = 3256;
+		rLoc = 3263;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 2159;
@@ -1433,9 +1453,15 @@
 	};
 	BE8CCE361447FED10049AC52 /* objc.h */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
 		name = objc.h;
 		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/usr/include/objc/objc.h;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1090, 1378}}";
+			sepNavSelRange = "{1125, 0}";
+			sepNavVisRange = "{103, 1606}";
+		};
 	};
 	BE8CCE371447FED10049AC52 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1713,7 +1739,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 166;
+		rLoc = 170;
 		rType = 1;
 	};
 	BE8CCE801448195C0049AC52 /* PBXTextBookmark */ = {
@@ -1721,7 +1747,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 173";
 		rLen = 0;
-		rLoc = 4515;
+		rLoc = 4642;
 		rType = 0;
 		vrLen = 496;
 		vrLoc = 3815;
@@ -1781,7 +1807,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 169";
 		rLen = 0;
-		rLoc = 4340;
+		rLoc = 4347;
 		rType = 0;
 		vrLen = 1304;
 		vrLoc = 3641;
@@ -1791,7 +1817,7 @@
 		fRef = BEC2BE22142F36E400244915 /* PublicationDetailViewController.h */;
 		name = "PublicationDetailViewController.h: 26";
 		rLen = 20;
-		rLoc = 682;
+		rLoc = 772;
 		rType = 0;
 		vrLen = 655;
 		vrLoc = 0;
@@ -1812,7 +1838,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 166;
+		rLoc = 170;
 		rType = 1;
 	};
 	BE8CCE9014481A3B0049AC52 /* PBXTextBookmark */ = {
@@ -1820,7 +1846,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 156";
 		rLen = 0;
-		rLoc = 4222;
+		rLoc = 4229;
 		rType = 0;
 		vrLen = 496;
 		vrLoc = 3835;
@@ -1830,7 +1856,7 @@
 		fRef = BEC2BE22142F36E400244915 /* PublicationDetailViewController.h */;
 		name = "PublicationDetailViewController.h: 18";
 		rLen = 0;
-		rLoc = 433;
+		rLoc = 459;
 		rType = 0;
 		vrLen = 709;
 		vrLoc = 0;
@@ -1840,7 +1866,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 155";
 		rLen = 0;
-		rLoc = 4222;
+		rLoc = 4229;
 		rType = 0;
 		vrLen = 1306;
 		vrLoc = 3641;
@@ -1850,7 +1876,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 38";
 		rLen = 0;
-		rLoc = 991;
+		rLoc = 1018;
 		rType = 0;
 		vrLen = 1137;
 		vrLoc = 748;
@@ -1860,7 +1886,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 38";
 		rLen = 0;
-		rLoc = 1006;
+		rLoc = 1033;
 		rType = 0;
 		vrLen = 1155;
 		vrLoc = 748;
@@ -1910,7 +1936,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 38";
 		rLen = 0;
-		rLoc = 1006;
+		rLoc = 1033;
 		rType = 0;
 		vrLen = 1228;
 		vrLoc = 677;
@@ -1920,7 +1946,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 59";
 		rLen = 0;
-		rLoc = 1624;
+		rLoc = 1721;
 		rType = 0;
 		vrLen = 1206;
 		vrLoc = 677;
@@ -1940,7 +1966,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 59";
 		rLen = 0;
-		rLoc = 1624;
+		rLoc = 1721;
 		rType = 0;
 		vrLen = 1246;
 		vrLoc = 677;
@@ -1950,7 +1976,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 40";
 		rLen = 0;
-		rLoc = 1010;
+		rLoc = 1071;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 677;
@@ -1960,7 +1986,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 38";
 		rLen = 0;
-		rLoc = 1006;
+		rLoc = 1033;
 		rType = 0;
 		vrLen = 1250;
 		vrLoc = 677;
@@ -2000,7 +2026,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 38";
 		rLen = 0;
-		rLoc = 1006;
+		rLoc = 1033;
 		rType = 0;
 		vrLen = 1250;
 		vrLoc = 677;
@@ -2010,7 +2036,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 40";
 		rLen = 0;
-		rLoc = 1010;
+		rLoc = 1071;
 		rType = 0;
 		vrLen = 1212;
 		vrLoc = 677;
@@ -2020,7 +2046,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 38";
 		rLen = 0;
-		rLoc = 991;
+		rLoc = 1018;
 		rType = 0;
 		vrLen = 1206;
 		vrLoc = 677;
@@ -2050,7 +2076,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 169";
 		rLen = 0;
-		rLoc = 4515;
+		rLoc = 4642;
 		rType = 0;
 		vrLen = 1270;
 		vrLoc = 3567;
@@ -2060,7 +2086,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 170";
 		rLen = 0;
-		rLoc = 4530;
+		rLoc = 4657;
 		rType = 0;
 		vrLen = 1315;
 		vrLoc = 3567;
@@ -2090,7 +2116,7 @@
 		fRef = BEC2BE22142F36E400244915 /* PublicationDetailViewController.h */;
 		name = "PublicationDetailViewController.h: 18";
 		rLen = 0;
-		rLoc = 433;
+		rLoc = 459;
 		rType = 0;
 		vrLen = 709;
 		vrLoc = 0;
@@ -2100,7 +2126,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 167";
 		rLen = 0;
-		rLoc = 4436;
+		rLoc = 4443;
 		rType = 0;
 		vrLen = 1143;
 		vrLoc = 3797;
@@ -2110,7 +2136,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 169";
 		rLen = 0;
-		rLoc = 4514;
+		rLoc = 4641;
 		rType = 0;
 		vrLen = 1135;
 		vrLoc = 3797;
@@ -2120,7 +2146,7 @@
 		fRef = BEC2BE22142F36E400244915 /* PublicationDetailViewController.h */;
 		name = "PublicationDetailViewController.h: 18";
 		rLen = 0;
-		rLoc = 433;
+		rLoc = 459;
 		rType = 0;
 		vrLen = 709;
 		vrLoc = 0;
@@ -2130,7 +2156,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 167";
 		rLen = 0;
-		rLoc = 4430;
+		rLoc = 4437;
 		rType = 0;
 		vrLen = 1450;
 		vrLoc = 0;
@@ -2140,7 +2166,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 75";
 		rLen = 0;
-		rLoc = 2088;
+		rLoc = 2140;
 		rType = 0;
 		vrLen = 1300;
 		vrLoc = 1168;
@@ -2161,7 +2187,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 174;
+		rLoc = 178;
 		rType = 1;
 	};
 	BE8CCED3144821010049AC52 /* PBXTextBookmark */ = {
@@ -2169,7 +2195,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 169";
 		rLen = 0;
-		rLoc = 4419;
+		rLoc = 4426;
 		rType = 0;
 		vrLen = 452;
 		vrLoc = 3874;
@@ -2179,7 +2205,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 171";
 		rLen = 0;
-		rLoc = 4501;
+		rLoc = 4628;
 		rType = 0;
 		vrLen = 1194;
 		vrLoc = 3843;
@@ -2189,7 +2215,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 170";
 		rLen = 0;
-		rLoc = 4416;
+		rLoc = 4423;
 		rType = 0;
 		vrLen = 1352;
 		vrLoc = 3479;
@@ -2199,7 +2225,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 77";
 		rLen = 0;
-		rLoc = 2088;
+		rLoc = 2140;
 		rType = 0;
 		vrLen = 1425;
 		vrLoc = 1310;
@@ -2209,7 +2235,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 77";
 		rLen = 0;
-		rLoc = 2087;
+		rLoc = 2140;
 		rType = 0;
 		vrLen = 1432;
 		vrLoc = 1310;
@@ -2219,7 +2245,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 75";
 		rLen = 0;
-		rLoc = 1941;
+		rLoc = 1940;
 		rType = 0;
 		vrLen = 1334;
 		vrLoc = 1310;
@@ -2229,7 +2255,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 71";
 		rLen = 0;
-		rLoc = 1812;
+		rLoc = 1815;
 		rType = 0;
 		vrLen = 1418;
 		vrLoc = 1229;
@@ -2239,7 +2265,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 77";
 		rLen = 0;
-		rLoc = 2008;
+		rLoc = 1944;
 		rType = 0;
 		vrLen = 1416;
 		vrLoc = 1229;
@@ -2249,7 +2275,7 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 178";
 		rLen = 0;
-		rLoc = 4501;
+		rLoc = 4628;
 		rType = 0;
 		vrLen = 1357;
 		vrLoc = 3514;
@@ -2259,10 +2285,168 @@
 		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
 		name = "PublicationDetailViewController.m: 200";
 		rLen = 0;
-		rLoc = 5120;
+		rLoc = 5247;
 		rType = 0;
 		vrLen = 1127;
 		vrLoc = 4127;
+	};
+	BE8CCEFB1448329F0049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
+		name = "PublicationDetailViewController.m: 177";
+		rLen = 51;
+		rLoc = 4507;
+		rType = 0;
+		vrLen = 1159;
+		vrLoc = 4149;
+	};
+	BE8CCEFE144833250049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
+		name = "PublicationDetailViewController.m: 65";
+		rLen = 0;
+		rLoc = 1764;
+		rType = 0;
+		vrLen = 1391;
+		vrLoc = 1090;
+	};
+	BE8CCF07144836770049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BE8CCE361447FED10049AC52 /* objc.h */;
+		name = "objc.h: 31";
+		rLen = 0;
+		rLoc = 1125;
+		rType = 0;
+		vrLen = 1606;
+		vrLoc = 103;
+	};
+	BE8CCF08144836770049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BE8CCF09144836770049AC52 /* NSSortDescriptor.h */;
+		name = "NSSortDescriptor.h: 35";
+		rLen = 12;
+		rLoc = 1179;
+		rType = 0;
+		vrLen = 1929;
+		vrLoc = 0;
+	};
+	BE8CCF09144836770049AC52 /* NSSortDescriptor.h */ = {
+		isa = PBXFileReference;
+		name = NSSortDescriptor.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSSortDescriptor.h;
+		sourceTree = "<absolute>";
+	};
+	BE8CCF0A144836770049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BE8CCF0B144836770049AC52 /* NSObjCRuntime.h */;
+		name = "NSObjCRuntime.h: 139";
+		rLen = 95;
+		rLoc = 4915;
+		rType = 0;
+		vrLen = 2770;
+		vrLoc = 4006;
+	};
+	BE8CCF0B144836770049AC52 /* NSObjCRuntime.h */ = {
+		isa = PBXFileReference;
+		name = NSObjCRuntime.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObjCRuntime.h;
+		sourceTree = "<absolute>";
+	};
+	BE8CCF0C144836770049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BE8CCF0D144836770049AC52 /* NSArray.h */;
+		name = "NSArray.h: 138";
+		rLen = 10;
+		rLoc = 6285;
+		rType = 0;
+		vrLen = 2149;
+		vrLoc = 4651;
+	};
+	BE8CCF0D144836770049AC52 /* NSArray.h */ = {
+		isa = PBXFileReference;
+		name = NSArray.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSArray.h;
+		sourceTree = "<absolute>";
+	};
+	BE8CCF0E144836770049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
+		name = "PublicationDetailViewController.m: 74";
+		rLen = 0;
+		rLoc = 2139;
+		rType = 0;
+		vrLen = 1281;
+		vrLoc = 1310;
+	};
+	BE8CCF0F144836770049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
+		name = "PublicationDetailViewController.m: 74";
+		rLen = 0;
+		rLoc = 2139;
+		rType = 0;
+		vrLen = 1282;
+		vrLoc = 1310;
+	};
+	BE8CCF12144837620049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
+		name = "PublicationDetailViewController.m: 177";
+		rLen = 0;
+		rLoc = 4562;
+		rType = 0;
+		vrLen = 1282;
+		vrLoc = 3665;
+	};
+	BE8CCF15144838290049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BEC2BE22142F36E400244915 /* PublicationDetailViewController.h */;
+		name = "PublicationDetailViewController.h: 27";
+		rLen = 0;
+		rLoc = 770;
+		rType = 0;
+		vrLen = 799;
+		vrLoc = 0;
+	};
+	BE8CCF16144838290049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
+		name = "PublicationDetailViewController.m: 20";
+		rLen = 0;
+		rLoc = 440;
+		rType = 0;
+		vrLen = 1460;
+		vrLoc = 0;
+	};
+	BE8CCF17144838290049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
+		name = "PublicationDetailViewController.m: 20";
+		rLen = 0;
+		rLoc = 454;
+		rType = 0;
+		vrLen = 1474;
+		vrLoc = 0;
+	};
+	BE8CCF1A144838500049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
+		name = "PublicationDetailViewController.m: 20";
+		rLen = 0;
+		rLoc = 454;
+		rType = 0;
+		vrLen = 1405;
+		vrLoc = 0;
+	};
+	BE8CCF1D144838DB0049AC52 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */;
+		name = "PublicationDetailViewController.m: 54";
+		rLen = 0;
+		rLoc = 1376;
+		rType = 0;
+		vrLen = 1293;
+		vrLoc = 848;
 	};
 	BE9F67441430D2850038D619 /* TopicViewController.h */ = {
 		uiCtxt = {
@@ -2313,15 +2497,15 @@
 	BEC2BE22142F36E400244915 /* PublicationDetailViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1090, 705}}";
-			sepNavSelRange = "{433, 0}";
-			sepNavVisRange = "{0, 709}";
+			sepNavSelRange = "{770, 0}";
+			sepNavVisRange = "{0, 799}";
 		};
 	};
 	BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1090, 2834}}";
-			sepNavSelRange = "{5120, 0}";
-			sepNavVisRange = "{4127, 1127}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 2821}}";
+			sepNavSelRange = "{1376, 0}";
+			sepNavVisRange = "{848, 1293}";
 			sepNavWindowFrame = "{{15, 296}, {947, 757}}";
 		};
 	};
