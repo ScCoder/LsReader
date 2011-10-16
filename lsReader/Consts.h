@@ -8,13 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#define CACHE_KEY @"cacheKey"
+#define CACHE_FILE_NAME  @"lsReaderCache.txt"
+#define SITE_URL @"url"
+#define SITE_LOGIN @"login"
+#define SITE_PASSWD @"passwd"
+#define COUNT_PER_PAGE @"countPerPage"
+#define SHOW_PICS @"showPics"
+#define NEW_KEY @"new"
 
-extern const NSString *SITE_URL;
-extern const NSString *SITE_LOGIN;
-extern const NSString *SITE_PASSWD;
-extern const NSString *COUNT_PER_PAGE;
-extern const NSString *SHOW_PICS;
-extern const NSString *NEW_KEY;
+
+
 //extern const 
 /*
  

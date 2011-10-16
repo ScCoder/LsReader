@@ -123,9 +123,33 @@
 -(IBAction)testConnection{
 	
 	
-	[[Communicator sharedCommunicator] testConnectionBySite:siteURL.text
+	BOOL * connOk = [[Communicator sharedCommunicator] checkConnectionBySite:siteURL.text
 													  login:siteLogin.text
 												   password:sitePasswd.text];
+	
+	NSString *msg;
+	
+	if (connOk) {
+		
+		msg = @"Соединие установленно успешно!!";
+		
+	}
+	else {
+		
+		msg = @"Ошибка!!! Проверьте введенные данные...";
+		
+	}
+
+	
+	
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil 
+													message:msg 
+												   delegate:self 
+										  cancelButtonTitle:@"OK" 
+										  otherButtonTitles:nil]; 
+	
+	[alert show]; 
+	[alert release];
 	
 }
 

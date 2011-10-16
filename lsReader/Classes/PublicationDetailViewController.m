@@ -78,6 +78,7 @@
 	self.keys = [NSMutableArray arrayWithArray: [topics_collection allKeys]];	
 	
 	[self.keys sortUsingSelector:@selector(compare:) ];	
+	
 	self.keys = [[ self.keys reverseObjectEnumerator] allObjects];
 
 
@@ -106,6 +107,14 @@
 	
 }
 
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+	CGFloat cellHeight = 80.0f;
+      
+	return cellHeight;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 	
 	static NSString *CellIdentifier = @"Cell";
@@ -122,7 +131,7 @@
 		
 	cell.textLabel.text = [topic objectForKey: @"topic_title"] ;
 	cell.detailTextLabel.text = [topic objectForKey:@"topic_text_short"];
-	
+	cell.detailTextLabel.numberOfLines = 3;
 	
 	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -182,8 +191,10 @@
 	
 	self.keys = [[ self.keys reverseObjectEnumerator] allObjects];
 	
+	
 	[self.myTable reloadData];	
 	
+	[self.myTable scrollsToTop];	
 }
 
 

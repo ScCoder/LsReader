@@ -1,0 +1,8 @@
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator commandByModule:site:method:params:]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:125: warning: 'parseJSONData:' is deprecated (declared at /Users/sergejusov/github/LsReader/lsReader/../libs/johnezang-JSONKit-c2146ff/JSONKit.h:155)
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator checkConnectionBySite:login:password:]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:184: warning: return makes pointer from integer without a cast
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:192: warning: return makes pointer from integer without a cast
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: At top level:
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:265: warning: incomplete implementation of class 'Communicator'
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:265: warning: method definition for '-testConnectionBySite:login:password:' not found

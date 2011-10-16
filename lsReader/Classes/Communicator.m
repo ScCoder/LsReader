@@ -8,6 +8,7 @@
 
 #import "Communicator.h"
 #import "JSONKit.h"
+#import "Consts.h"
 
 @implementation Communicator
 
@@ -27,76 +28,173 @@ static Communicator * communicator =  NULL;
 	return communicator;
 }
 
--(NSString *)login{
+
+-(void) loadCache {
 	
-	NSString *api_command = [NSString stringWithFormat:@"http://new.livestreet.ru/api/common/login/?login=sc_coder&password=62b183f&response_type=json"];
+	ls_cache = [[NSCache alloc] init];
 	
-	NSURL *url = [NSURL URLWithString:api_command];
+	/*
+	NSData *data = [[NSData alloc] initWithContentsOfFile:CACHE_FILE_NAME];
+	NSKeyedUnarchiver *unarhiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
 	
-	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	
-	NSData *tmpContainer = [NSURLConnection sendSynchronousRequest:request 
-												 returningResponse:nil 
-															 error:nil];
 	
-	JSONDecoder *decoder = [JSONDecoder decoder];
+	ls_cache = [unarhiver decodeObjectForKey:CACHE_KEY];
 	
-	NSDictionary *params = [decoder parseJSONData:tmpContainer];
+	if (!ls_cache){
+		ls_cache = [[NSCache alloc] init];
+	}
 	
-	NSLog(@"test data %@",params);
 	
-	NSLog(@"hash = %@",[[params objectForKey:@"response"] objectForKey:@"hash"]);
-	
-	return [[params objectForKey:@"response"] objectForKey:@"hash"];
+	[unarhiver finishDecoding];
+	[unarhiver release];
+	[data release];
+	*/
 	
 }
 
+-(void) saveCache {
+
+	NSLog(@"saveCache");
+/*
+	if (ls_cache) {
+		
+
+	
+	NSMutableData *data = [[NSMutableData alloc] init];
+	
+	NSKeyedArchiver *arhiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+	
+	[arhiver encodeObject:ls_cache forKey:CACHE_KEY];
+	[arhiver finishEncoding];
+	[data writeToFile:CACHE_FILE_NAME atomically:YES];
+	
+		
+	[ls_cache release];
+
+	[arhiver release];
+	[data release];
+	
+	}
+ */
+	[ls_cache release];
+}
+
+
 -(NSDictionary *)commandByModule:(NSString*)module site:(NSString*)site  method:(NSString*)method params:(NSString*)params
 {
+		
+	
+	UIApplication *app = [UIApplication sharedApplication];
+	
+	app.networkActivityIndicatorVisible = YES;
 	
 	
 	NSString *api_command = [NSString stringWithFormat:@"http://%@/api/%@/%@/?%@&response_type=json",
 							 site,module,method,params];
-	NSLog(api_command);
 	
-	NSURL *url = [NSURL URLWithString:api_command];
+	NSLog(@"api_comand=%@",api_command);
 	
-	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	
-	NSData *tmpContainer = [NSURLConnection sendSynchronousRequest:request 
-												 returningResponse:nil 
-															 error:nil];
+	// Пробуем взять из кеша (текущий класс наследник от NSCashe TODO наверно нужно переделать по другому)
+	NSDictionary *response = [ls_cache objectForKey:api_command];
+		
+	// Если нет в кеше то берем с сайта
+	if (!response) {
+		
+		NSLog(@"not in cache");
 	
-	JSONDecoder *decoder = [JSONDecoder decoder];
+		NSURL *url = [NSURL URLWithString:api_command];
 	
-	NSDictionary *response = [decoder parseJSONData:tmpContainer];
+		NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	
-	response = [response objectForKey:@"response"];	
+		NSData *tmpContainer = [NSURLConnection sendSynchronousRequest:request 
+													 returningResponse:nil 
+																 error:nil];
+	
+		if (!tmpContainer) {
+			
+			NSLog(@"commandByModule ошибка tmpContainer = nill");
+			app.networkActivityIndicatorVisible = NO;
+			return nil;
+		}
+		
+		
+		JSONDecoder *decoder = [JSONDecoder decoder];
+	
+		response = [decoder parseJSONData:tmpContainer];
+		
+		
+		if (!response) {
+			NSLog(@"commandByModule ошибка response = nill");
+			app.networkActivityIndicatorVisible = NO;
+			return nil;
+		}
+
+		
+		if (![response objectForKey:@"response"]) {
+			
+			if ([response objectForKey:@"bStateError"]) {
+				
+				// Ошибка 
+				NSLog(@"bStateError = %@",[response objectForKey:@"bStateError"]);
+				NSLog(@"sMSG = %@", [response objectForKey:@"sMsg"]);
+				NSLog(@"sMsgTitle = %@", [response objectForKey:@"sMsgTitle"]);
+				
+			} else {
+				
+				NSLog(@"Неизвестная ошибка(Нет response в ответе) текущий ответ = @%",response);
+				
+			}
+			
+		} else {
+			
+			// Все ок ложим в кеш !!!!!
+			response = [response objectForKey:@"response"];						
+			// Ложим в кеш
+			[ls_cache setObject:response forKey:api_command];
+			
+		}
+		
+    }
+	
+	app.networkActivityIndicatorVisible = NO;
 	
 	return response;
 		
 
 }
 
--(Boolean *)testConnectionBySite:(NSString*)site  login:(NSString*)login password:(NSString*)password{
+-(Boolean *)checkConnectionBySite:(NSString*)site  login:(NSString*)login password:(NSString*)password{
+	
+
+	
+	
 	
 	NSString *tmpParams = [NSString stringWithFormat:@"login=%@&password=%@",login,password];
 	
 	NSDictionary *response = [self commandByModule:@"common" site:site method:@"login" params:tmpParams]; 
-	
-	
-	if ([response objectForKey:@"hash"] == NULL ) {
 		
-		NSLog(@"test connection NO!!");
+	
+	if (!login) { //если логин пустой то просто проверяем есть ответ или нет
+		
+		if (!response) {
+			return NO;
+		} else {
+		    return YES;
+		}
+	}
+	
+	
+	if ([response objectForKey:@"hash"] ){
+		hash = [response objectForKey:@"hash"];
+		NSLog(@"test connection ok hash = %@",hash);
+		return YES;		
+	}
+	else {
 		return NO;
 	}
-	else{
-		
-		NSLog(@"test connection ok hash = %@",[response objectForKey:@"hash"]);
-		return YES;
-	}
-	
-	//
+
 }
 
 -(NSDictionary *) topPublicationsByPeriod:(NSString*)period {

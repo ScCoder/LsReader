@@ -30,7 +30,7 @@
 		BE81E70C14134BF80097D271 /* S7ViewSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = BE81E70B14134BF80097D271 /* S7ViewSlider.m */; };
 		BE867EC9141CEC03001DAD18 /* Communicator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE867EC8141CEC03001DAD18 /* Communicator.m */; };
 		BE8984231417AE3300065DCB /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8984221417AE3300065DCB /* JSONKit.m */; };
-		BE8CCDE11447F2520049AC52 /* Consts.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8CCDE01447F2520049AC52 /* Consts.m */; };
+		BE8CCFB714498DD60049AC52 /* lsCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8CCFB614498DD60049AC52 /* lsCache.m */; };
 		BE9F67471430D2850038D619 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9F67451430D2850038D619 /* TopicViewController.m */; };
 		BE9F67481430D2850038D619 /* TopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9F67461430D2850038D619 /* TopicViewController.xib */; };
 		BEC2BE1E142F363F00244915 /* checkmarkControllerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC2BE1D142F363F00244915 /* checkmarkControllerIcon.png */; };
@@ -77,7 +77,8 @@
 		BE8984211417AE3300065DCB /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = "../libs/johnezang-JSONKit-c2146ff/JSONKit.h"; sourceTree = SOURCE_ROOT; };
 		BE8984221417AE3300065DCB /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = "../libs/johnezang-JSONKit-c2146ff/JSONKit.m"; sourceTree = SOURCE_ROOT; };
 		BE8CCDDF1447F2520049AC52 /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
-		BE8CCDE01447F2520049AC52 /* Consts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consts.m; sourceTree = "<group>"; };
+		BE8CCFB514498DD60049AC52 /* lsCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lsCache.h; path = ../lsCache.h; sourceTree = "<group>"; };
+		BE8CCFB614498DD60049AC52 /* lsCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = lsCache.m; path = ../lsCache.m; sourceTree = "<group>"; };
 		BE9F67441430D2850038D619 /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
 		BE9F67451430D2850038D619 /* TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
 		BE9F67461430D2850038D619 /* TopicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TopicViewController.xib; path = Classes/TopicViewController.xib; sourceTree = "<group>"; };
@@ -126,6 +127,8 @@
 				BEC2BE23142F36E400244915 /* PublicationDetailViewController.m */,
 				BE9F67441430D2850038D619 /* TopicViewController.h */,
 				BE9F67451430D2850038D619 /* TopicViewController.m */,
+				BE8CCFB514498DD60049AC52 /* lsCache.h */,
+				BE8CCFB614498DD60049AC52 /* lsCache.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -154,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				BE8CCDDF1447F2520049AC52 /* Consts.h */,
-				BE8CCDE01447F2520049AC52 /* Consts.m */,
 				BE81E70A14134BF80097D271 /* S7ViewSlider.h */,
 				BE81E70B14134BF80097D271 /* S7ViewSlider.m */,
 				BE8984211417AE3300065DCB /* JSONKit.h */,
@@ -279,7 +281,7 @@
 				BE867EC9141CEC03001DAD18 /* Communicator.m in Sources */,
 				BEC2BE25142F36E400244915 /* PublicationDetailViewController.m in Sources */,
 				BE9F67471430D2850038D619 /* TopicViewController.m in Sources */,
-				BE8CCDE11447F2520049AC52 /* Consts.m in Sources */,
+				BE8CCFB714498DD60049AC52 /* lsCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

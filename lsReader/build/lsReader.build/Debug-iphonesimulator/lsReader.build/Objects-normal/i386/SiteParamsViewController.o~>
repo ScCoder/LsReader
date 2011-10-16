@@ -1,0 +1,6 @@
+/Users/sergejusov/github/LsReader/lsReader/Classes/SiteParamsViewController.m: In function '-[SiteParamsViewController testConnection]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/SiteParamsViewController.m:128: warning: 'Communicator' may not respond to '-checkConnectionBySite:login:password:'
+/Users/sergejusov/github/LsReader/lsReader/Classes/SiteParamsViewController.m:128: warning: (Messages without a matching method signature
+/Users/sergejusov/github/LsReader/lsReader/Classes/SiteParamsViewController.m:128: warning: will be assumed to return 'id' and accept
+/Users/sergejusov/github/LsReader/lsReader/Classes/SiteParamsViewController.m:128: warning: '...' as arguments.)
+/Users/sergejusov/github/LsReader/lsReader/Classes/SiteParamsViewController.m:128: warning: initialization from incompatible pointer type

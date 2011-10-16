@@ -9,24 +9,29 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Communicator : NSObject {
+@interface Communicator : NSCache {
 	NSString *siteURL;
 	NSString *countPerPage;
+	NSCache *ls_cache;
+	NSString *hash;
 
 }
 
 @property (nonatomic, retain) NSString *siteURL;
 @property (nonatomic, retain) NSString *countPerPage;
 
+
 +(Communicator *)sharedCommunicator;
 
--(NSString *)login;
 
+-(void) loadCache;
+
+-(void) saveCache;
 
 
 -(NSDictionary *)commandByModule:(NSString*)module site:(NSString*)site method:(NSString*)method params:(NSString*)params;  
 
--(Boolean *)testConnectionBySite:(NSString*)site  login:(NSString*)login password:(NSString*)password;
+-(Boolean *)checkConnectionBySite:(NSString*)site  login:(NSString*)login password:(NSString*)password;
 
 -(NSDictionary *) topPublicationsByPeriod:(NSString*)period; 
 
