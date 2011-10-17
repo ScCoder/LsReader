@@ -71,7 +71,9 @@
 		
 	
 	self.topics_collection = [[NSMutableDictionary alloc] initWithCapacity:1];
-		
+	
+	topicTitles = [[NSMutableDictionary alloc] initWithCapacity:1];
+	
 	[self.topics_collection addEntriesFromDictionary: [response objectForKey:@"collection"]];	
 	
 	
@@ -127,19 +129,44 @@
 	
 	
 	
-	NSDictionary *topic = [self.topics_collection objectForKey: [self.keys objectAtIndex:indexPath.row]];
+	NSMutableDictionary *topic = [self.topics_collection objectForKey: [self.keys objectAtIndex:indexPath.row]];
 		
 	cell.textLabel.text = [topic objectForKey: @"topic_title"] ;
-	cell.detailTextLabel.text = [topic objectForKey:@"topic_text_short"];
+	//cell.detailTextLabel.text = [topic objectForKey:@"topic_text_short"];
+	
+	
+	
+
+	if (![topicTitles objectForKey: [self.keys objectAtIndex:indexPath.row]]) {
+			
+		NSMutableString *str = [[NSMutableString alloc] initWithCapacity:10];
+			
+		[str appendString:[topic objectForKey: @"topic_text_short"]]; 	
+			
+		[self cutHtmlTagsFromText: str];
+			
+		[topicTitles setObject:[str retain] forKey:[self.keys objectAtIndex:indexPath.row]];
+			
+		[str release];
+	}
+	
+		cell.detailTextLabel.text = [topicTitles objectForKey: [self.keys objectAtIndex:indexPath.row]];	
+	
+	
+	//cell.detailTextLabel.text = [self cutHtmlTagsFromText: str];
 	cell.detailTextLabel.numberOfLines = 3;
 	
 	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
 	
+	
 	return cell;
 	
+
+	
 }
+
 
 
 
@@ -197,6 +224,29 @@
 	[self.myTable scrollsToTop];	
 }
 
+-(NSMutableString *) cutHtmlTagsFromText: (NSMutableString *) intext
+{
+	
+	//if ((!intext)||([intext length] < 1 )) return;
+	
+	//NSLog(@"cutHTML  %@",intext);
+	NSError *error = NULL;
+	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern:@"</?([a-oq-z][^>]*|p[^>]+)>" 
+																			options:NSRegularExpressionCaseInsensitive
+																			  error:&error];
+	
+    [regExp replaceMatchesInString:intext options:0 range:NSMakeRange(0,[intext length]) withTemplate:@""];
+	
+
+	if ([intext length] > 100) {
+		
+		[intext deleteCharactersInRange:NSMakeRange(100,[intext length]-100)];
+	}
+	//[regExp release];
+	//NSLog(@"intext=%@",intext);		
+	return intext;
+								   
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -214,9 +264,13 @@
 }
 
 - (void)viewDidUnload {
+	[self.topics_collection release];
+	[topicTitles release];
+	self.topics_collection = nil;
+	topicTitles = nil;
     [super viewDidUnload];
 	
-	[self.topics_collection release];
+
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }

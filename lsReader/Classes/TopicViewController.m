@@ -13,6 +13,8 @@
 
 @synthesize webView;
 @synthesize topicId;
+@synthesize voteBar;
+@synthesize voteSegControl;
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -43,7 +45,7 @@
 		
 	[webView loadHTMLString:topicContent baseURL:base_url];//
 	
-
+    [voteBar setHidden: ![[Communicator sharedCommunicator] isLogedIn]];
 	
 	//[[UIApplication sharedApplication] openURL:base_url];
     	
@@ -72,6 +74,33 @@
 	
 }
 
+-(IBAction) voting{
+	
+		NSLog(@"voting ");
+	
+	NSInteger value;
+	
+	switch (self.voteSegControl.selectedSegmentIndex) {
+		case 0:
+			value = 1;
+			break;
+		case 1:
+			value = 0;
+			break;
+		case 2:
+			value = -1;
+			break;
+
+		default:
+			break;
+	}
+	
+   NSString *newRating = [[Communicator sharedCommunicator] voteByTopicId:self.topicId value:value];
+	
+	NSLog(@"new Rating = %@",newRating);
+
+}
+
 
 
 /*
@@ -97,6 +126,8 @@
 
 
 - (void)dealloc {
+	[voteSegControl release];
+	[webView release];
     [super dealloc];
 }
 

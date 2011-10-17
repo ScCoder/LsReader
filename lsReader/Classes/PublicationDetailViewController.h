@@ -14,6 +14,7 @@
 	IBOutlet UITableView *myTable;
 	NSMutableArray *keys;
 	NSMutableDictionary *topics_collection;
+	NSMutableDictionary *topicTitles;
 	NSString *publication_type;
 	NSInteger *current_page;
 	UIButton *addNextButton;
@@ -27,5 +28,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *addNextButton;
 
 -(IBAction) addNext;
+
+-(NSMutableString*) cutHtmlTagsFromText: (NSMutableString *) intext;
 
 @end

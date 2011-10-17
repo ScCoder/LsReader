@@ -41,4 +41,9 @@
 
 -(NSDictionary *) readTopicById:(NSString*) topic_id;
 
+-(NSString *) voteByTopicId:(NSString *) topic_id value: (NSInteger)value;
+
+-(Boolean *) isLogedIn;
+
+
 @end

@@ -13,10 +13,18 @@
 
 	UIWebView *webView;
 	NSString *tiopicId;
+	UIToolbar *voteBar;
+	UISegmentedControl *voteSegControl;
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView *webView; 
 
+@property (nonatomic, retain) IBOutlet UIToolbar *voteBar;
+
 @property (nonatomic, retain) NSString *topicId;
+
+@property (nonatomic, retain) IBOutlet UISegmentedControl *voteSegControl;
+
+-(IBAction) voting;
 
 @end

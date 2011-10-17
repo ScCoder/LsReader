@@ -222,8 +222,20 @@
 		
 		//Запоминаем урл выбранного сайта и колво на страницу в коммуникаторе
 		
-		[Communicator sharedCommunicator].siteURL = [[self.siteParams objectForKey:[keys objectAtIndex:indexPath.row]] objectForKey:SITE_URL];
-		[Communicator sharedCommunicator].countPerPage =[[self.siteParams objectForKey:[keys objectAtIndex:indexPath.row]] objectForKey:COUNT_PER_PAGE];
+		NSString *tmpKey = [keys objectAtIndex:indexPath.row];
+		
+		NSDictionary *tmpParams = [self.siteParams objectForKey:tmpKey];
+		
+		
+		//[Communicator sharedCommunicator].siteURL = [tmpParams objectForKey:SITE_URL];
+		
+		// Проверка соединения - запоминается хеш и сайт в коммуникаторе
+		[[Communicator sharedCommunicator] checkConnectionBySite:[tmpParams objectForKey: SITE_URL] 
+														   login: [tmpParams objectForKey: SITE_LOGIN]
+														password:[tmpParams objectForKey: SITE_PASSWD]];
+		 
+		
+		[Communicator sharedCommunicator].countPerPage =[[self.siteParams objectForKey:tmpKey] objectForKey:COUNT_PER_PAGE];
 		
 		//NSLog([Communicator sharedCommunicator].siteURL);
 		//Переход к основному виду

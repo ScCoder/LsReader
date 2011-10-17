@@ -29,6 +29,20 @@ static Communicator * communicator =  NULL;
 }
 
 
+-(Boolean *) isLogedIn {
+
+  if (!hash) {
+	  
+	  NSLog(@"not logged");
+	  return NO;
+	  
+  }	else {
+	  return YES;
+  }
+	
+}
+
+
 -(void) loadCache {
 	
 	ls_cache = [[NSCache alloc] init];
@@ -167,32 +181,41 @@ static Communicator * communicator =  NULL;
 
 -(Boolean *)checkConnectionBySite:(NSString*)site  login:(NSString*)login password:(NSString*)password{
 	
-
-	
-	
-	
 	NSString *tmpParams = [NSString stringWithFormat:@"login=%@&password=%@",login,password];
 	
 	NSDictionary *response = [self commandByModule:@"common" site:site method:@"login" params:tmpParams]; 
 		
-	
-	if (!login) { //если логин пустой то просто проверяем есть ответ или нет
+	//если логин пустой то просто проверяем есть ответ или нет
+
+	if (!login) { 	
 		
 		if (!response) {
+			
 			return NO;
+			
 		} else {
-		    return YES;
+			
+			self.siteURL = site;
+		    
+			return YES;
 		}
+		
 	}
 	
 	
 	if ([response objectForKey:@"hash"] ){
+		
 		hash = [response objectForKey:@"hash"];
-		NSLog(@"test connection ok hash = %@",hash);
+		
+		self.siteURL = site;
+
 		return YES;		
-	}
+	
+	}	
 	else {
+		
 		return NO;
+		
 	}
 
 }
@@ -259,6 +282,17 @@ static Communicator * communicator =  NULL;
 	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"read" params:tmpParams]; 
 		
     return response;
+
+}
+
+-(NSString *) voteByTopicId:(NSString *) topic_id value: (NSInteger)value{
+
+	NSString *tmpParams = [NSString stringWithFormat:@"id=%@&value=%i&hash=%@",topic_id,value,hash];
+	
+	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"vote" params:tmpParams]; 
+	
+	return [response objectForKey:@"rating"];
+	
 
 }
 
