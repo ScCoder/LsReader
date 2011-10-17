@@ -220,7 +220,7 @@
 		}
 		
 		
-		//Запоминаем урл выбранного сайта и колво на страницу в коммуникаторе
+		//Запоминаем урл выбранного сайта и колво на страницу в коммуникаторе 
 		
 		NSString *tmpKey = [keys objectAtIndex:indexPath.row];
 		
@@ -236,6 +236,13 @@
 		 
 		
 		[Communicator sharedCommunicator].countPerPage =[[self.siteParams objectForKey:tmpKey] objectForKey:COUNT_PER_PAGE];
+		
+		// Показывать ли картинки
+		
+		[Communicator sharedCommunicator].showPics = [[[siteParams objectForKey:tmpKey] objectForKey:SHOW_PICS] isEqualToString: @"YES"];
+		
+		
+		
 		
 		//NSLog([Communicator sharedCommunicator].siteURL);
 		//Переход к основному виду

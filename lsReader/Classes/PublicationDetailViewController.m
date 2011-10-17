@@ -145,7 +145,7 @@
 			
 		[self cutHtmlTagsFromText: str];
 			
-		[topicTitles setObject:[str retain] forKey:[self.keys objectAtIndex:indexPath.row]];
+		[topicTitles setObject:str forKey:[self.keys objectAtIndex:indexPath.row]];
 			
 		[str release];
 	}
@@ -224,14 +224,11 @@
 	[self.myTable scrollsToTop];	
 }
 
--(NSMutableString *) cutHtmlTagsFromText: (NSMutableString *) intext
+-(void)cutHtmlTagsFromText: (NSMutableString *) intext
 {
-	
-	//if ((!intext)||([intext length] < 1 )) return;
-	
-	//NSLog(@"cutHTML  %@",intext);
+
 	NSError *error = NULL;
-	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern:@"</?([a-oq-z][^>]*|p[^>]+)>" 
+	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern:@"<[^>]*>"             //@"</?([a-oq-z][^>]*|p[^>]+)>" // @"<img([^<]+)>" 
 																			options:NSRegularExpressionCaseInsensitive
 																			  error:&error];
 	
@@ -242,9 +239,6 @@
 		
 		[intext deleteCharactersInRange:NSMakeRange(100,[intext length]-100)];
 	}
-	//[regExp release];
-	//NSLog(@"intext=%@",intext);		
-	return intext;
 								   
 }
 

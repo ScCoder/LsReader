@@ -29,6 +29,6 @@
 
 -(IBAction) addNext;
 
--(NSMutableString*) cutHtmlTagsFromText: (NSMutableString *) intext;
+-(void)cutHtmlTagsFromText: (NSMutableString *) intext;
 
 @end

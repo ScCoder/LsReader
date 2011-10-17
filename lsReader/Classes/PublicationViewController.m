@@ -66,7 +66,10 @@
 	
 	pdVC.publication_type = [self.publicTypes objectAtIndex:indexPath.row];
 	
-	[self.navigationController pushViewController:pdVC animated:YES];
+	//[pdVC autorelease];
+	
+	// TODO: Здесь возможно утечка, нужно подумать где сделать релеазе для pdVC
+	[self.navigationController pushViewController:[pdVC retain] animated:YES];
 	
 	[pdVC release];
 	

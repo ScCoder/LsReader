@@ -14,11 +14,13 @@
 	NSString *countPerPage;
 	NSCache *ls_cache;
 	NSString *hash;
+	BOOL showPics; 
 
 }
 
 @property (nonatomic, retain) NSString *siteURL;
 @property (nonatomic, retain) NSString *countPerPage;
+@property BOOL showPics;
 
 
 +(Communicator *)sharedCommunicator;

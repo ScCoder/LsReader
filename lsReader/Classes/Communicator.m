@@ -14,6 +14,7 @@
 
 @synthesize siteURL;
 @synthesize countPerPage;
+@synthesize showPics;
 
 
 static Communicator * communicator =  NULL;

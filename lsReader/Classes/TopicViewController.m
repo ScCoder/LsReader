@@ -39,7 +39,21 @@
 
 	NSDictionary *topic_data = [[Communicator sharedCommunicator] readTopicById:self.topicId];
 		
-	NSString *topicContent =	[topic_data objectForKey: @"topic_text" ];
+	//OLD   NSString *topicContent =	[topic_data objectForKey: @"topic_text" ];
+	
+	
+	
+	NSMutableString *topicContent = [[NSMutableString alloc] initWithCapacity:10];
+	
+	[topicContent  appendString: [topic_data objectForKey: @"topic_text" ]];
+	
+	if (![Communicator sharedCommunicator].showPics) {
+	
+	  //Обрезать картинки
+		[self cutImagesFromText:topicContent];
+		
+	}
+	
 	
 	NSURL *base_url = [NSURL URLWithString: [@"http://www." stringByAppendingString: [Communicator sharedCommunicator].siteURL ]];	
 		
@@ -48,6 +62,8 @@
     [voteBar setHidden: ![[Communicator sharedCommunicator] isLogedIn]];
 	
 	//[[UIApplication sharedApplication] openURL:base_url];
+	
+	[topicContent release];
     	
 }
 
@@ -100,6 +116,22 @@
 	NSLog(@"new Rating = %@",newRating);
 
 }
+
+-(void) cutImagesFromText:(NSMutableString *) intext{
+
+
+	NSError *error = NULL;
+	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern: @"<img([^<]+)>" 
+																			options:NSRegularExpressionCaseInsensitive
+																			  error:&error];
+	
+    [regExp replaceMatchesInString:intext options:0 range:NSMakeRange(0,[intext length]) withTemplate:@"<b>IMG IMG</b>"];
+	
+    NSLog(intext);
+	
+}
+
+
 
 
 

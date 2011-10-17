@@ -26,5 +26,6 @@
 @property (nonatomic, retain) IBOutlet UISegmentedControl *voteSegControl;
 
 -(IBAction) voting;
+-(void) cutImagesFromText:(NSMutableString *) intext;
 
 @end
