@@ -13,11 +13,16 @@
 
 @implementation PublicationDetailViewController
 
+
+
 @synthesize myTable;
 @synthesize keys;
 @synthesize topics_collection;
 @synthesize publication_type;
 @synthesize addNextButton;
+@synthesize topPeriodSegControl;
+@synthesize topPeriodToolBar;
+
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -35,26 +40,43 @@
 - (void)viewDidLoad {
 	
     [super viewDidLoad];
-	current_page = 0;
-	current_page++;
+	
+	NSLog(@"pub detail");	
+	
+	current_page = 1;
+	//current_page++;
 	
 	[addNextButton setHidden:NO]; 
+	[topPeriodToolBar setHidden:YES];
 	
-	NSLog(@"pub detail");
-//	NSLog(self.publication_type);
+	[self loadTopicsList];
+	
+}
+
+-(IBAction)loadTopicsList{
+
 	
 	// Получение данных
 	
 	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
+
 	
 	if ([self.publication_type isEqualToString: @"Лучшие"]) {
 	
-		response = [[Communicator sharedCommunicator] topPublicationsByPeriod:@"all"];
+
+		NSArray *pubPeriods = [NSArray arrayWithObjects:@"24h",@"7d",@"30d",@"all",nil];
 		
-		[addNextButton setHidden:YES]; 	
+		
+		response = [[Communicator sharedCommunicator] 
+					topPublicationsByPeriod:[pubPeriods objectAtIndex:topPeriodSegControl.selectedSegmentIndex] ];
+		
+		[addNextButton setHidden:YES];
+		[topPeriodToolBar setHidden:NO];
+		
+		self.title = @"Лучшие";
 	}
 	else if ( [self.publication_type isEqualToString: @"Новые"]){
-	 
+		
 		response = [[Communicator sharedCommunicator] newPublications];
 		
 	}
@@ -67,8 +89,8 @@
 	else {
 		NSLog(@"other");
 	}
-
-		
+	
+	
 	
 	self.topics_collection = [[NSMutableDictionary alloc] initWithCapacity:1];
 	
@@ -82,8 +104,9 @@
 	[self.keys sortUsingSelector:@selector(compare:) ];	
 	
 	self.keys = [[ self.keys reverseObjectEnumerator] allObjects];
-
-
+	
+	[self.myTable reloadData];
+	
 	
 }
 
@@ -115,6 +138,7 @@
 	CGFloat cellHeight = 80.0f;
       
 	return cellHeight;
+	
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -150,21 +174,14 @@
 		[str release];
 	}
 	
-		cell.detailTextLabel.text = [topicTitles objectForKey: [self.keys objectAtIndex:indexPath.row]];	
+    cell.detailTextLabel.text = [topicTitles objectForKey: [self.keys objectAtIndex:indexPath.row]];	
 	
-	
-	//cell.detailTextLabel.text = [self cutHtmlTagsFromText: str];
 	cell.detailTextLabel.numberOfLines = 3;
-	
-	
+		
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
-	
-	
 	return cell;
-	
-
-	
+		
 }
 
 
@@ -172,27 +189,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	// TODO читать топик
 	
 	NSLog(@"read topic");
 	
 	TopicViewController *topicVC = [[TopicViewController alloc] initWithNibName:@"TopicViewController" bundle:nil];
-	
-	
+		
 	NSDictionary *topic = [self.topics_collection objectForKey: [self.keys objectAtIndex:indexPath.row]];
 
     NSString *topic_id =  [topic objectForKey:@"topic_id"];
 
-	//NSDictionary *topic_data = [[Communicator sharedCommunicator] readTopicById:topic_id];
-
-	//NSLog(@"topic = %@",topic_data)	;
-	
-	//topicVC.topicContent =	[topic_data objectForKey: @"topic_text" ];
 	topicVC.topicId = topic_id;
 	
 	[self.navigationController pushViewController:topicVC animated:YES];
-	
-	
+		
 	[topicVC release];
 	
 	
@@ -200,7 +209,7 @@
 
 -(IBAction) addNext{
 
-	
+	//TODO Сделать что бы добавлялись из нужного метода зависит от pubType( персональные, новые и т.п.)
 	current_page++;
 	
 	NSDictionary *response;

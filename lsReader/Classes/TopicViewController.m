@@ -15,7 +15,7 @@
 @synthesize topicId;
 @synthesize voteBar;
 @synthesize voteSegControl;
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+@synthesize voteSegControl1;// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -113,22 +113,19 @@
 	
    NSString *newRating = [[Communicator sharedCommunicator] voteByTopicId:self.topicId value:value];
 	
-	NSLog(@"new Rating = %@",newRating);
+   NSLog(@"new Rating = %@",newRating);
 
 }
 
 -(void) cutImagesFromText:(NSMutableString *) intext{
-
-
+	
 	NSError *error = NULL;
-	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern: @"<img([^<]+)>" 
+	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern: @"<img[^>]src=\"([^>\"]+)\"[^>]*>"
 																			options:NSRegularExpressionCaseInsensitive
 																			  error:&error];
 	
-    [regExp replaceMatchesInString:intext options:0 range:NSMakeRange(0,[intext length]) withTemplate:@"<b>IMG IMG</b>"];
-	
-    NSLog(intext);
-	
+    [regExp replaceMatchesInString:intext options:0 range:NSMakeRange(0,[intext length]) withTemplate:@"<a href = $1> picture </a>"];
+
 }
 
 

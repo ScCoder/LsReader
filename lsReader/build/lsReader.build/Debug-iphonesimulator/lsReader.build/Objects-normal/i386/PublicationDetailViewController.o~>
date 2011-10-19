@@ -1,7 +1,0 @@
-/Users/sergejusov/github/LsReader/lsReader/Classes/PublicationDetailViewController.m: In function '-[PublicationDetailViewController viewDidLoad]':
-/Users/sergejusov/github/LsReader/lsReader/Classes/PublicationDetailViewController.m:84: warning: incompatible Objective-C types 'struct NSArray *', expected 'struct NSMutableArray *' when passing argument 1 of 'setKeys:' from distinct Objective-C type
-/Users/sergejusov/github/LsReader/lsReader/Classes/PublicationDetailViewController.m: In function '-[PublicationDetailViewController addNext]':
-/Users/sergejusov/github/LsReader/lsReader/Classes/PublicationDetailViewController.m:219: warning: incompatible Objective-C types 'struct NSArray *', expected 'struct NSMutableArray *' when passing argument 1 of 'setKeys:' from distinct Objective-C type
-/Users/sergejusov/github/LsReader/lsReader/Classes/PublicationDetailViewController.m: In function '-[PublicationDetailViewController cutHtmlTagsFromText:]':
-/Users/sergejusov/github/LsReader/lsReader/Classes/PublicationDetailViewController.m:228: warning: conflicting types for '-(void)cutHtmlTagsFromText:(NSMutableString *)intext'
-/Users/sergejusov/github/LsReader/lsReader/Classes/PublicationDetailViewController.h:32: warning: previous declaration of '-(NSMutableString *)cutHtmlTagsFromText:(NSMutableString *)intext'

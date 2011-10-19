@@ -11,24 +11,32 @@
 
 @interface PublicationDetailViewController : UIViewController<UITableViewDataSource> {
 
-	IBOutlet UITableView *myTable;
+	UITableView *myTable;
 	NSMutableArray *keys;
 	NSMutableDictionary *topics_collection;
 	NSMutableDictionary *topicTitles;
 	NSString *publication_type;
 	NSInteger *current_page;
 	UIButton *addNextButton;
-	
-	
+	UISegmentedControl *topPeriodSegControl;	
+	UIToolbar *topPeriodToolBar;
+
+
 }
 @property (nonatomic, retain) IBOutlet UITableView *myTable;
 @property (nonatomic, retain) NSMutableArray *keys;
 @property (nonatomic, retain) NSMutableDictionary *topics_collection;
 @property (nonatomic, retain) NSString *publication_type;
 @property (nonatomic, retain) IBOutlet UIButton *addNextButton;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *topPeriodSegControl;
+@property (nonatomic, retain) IBOutlet UIToolbar *topPeriodToolBar;
+
+
 
 -(IBAction) addNext;
 
 -(void)cutHtmlTagsFromText: (NSMutableString *) intext;
+
+-(IBAction)loadTopicsList;
 
 @end

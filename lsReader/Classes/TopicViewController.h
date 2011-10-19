@@ -15,6 +15,7 @@
 	NSString *tiopicId;
 	UIToolbar *voteBar;
 	UISegmentedControl *voteSegControl;
+	UISegmentedControl *voteSegControl1;
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView *webView; 
@@ -24,7 +25,7 @@
 @property (nonatomic, retain) NSString *topicId;
 
 @property (nonatomic, retain) IBOutlet UISegmentedControl *voteSegControl;
-
+@property (nonatomic, retain) IBOutlet UISegmentedControl *voteSegControl1;
 -(IBAction) voting;
 -(void) cutImagesFromText:(NSMutableString *) intext;
 
