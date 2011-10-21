@@ -44,11 +44,7 @@
 	NSLog(@"pub detail");	
 	
 	current_page = 1;
-	//current_page++;
-	
-	[addNextButton setHidden:NO]; 
-	[topPeriodToolBar setHidden:YES];
-	
+
 	[self loadTopicsList];
 	
 }
@@ -56,11 +52,25 @@
 -(IBAction)loadTopicsList{
 
 	
+	[addNextButton setHidden:NO]; 
+	
+	
+	
+	[topPeriodToolBar setHidden:YES];
+     
+	self.myTable.frame = CGRectMake(self.myTable.frame.origin.x
+									, self.topPeriodToolBar.frame.origin.y
+									,self.myTable.frame.size.width
+									,self.view.frame.size.height); //self.myTable.frame.size.height + self.topPeriodToolBar.frame.size.height);
+	
+	//self.view.frame.height
 	// Получение данных
 	
 	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
 
 	
+	
+	 
 	if ([self.publication_type isEqualToString: @"Лучшие"]) {
 	
 
@@ -70,8 +80,14 @@
 		response = [[Communicator sharedCommunicator] 
 					topPublicationsByPeriod:[pubPeriods objectAtIndex:topPeriodSegControl.selectedSegmentIndex] ];
 		
+		
 		[addNextButton setHidden:YES];
 		[topPeriodToolBar setHidden:NO];
+		
+		self.myTable.frame = CGRectMake(self.myTable.frame.origin.x
+										,self.topPeriodToolBar.frame.origin.y + self.topPeriodToolBar.frame.size.height
+										,self.myTable.frame.size.width
+										,self.view.frame.size.height - self.topPeriodToolBar.frame.size.height);
 		
 		self.title = @"Лучшие";
 	}
