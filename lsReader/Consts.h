@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#define CACHE_KEY @"cacheKey"
-#define CACHE_FILE_NAME  @"lsReaderCache.txt"
+
+#define CACHE_FILE_NAME  @"/lsReaderCache63.txt"
 #define SITE_URL @"url"
 #define SITE_LOGIN @"login"
 #define SITE_PASSWD @"passwd"

@@ -9,17 +9,20 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Communicator : NSCache {
+@interface Communicator : NSObject {
 	NSString *siteURL;
 	NSString *countPerPage;
-	NSCache *ls_cache;
+	NSMutableDictionary *ls_cache;
 	NSString *hash;
+	NSString *casheFilePath;
 	BOOL showPics; 
 
 }
 
 @property (nonatomic, retain) NSString *siteURL;
 @property (nonatomic, retain) NSString *countPerPage;
+@property (nonatomic, retain) NSString *casheFilePath;
+@property (nonatomic, retain) NSMutableDictionary *ls_cache;
 @property BOOL showPics;
 
 
@@ -29,6 +32,8 @@
 -(void) loadCache;
 
 -(void) saveCache;
+
+-(void) showCacheToLog;
 
 
 -(NSDictionary *)commandByModule:(NSString*)module site:(NSString*)site method:(NSString*)method params:(NSString*)params;  

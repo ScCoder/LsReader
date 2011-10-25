@@ -10,7 +10,11 @@
 
 
 @interface BlogsViewController : UIViewController {
+	
+
 
 }
+
+-(IBAction) testBtnClick;
 
 @end

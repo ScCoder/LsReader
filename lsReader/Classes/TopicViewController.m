@@ -69,16 +69,14 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
 	
-	// 
-	
-	NSLog(@"url %@",request.URL);
+
 	if (navigationType != UIWebViewNavigationTypeLinkClicked) {
 	
 		return YES;
 	}
     else {
 
-		// Запуск сафариы
+		// Запуск сафари
 		[[UIApplication sharedApplication] openURL:request.URL ];
 	
 	return NO;

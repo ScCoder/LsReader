@@ -10,12 +10,14 @@
 #import "JSONKit.h"
 #import "Consts.h"
 
+
 @implementation Communicator
 
 @synthesize siteURL;
 @synthesize countPerPage;
 @synthesize showPics;
-
+@synthesize casheFilePath;
+@synthesize ls_cache;
 
 static Communicator * communicator =  NULL;
 
@@ -46,53 +48,43 @@ static Communicator * communicator =  NULL;
 
 -(void) loadCache {
 	
-	ls_cache = [[NSCache alloc] init];
+	// Получаем и запоминаем путь до файла кеша
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
+	NSString *documentsDirectoryPath = [paths objectAtIndex:0];	
+	self.casheFilePath = [documentsDirectoryPath stringByAppendingString:CACHE_FILE_NAME];
 	
-	/*
-	NSData *data = [[NSData alloc] initWithContentsOfFile:CACHE_FILE_NAME];
-	NSKeyedUnarchiver *unarhiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+	// Пытаемся загрузить кешь
+
+	self.ls_cache = [NSKeyedUnarchiver unarchiveObjectWithFile:self.casheFilePath];
+
+	// Если не загрузили то создаем
 	
+	if (!self.ls_cache) {
 	
-	
-	ls_cache = [unarhiver decodeObjectForKey:CACHE_KEY];
-	
-	if (!ls_cache){
-		ls_cache = [[NSCache alloc] init];
+		self.ls_cache = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"start",@"cache",nil];
+		NSLog(@"cache created!");
+		
 	}
-	
-	
-	[unarhiver finishDecoding];
-	[unarhiver release];
-	[data release];
-	*/
+	else {
+		
+		NSLog(@"cahe loaded!");
+		
+	}
 	
 }
 
 -(void) saveCache {
-
-	NSLog(@"saveCache");
-/*
-	if (ls_cache) {
 		
 
-	
-	NSMutableData *data = [[NSMutableData alloc] init];
-	
-	NSKeyedArchiver *arhiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-	
-	[arhiver encodeObject:ls_cache forKey:CACHE_KEY];
-	[arhiver finishEncoding];
-	[data writeToFile:CACHE_FILE_NAME atomically:YES];
-	
+	if ([NSKeyedArchiver archiveRootObject:self.ls_cache toFile:self.casheFilePath]) {
 		
-	[ls_cache release];
-
-	[arhiver release];
-	[data release];
-	
+		NSLog(@"cache saved OK");
 	}
- */
-	[ls_cache release];
+	else {
+		
+		NSLog(@"cache saved FALSE");
+	}
+
 }
 
 
@@ -108,11 +100,14 @@ static Communicator * communicator =  NULL;
 	NSString *api_command = [NSString stringWithFormat:@"http://%@/api/%@/%@/?%@&response_type=json",
 							 site,module,method,params];
 	
+	NSString *api_cmd_hash = [NSString stringWithFormat:@"hash =%d",[api_command hash]];
+	
 	NSLog(@"api_comand=%@",api_command);
 	
 	
-	// Пробуем взять из кеша (текущий класс наследник от NSCashe TODO наверно нужно переделать по другому)
-	NSDictionary *response = [ls_cache objectForKey:api_command];
+	// Пробуем взять из кеша 
+	
+	NSDictionary *response = [self.ls_cache objectForKey:api_cmd_hash];
 		
 	// Если нет в кеше то берем с сайта
 	if (!response) {
@@ -166,9 +161,16 @@ static Communicator * communicator =  NULL;
 			
 			// Все ок ложим в кеш !!!!!
 			response = [response objectForKey:@"response"];						
-			// Ложим в кеш
-			[ls_cache setObject:response forKey:api_command];
 			
+			// Ложим в кеш
+			
+			[self.ls_cache setObject:response forKey:api_cmd_hash];
+
+			NSLog(@"put to cache!");
+			//NSLog(@"cache count =%d",[self.ls_cache count]);
+
+			
+		   
 		}
 		
     }
@@ -176,7 +178,7 @@ static Communicator * communicator =  NULL;
 	app.networkActivityIndicatorVisible = NO;
 	
 	return response;
-		
+			
 
 }
 
@@ -295,6 +297,40 @@ static Communicator * communicator =  NULL;
 	return [response objectForKey:@"rating"];
 	
 
+}
+
+-(void) showCacheToLog{
+
+	NSArray *keys = [self.ls_cache allKeys];
+	
+	for ( id key in keys){
+	
+		NSLog(@" key = %@", key);
+	}
+	
+
+//	[NSKeyedArchiver archiveRootObject:self.ls_cache
+	//							toFile:self.casheFilePath];
+	//
+	
+	
+	
+	if ([NSKeyedArchiver archiveRootObject:self.ls_cache toFile:self.casheFilePath]) {
+	  NSLog(@"writed OK");
+	}
+	else {
+		NSLog(@"writed FALSE");
+	}
+
+
+	
+	NSLog(@"path=%@",self.casheFilePath);
+	
+	//[@"test" writeToFile:self.casheFilePath atomically:YES];
+	
+	
+	NSLog(@"writed");
+	
 }
 
 @end
