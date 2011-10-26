@@ -15,6 +15,12 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		BE166A1614586E3A0005EDAC /* 3D-Book-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A1014586E3A0005EDAC /* 3D-Book-32.png */; };
+		BE166A1714586E3A0005EDAC /* Blogs-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A1114586E3A0005EDAC /* Blogs-32.png */; };
+		BE166A1814586E3A0005EDAC /* Book-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A1214586E3A0005EDAC /* Book-32.png */; };
+		BE166A1914586E3A0005EDAC /* Marine-star-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A1314586E3A0005EDAC /* Marine-star-32.png */; };
+		BE166A1A14586E3A0005EDAC /* Star-full-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A1414586E3A0005EDAC /* Star-full-32.png */; };
+		BE166A1B14586E3A0005EDAC /* Website-User-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A1514586E3A0005EDAC /* Website-User-32.png */; };
 		BE759D0C140FA8C0003D8A75 /* SiteParamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE759D0A140FA8C0003D8A75 /* SiteParamsViewController.m */; };
 		BE759D0D140FA8C0003D8A75 /* SiteParamsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE759D0B140FA8C0003D8A75 /* SiteParamsViewController.xib */; };
 		BE759D4E140FAFB4003D8A75 /* BlogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE759D40140FAFB4003D8A75 /* BlogsViewController.m */; };
@@ -51,6 +57,12 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* lsReader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "lsReader-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		BE166A1014586E3A0005EDAC /* 3D-Book-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "3D-Book-32.png"; path = "../icons/3D-Book-32.png"; sourceTree = SOURCE_ROOT; };
+		BE166A1114586E3A0005EDAC /* Blogs-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Blogs-32.png"; path = "../icons/Blogs-32.png"; sourceTree = SOURCE_ROOT; };
+		BE166A1214586E3A0005EDAC /* Book-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Book-32.png"; path = "../icons/Book-32.png"; sourceTree = SOURCE_ROOT; };
+		BE166A1314586E3A0005EDAC /* Marine-star-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Marine-star-32.png"; path = "../icons/Marine-star-32.png"; sourceTree = SOURCE_ROOT; };
+		BE166A1414586E3A0005EDAC /* Star-full-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Star-full-32.png"; path = "../icons/Star-full-32.png"; sourceTree = SOURCE_ROOT; };
+		BE166A1514586E3A0005EDAC /* Website-User-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Website-User-32.png"; path = "../icons/Website-User-32.png"; sourceTree = SOURCE_ROOT; };
 		BE759D09140FA8C0003D8A75 /* SiteParamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteParamsViewController.h; sourceTree = "<group>"; };
 		BE759D0A140FA8C0003D8A75 /* SiteParamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteParamsViewController.m; sourceTree = "<group>"; };
 		BE759D0B140FA8C0003D8A75 /* SiteParamsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SiteParamsViewController.xib; path = Classes/SiteParamsViewController.xib; sourceTree = "<group>"; };
@@ -165,6 +177,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE166A1014586E3A0005EDAC /* 3D-Book-32.png */,
+				BE166A1114586E3A0005EDAC /* Blogs-32.png */,
+				BE166A1214586E3A0005EDAC /* Book-32.png */,
+				BE166A1314586E3A0005EDAC /* Marine-star-32.png */,
+				BE166A1414586E3A0005EDAC /* Star-full-32.png */,
+				BE166A1514586E3A0005EDAC /* Website-User-32.png */,
 				BE9F67461430D2850038D619 /* TopicViewController.xib */,
 				BEC2BE24142F36E400244915 /* PublicationDetailViewController.xib */,
 				BE759D44140FAFB4003D8A75 /* FavoritesViewController.xib */,
@@ -252,6 +270,12 @@
 				BEC2BE1E142F363F00244915 /* checkmarkControllerIcon.png in Resources */,
 				BEC2BE26142F36E400244915 /* PublicationDetailViewController.xib in Resources */,
 				BE9F67481430D2850038D619 /* TopicViewController.xib in Resources */,
+				BE166A1614586E3A0005EDAC /* 3D-Book-32.png in Resources */,
+				BE166A1714586E3A0005EDAC /* Blogs-32.png in Resources */,
+				BE166A1814586E3A0005EDAC /* Book-32.png in Resources */,
+				BE166A1914586E3A0005EDAC /* Marine-star-32.png in Resources */,
+				BE166A1A14586E3A0005EDAC /* Star-full-32.png in Resources */,
+				BE166A1B14586E3A0005EDAC /* Website-User-32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

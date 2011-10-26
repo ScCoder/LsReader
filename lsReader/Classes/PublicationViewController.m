@@ -46,7 +46,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
 	
-	UIImage *image = [UIImage imageNamed:@"checkmarkControllerIcon.png"];
+	UIImage *image = [UIImage imageNamed:@"Star-full-32.png"];
 	
 	cell.textLabel.text = [self.publicTypes objectAtIndex:indexPath.row];
 	
