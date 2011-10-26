@@ -1,11 +1,7 @@
 TlsReader
 v7
 r0
-<<<<<<< HEAD
-t341338011.897311
-=======
 t341313630.649276
->>>>>>> parent of 30f9c08... add temp icons need find good icons
 cCheck dependencies
 cProcessInfoPlistFile /Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/Info.plist lsReader-Info.plist
 cCompileXIB /Users/sergejusov/github/LsReader/lsReader/MainWindow.xib
@@ -690,11 +686,7 @@ s909
 
 CCheck dependencies
 r0
-<<<<<<< HEAD
-lSLF07#2@18"Check dependencies341338011#341338011#0(0"0(0#1#0"8664434464#0"0#
-=======
 lSLF07#2@18"Check dependencies341313630#341313630#0(0"0(0#1#0"8655718176#0"0#
->>>>>>> parent of 30f9c08... add temp icons need find good icons
 
 CCompileC build/lsReader.build/Debug-iphonesimulator/lsReader.build/Objects-normal/i386/BlogsViewController.o /Users/sergejusov/github/LsReader/lsReader/Classes/BlogsViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s341310743.172794
