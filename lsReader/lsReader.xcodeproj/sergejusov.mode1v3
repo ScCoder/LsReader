@@ -282,7 +282,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 92}, {258, 691}}</string>
+							<string>{{0, 0}, {258, 691}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -301,7 +301,7 @@
 							<real>258</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>724 226 1152 750 0 0 1920 1058 </string>
+						<string>474 233 1152 750 0 0 1920 1058 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -319,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Communicator.m</string>
+								<string>TopicViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +327,15 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Communicator.m</string>
+										<string>TopicViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
+<<<<<<< HEAD
 										<string>BE8B65F5145867AA00B8B4F4</string>
+=======
+										<string>BE8B65271458085F00B8B4F4</string>
+>>>>>>> parent of 30f9c08... add temp icons need find good icons
 										<key>history</key>
 										<array>
 											<string>BEA3F3691439DEA10077D34F</string>
@@ -358,7 +362,10 @@
 											<string>BE7AEE971451CCB6001631D1</string>
 											<string>BE04AA9514556D160035F71A</string>
 											<string>BE04AA9714556D160035F71A</string>
+											<string>BE18BFB21456544100D92C6B</string>
 											<string>BE18BFB41456544100D92C6B</string>
+											<string>BE18BFB51456544100D92C6B</string>
+											<string>BE18BFCE14565A0100D92C6B</string>
 											<string>BE18C00D1456928500D92C6B</string>
 											<string>BE18C08E1456AF1100D92C6B</string>
 											<string>BE18C08F1456AF1100D92C6B</string>
@@ -372,9 +379,14 @@
 											<string>BE8B64A91457F72300B8B4F4</string>
 											<string>BE8B64AA1457F72300B8B4F4</string>
 											<string>BE8B64AB1457F72300B8B4F4</string>
+											<string>BE8B64BE1457F99D00B8B4F4</string>
+											<string>BE8B64BF1457F99D00B8B4F4</string>
+											<string>BE8B65161458060200B8B4F4</string>
+											<string>BE8B651D1458080500B8B4F4</string>
 											<string>BE8B651F1458080500B8B4F4</string>
 											<string>BE8B65201458080500B8B4F4</string>
 											<string>BE8B65251458085F00B8B4F4</string>
+<<<<<<< HEAD
 											<string>BE8B6534145856A400B8B4F4</string>
 											<string>BE8B653D145859C300B8B4F4</string>
 											<string>BE8B6540145859C300B8B4F4</string>
@@ -388,6 +400,9 @@
 											<string>BE8B65CA145865FC00B8B4F4</string>
 											<string>BE8B65D11458667D00B8B4F4</string>
 											<string>BE8B65D6145866B200B8B4F4</string>
+=======
+											<string>BE8B65261458085F00B8B4F4</string>
+>>>>>>> parent of 30f9c08... add temp icons need find good icons
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -401,7 +416,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {872, 570}}</string>
 								<key>RubberWindowFrame</key>
-								<string>724 226 1152 750 0 0 1920 1058 </string>
+								<string>474 233 1152 750 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -421,7 +436,7 @@
 								<key>Frame</key>
 								<string>{{0, 575}, {872, 134}}</string>
 								<key>RubberWindowFrame</key>
-								<string>724 226 1152 750 0 0 1920 1058 </string>
+								<string>474 233 1152 750 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -585,13 +600,17 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+<<<<<<< HEAD
+=======
+		<string>BE8B639D1457BF9000B8B4F4</string>
+>>>>>>> parent of 30f9c08... add temp icons need find good icons
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>BE759CEE140FA527003D8A75</string>
 		<string>/Users/sergejusov/github/LsReader/lsReader/lsReader.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>724 226 1152 750 0 0 1920 1058 </string>
+	<string>474 233 1152 750 0 0 1920 1058 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -621,7 +640,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {788, 193}}</string>
 								<key>RubberWindowFrame</key>
-								<string>188 278 788 688 0 0 1920 1058 </string>
+								<string>235 364 788 688 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -645,7 +664,7 @@
 								<key>Frame</key>
 								<string>{{0, 198}, {788, 449}}</string>
 								<key>RubberWindowFrame</key>
-								<string>188 278 788 688 0 0 1920 1058 </string>
+								<string>235 364 788 688 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
@@ -677,7 +696,7 @@
 			<key>WindowContentMinSize</key>
 			<string>486 300</string>
 			<key>WindowString</key>
-			<string>188 278 788 688 0 0 1920 1058 </string>
+			<string>235 364 788 688 0 0 1920 1058 </string>
 			<key>WindowToolGUID</key>
 			<string>BE759CEE140FA527003D8A75</string>
 			<key>WindowToolIsVisible</key>
