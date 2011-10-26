@@ -30,6 +30,11 @@
 		BE81E70C14134BF80097D271 /* S7ViewSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = BE81E70B14134BF80097D271 /* S7ViewSlider.m */; };
 		BE867EC9141CEC03001DAD18 /* Communicator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE867EC8141CEC03001DAD18 /* Communicator.m */; };
 		BE8984231417AE3300065DCB /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8984221417AE3300065DCB /* JSONKit.m */; };
+		BE8B652A1458564700B8B4F4 /* 3D-Book-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8B65291458564700B8B4F4 /* 3D-Book-32.png */; };
+		BE8B652C1458564F00B8B4F4 /* Blogs-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8B652B1458564F00B8B4F4 /* Blogs-32.png */; };
+		BE8B652E1458565B00B8B4F4 /* Marine-star-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8B652D1458565B00B8B4F4 /* Marine-star-32.png */; };
+		BE8B65301458566400B8B4F4 /* Website-User-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8B652F1458566400B8B4F4 /* Website-User-32.png */; };
+		BE8B65321458568300B8B4F4 /* Book-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8B65311458568300B8B4F4 /* Book-32.png */; };
 		BE9F67471430D2850038D619 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9F67451430D2850038D619 /* TopicViewController.m */; };
 		BE9F67481430D2850038D619 /* TopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9F67461430D2850038D619 /* TopicViewController.xib */; };
 		BEC2BE1E142F363F00244915 /* checkmarkControllerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC2BE1D142F363F00244915 /* checkmarkControllerIcon.png */; };
@@ -75,6 +80,11 @@
 		BE867EC8141CEC03001DAD18 /* Communicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Communicator.m; sourceTree = "<group>"; };
 		BE8984211417AE3300065DCB /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = "../libs/johnezang-JSONKit-c2146ff/JSONKit.h"; sourceTree = SOURCE_ROOT; };
 		BE8984221417AE3300065DCB /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = "../libs/johnezang-JSONKit-c2146ff/JSONKit.m"; sourceTree = SOURCE_ROOT; };
+		BE8B65291458564700B8B4F4 /* 3D-Book-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3D-Book-32.png"; sourceTree = "<group>"; };
+		BE8B652B1458564F00B8B4F4 /* Blogs-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blogs-32.png"; sourceTree = "<group>"; };
+		BE8B652D1458565B00B8B4F4 /* Marine-star-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Marine-star-32.png"; sourceTree = "<group>"; };
+		BE8B652F1458566400B8B4F4 /* Website-User-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Website-User-32.png"; sourceTree = "<group>"; };
+		BE8B65311458568300B8B4F4 /* Book-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Book-32.png"; sourceTree = "<group>"; };
 		BE8CCDDF1447F2520049AC52 /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
 		BE9F67441430D2850038D619 /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
 		BE9F67451430D2850038D619 /* TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
@@ -165,6 +175,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE8B65311458568300B8B4F4 /* Book-32.png */,
+				BE8B652F1458566400B8B4F4 /* Website-User-32.png */,
+				BE8B652B1458564F00B8B4F4 /* Blogs-32.png */,
+				BE8B65291458564700B8B4F4 /* 3D-Book-32.png */,
+				BE8B652D1458565B00B8B4F4 /* Marine-star-32.png */,
 				BE9F67461430D2850038D619 /* TopicViewController.xib */,
 				BEC2BE24142F36E400244915 /* PublicationDetailViewController.xib */,
 				BE759D44140FAFB4003D8A75 /* FavoritesViewController.xib */,
@@ -252,6 +267,11 @@
 				BEC2BE1E142F363F00244915 /* checkmarkControllerIcon.png in Resources */,
 				BEC2BE26142F36E400244915 /* PublicationDetailViewController.xib in Resources */,
 				BE9F67481430D2850038D619 /* TopicViewController.xib in Resources */,
+				BE8B652A1458564700B8B4F4 /* 3D-Book-32.png in Resources */,
+				BE8B652C1458564F00B8B4F4 /* Blogs-32.png in Resources */,
+				BE8B652E1458565B00B8B4F4 /* Marine-star-32.png in Resources */,
+				BE8B65301458566400B8B4F4 /* Website-User-32.png in Resources */,
+				BE8B65321458568300B8B4F4 /* Book-32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

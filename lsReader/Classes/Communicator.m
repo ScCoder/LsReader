@@ -21,6 +21,8 @@
 @synthesize publicationPeriods;
 @synthesize publicTypes;
 @synthesize publicationShowType;
+@synthesize publicTypesIcons;
+
 static Communicator * communicator =  NULL;
 
 
@@ -29,14 +31,23 @@ static Communicator * communicator =  NULL;
 	if (!communicator || communicator == NULL) {
 	
 		communicator = [Communicator new];
+	
 		
 		communicator.publicationPeriods = [NSArray arrayWithObjects:@"24h",@"7d",@"30d",@"all",nil];
 		communicator.publicationShowType = [NSArray arrayWithObjects:@"good",@"bad",@"new",nil];
-		
-		//communicator.publicTypes = [NSArray arrayWithObjects:@"Лучшие", @"Новые", @"Коллективные", @"Персональные",@"Лента",@"Активность",nil];
-		
+	
 		communicator.publicTypes = [NSArray arrayWithObjects:PT_TOP,PT_NEW,PT_COLLECTIV
 									,PT_PERSONAL,PT_LINE,PT_ACTIVITY,nil];
+		
+		communicator.publicTypesIcons = [NSDictionary dictionaryWithObjectsAndKeys:
+										
+										  @"Marine-star-32.png",PT_TOP
+										 ,@"Marine-star-32.png",PT_NEW
+										 ,@"Marine-star-32.png",PT_COLLECTIV
+										 ,@"Website-User-32.png",PT_PERSONAL
+										 ,@"Blogs-32.png",PT_LINE
+										 ,@"Blogs-32.png",PT_ACTIVITY,nil
+										 ];
 		
 		
 	}
