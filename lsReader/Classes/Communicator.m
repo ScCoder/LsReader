@@ -18,7 +18,9 @@
 @synthesize showPics;
 @synthesize casheFilePath;
 @synthesize ls_cache;
-
+@synthesize publicationPeriods;
+@synthesize publicTypes;
+@synthesize publicationShowType;
 static Communicator * communicator =  NULL;
 
 
@@ -27,6 +29,16 @@ static Communicator * communicator =  NULL;
 	if (!communicator || communicator == NULL) {
 	
 		communicator = [Communicator new];
+		
+		communicator.publicationPeriods = [NSArray arrayWithObjects:@"24h",@"7d",@"30d",@"all",nil];
+		communicator.publicationShowType = [NSArray arrayWithObjects:@"good",@"bad",@"new",nil];
+		
+		//communicator.publicTypes = [NSArray arrayWithObjects:@"Лучшие", @"Новые", @"Коллективные", @"Персональные",@"Лента",@"Активность",nil];
+		
+		communicator.publicTypes = [NSArray arrayWithObjects:PT_TOP,PT_NEW,PT_COLLECTIV
+									,PT_PERSONAL,PT_LINE,PT_ACTIVITY,nil];
+		
+		
 	}
 	return communicator;
 }
@@ -167,9 +179,7 @@ static Communicator * communicator =  NULL;
 			[self.ls_cache setObject:response forKey:api_cmd_hash];
 
 			NSLog(@"put to cache!");
-			//NSLog(@"cache count =%d",[self.ls_cache count]);
-
-			
+			//NSLog(@"cache count =%d",[self.ls_cache count]);			
 		   
 		}
 		
@@ -179,7 +189,6 @@ static Communicator * communicator =  NULL;
 	
 	return response;
 			
-
 }
 
 -(Boolean *)checkConnectionBySite:(NSString*)site  login:(NSString*)login password:(NSString*)password{
@@ -308,12 +317,6 @@ static Communicator * communicator =  NULL;
 		NSLog(@" key = %@", key);
 	}
 	
-
-//	[NSKeyedArchiver archiveRootObject:self.ls_cache
-	//							toFile:self.casheFilePath];
-	//
-	
-	
 	
 	if ([NSKeyedArchiver archiveRootObject:self.ls_cache toFile:self.casheFilePath]) {
 	  NSLog(@"writed OK");
@@ -321,16 +324,55 @@ static Communicator * communicator =  NULL;
 	else {
 		NSLog(@"writed FALSE");
 	}
-
-
 	
 	NSLog(@"path=%@",self.casheFilePath);
-	
-	//[@"test" writeToFile:self.casheFilePath atomically:YES];
-	
-	
+		
 	NSLog(@"writed");
 	
+}
+
+- (void) loadTopicsToStorage: (NSDictionary *) response  {
+ 
+	NSMutableDictionary *topics_collection = [[NSMutableDictionary alloc] initWithCapacity:1];
+			
+	[topics_collection addEntriesFromDictionary: [response objectForKey:@"collection"]];	
+		
+	NSMutableArray *keys = [NSMutableArray arrayWithArray: [topics_collection allKeys]];	
+	
+	for(id key in keys) {
+		
+		[self readTopicById:[[topics_collection objectForKey: key] objectForKey:@"topic_id" ]];
+	}
+
+}
+-(void) loadContent{
+    NSLog(@"start load content");
+	// Загрузка публикацийыы
+	
+	//NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
+	
+    // Лучшие
+	for ( id period in self.publicationPeriods){
+	
+	  //response = [self topPublicationsByPeriod:period];
+		
+	  [self loadTopicsToStorage: [self topPublicationsByPeriod:period]];
+	}
+	
+	//[self loadTopicsToStorage: response];
+
+	// Новые публикации
+	
+	[self loadTopicsToStorage: [[Communicator sharedCommunicator] newPublications]];
+	
+	//Персональные публикации
+	
+	 [self loadTopicsToStorage: 
+	  [[Communicator sharedCommunicator] personalPublications:@"good" page:10]];
+	
+	 NSLog(@"end load content");	
+
+
 }
 
 @end

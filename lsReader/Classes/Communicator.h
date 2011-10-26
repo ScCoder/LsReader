@@ -16,6 +16,8 @@
 	NSString *hash;
 	NSString *casheFilePath;
 	BOOL showPics; 
+	NSArray *publicationPeriods;
+	NSArray *publicTypes;
 
 }
 
@@ -24,6 +26,9 @@
 @property (nonatomic, retain) NSString *casheFilePath;
 @property (nonatomic, retain) NSMutableDictionary *ls_cache;
 @property BOOL showPics;
+@property (nonatomic, retain) NSArray *publicationPeriods;
+@property (nonatomic, retain) NSArray *publicTypes;
+@property (nonatomic, retain) NSArray *publicationShowType;
 
 
 +(Communicator *)sharedCommunicator;
@@ -51,6 +56,8 @@
 -(NSString *) voteByTopicId:(NSString *) topic_id value: (NSInteger)value;
 
 -(Boolean *) isLogedIn;
+
+-(void) loadContent;
 
 
 @end

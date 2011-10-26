@@ -16,6 +16,12 @@
 #define COUNT_PER_PAGE @"countPerPage"
 #define SHOW_PICS @"showPics"
 #define NEW_KEY @"new"
+#define PT_TOP @"Лучшие"
+#define PT_NEW @"Новые"
+#define PT_COLLECTIV @"Коллективные"
+#define PT_PERSONAL @"Персональные"
+#define PT_LINE @"Лента"
+#define PT_ACTIVITY @"Активность"
 
 
 

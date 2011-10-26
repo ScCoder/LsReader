@@ -14,8 +14,9 @@
 
 -(IBAction) testBtnClick{
 
-	[[Communicator sharedCommunicator] showCacheToLog];
+	//[[Communicator sharedCommunicator] showCacheToLog];
 
+	[[Communicator sharedCommunicator] loadContent];
 	
 	
 }

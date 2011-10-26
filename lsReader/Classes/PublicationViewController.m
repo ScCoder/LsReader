@@ -9,6 +9,7 @@
 #import "PublicationViewController.h"
 #import "JSONKit.h"
 #import "PublicationDetailViewController.h"
+#import "Consts.h"
 
 
 
@@ -80,14 +81,16 @@
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
-	NSLog(@" viewDidLoad: ");	
+    
+	[super viewDidLoad];
+	
 	self.title = @"Публикации";
 	
 	
-	//[self.navigationController.navigationBar setHidden:NO];
-	self.publicTypes = [NSArray arrayWithObjects:@"Лучшие", @"Новые", @"Коллективные", @"Персональные",@"Лента",@"Активность",nil];
+	self.publicTypes = [Communicator sharedCommunicator].publicTypes;  
+	
 }
 
 - (void) viewWillAppear:(BOOL)animated{

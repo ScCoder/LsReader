@@ -9,7 +9,7 @@
 #import "TopicViewController.h"
 #import "PublicationDetailViewController.h"
 #import "lsReaderAppDelegate.h"
-
+#import "Consts.h"
 
 @implementation PublicationDetailViewController
 
@@ -22,6 +22,9 @@
 @synthesize addNextButton;
 @synthesize topPeriodSegControl;
 @synthesize topPeriodToolBar;
+
+@synthesize showTypeSegControl;	
+@synthesize showTypeToolBar;
 
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -41,7 +44,7 @@
 	
     [super viewDidLoad];
 	
-	NSLog(@"pub detail");	
+	self.title = self.publication_type;
 	
 	current_page = 1;
 
@@ -49,37 +52,20 @@
 	
 }
 
--(IBAction)loadTopicsList{
-
+-(void) costomizeView {
+	// настройка интерфейса
 	
 	[addNextButton setHidden:NO]; 
-	
-	
-	
 	[topPeriodToolBar setHidden:YES];
-     
+	[showTypeToolBar setHidden:YES];
+	
 	self.myTable.frame = CGRectMake(self.myTable.frame.origin.x
 									, self.topPeriodToolBar.frame.origin.y
 									,self.myTable.frame.size.width
-									,self.view.frame.size.height); //self.myTable.frame.size.height + self.topPeriodToolBar.frame.size.height);
-	
-	//self.view.frame.height
-	// Получение данных
-	
-	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
-
+									,self.view.frame.size.height); 
 	
 	
-	 
-	if ([self.publication_type isEqualToString: @"Лучшие"]) {
-	
-
-		NSArray *pubPeriods = [NSArray arrayWithObjects:@"24h",@"7d",@"30d",@"all",nil];
-		
-		
-		response = [[Communicator sharedCommunicator] 
-					topPublicationsByPeriod:[pubPeriods objectAtIndex:topPeriodSegControl.selectedSegmentIndex] ];
-		
+	if ([self.publication_type isEqualToString: PT_TOP]) {
 		
 		[addNextButton setHidden:YES];
 		[topPeriodToolBar setHidden:NO];
@@ -89,17 +75,65 @@
 										,self.myTable.frame.size.width
 										,self.view.frame.size.height - self.topPeriodToolBar.frame.size.height);
 		
-		self.title = @"Лучшие";
+		
 	}
-	else if ( [self.publication_type isEqualToString: @"Новые"]){
+	else if ( [self.publication_type isEqualToString: PT_NEW]){
+		
+				
+	}
+	else if ( [self.publication_type isEqualToString: PT_PERSONAL]){
+		
+		[showTypeToolBar setHidden:NO];
+		self.showTypeToolBar.frame = topPeriodToolBar.frame;
+		
+		self.myTable.frame = CGRectMake(self.myTable.frame.origin.x
+										,self.topPeriodToolBar.frame.origin.y + self.topPeriodToolBar.frame.size.height
+										,self.myTable.frame.size.width
+										,self.view.frame.size.height - self.topPeriodToolBar.frame.size.height);
+		
+		
+				
+		
+	}
+	else {
+		NSLog(@"other");
+	}
+	
+	
+
+	
+}
+
+-(IBAction)loadTopicsList{
+
+   // Получение данных
+	
+	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
+
+	
+	if ([self.publication_type isEqualToString: PT_TOP]) {
+			
+		NSString *period = [[Communicator sharedCommunicator].publicationPeriods 
+							objectAtIndex:topPeriodSegControl.selectedSegmentIndex];
+		
+		response = [[Communicator sharedCommunicator] topPublicationsByPeriod:period];
+				   
+				
+	}
+	else if ( [self.publication_type isEqualToString: PT_NEW]){
 		
 		response = [[Communicator sharedCommunicator] newPublications];
 		
 	}
-	else if ( [self.publication_type isEqualToString: @"Персональные"]){
+	else if ( [self.publication_type isEqualToString: PT_PERSONAL]){
 		
-	    response = [[Communicator sharedCommunicator] personalPublications:@"good" page:current_page];
 		
+		NSString *showType = [[Communicator sharedCommunicator].publicationShowType 
+							objectAtIndex:showTypeSegControl.selectedSegmentIndex];
+		
+		
+		
+	    response = [[Communicator sharedCommunicator] personalPublications:showType page:current_page];
 		
 	}
 	else {
@@ -137,6 +171,8 @@
 	[appDeligate.navigationController setNavigationBarHidden:YES];
 		
 	[self.navigationController setNavigationBarHidden: NO];
+	
+	[self costomizeView];
 
 }
 

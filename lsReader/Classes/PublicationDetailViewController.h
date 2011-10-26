@@ -20,6 +20,10 @@
 	UIButton *addNextButton;
 	UISegmentedControl *topPeriodSegControl;	
 	UIToolbar *topPeriodToolBar;
+	
+	UISegmentedControl *showTypeSegControl;	
+	UIToolbar *showTypeToolBar;
+
 
 
 }
@@ -30,6 +34,9 @@
 @property (nonatomic, retain) IBOutlet UIButton *addNextButton;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *topPeriodSegControl;
 @property (nonatomic, retain) IBOutlet UIToolbar *topPeriodToolBar;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *showTypeSegControl;	
+@property (nonatomic, retain) IBOutlet UIToolbar *showTypeToolBar;
+
 
 
 
@@ -38,5 +45,7 @@
 -(void)cutHtmlTagsFromText: (NSMutableString *) intext;
 
 -(IBAction)loadTopicsList;
+
+-(void) costomizeView;
 
 @end
