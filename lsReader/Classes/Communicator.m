@@ -208,6 +208,8 @@ static Communicator * communicator =  NULL;
 		} else {
 			
 			self.siteURL = site;
+			
+			hash = NULL;
 		    
 			return YES;
 		}

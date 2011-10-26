@@ -15,7 +15,8 @@
 @synthesize topicId;
 @synthesize voteBar;
 @synthesize voteSegControl;
-@synthesize voteSegControl1;// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+
+// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,6 +36,26 @@
 }
 
 
+- (void) costomizeView {
+  if ([[Communicator sharedCommunicator] isLogedIn]) {
+	
+		[voteBar setHidden: NO];
+		webView.frame = CGRectMake(webView.frame.origin.x
+									 ,webView.frame.origin.y
+									 ,webView.frame.size.width
+									 ,self.view.frame.size.height - voteBar.frame.size.height);
+	 
+	 }
+	 else{
+		 [voteBar setHidden: YES];
+		 webView.frame = CGRectMake(webView.frame.origin.x
+									 ,webView.frame.origin.y
+									 ,webView.frame.size.width
+									 ,self.view.frame.size.height);
+		 
+	 }
+
+}
 -(void) viewWillAppear:(BOOL)animated{
 
 	NSDictionary *topic_data = [[Communicator sharedCommunicator] readTopicById:self.topicId];
@@ -58,12 +79,12 @@
 	NSURL *base_url = [NSURL URLWithString: [@"http://www." stringByAppendingString: [Communicator sharedCommunicator].siteURL ]];	
 		
 	[webView loadHTMLString:topicContent baseURL:base_url];//
-	
-    [voteBar setHidden: ![[Communicator sharedCommunicator] isLogedIn]];
-	
-	//[[UIApplication sharedApplication] openURL:base_url];
-	
+
 	[topicContent release];
+	
+	
+	[self costomizeView];
+
     	
 }
 

@@ -319,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PublicationDetailViewController.m</string>
+								<string>TopicViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PublicationDetailViewController.m</string>
+										<string>TopicViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BE8B64F11457FFA800B8B4F4</string>
+										<string>BE8B65271458085F00B8B4F4</string>
 										<key>history</key>
 										<array>
 											<string>BEA3F3691439DEA10077D34F</string>
@@ -366,9 +366,7 @@
 											<string>BE18C08E1456AF1100D92C6B</string>
 											<string>BE18C08F1456AF1100D92C6B</string>
 											<string>BE18C0901456AF1100D92C6B</string>
-											<string>BE18C0BF1456B5E200D92C6B</string>
 											<string>BEE4BF401456ED3E0001F794</string>
-											<string>BEE4BF421456ED3E0001F794</string>
 											<string>BE8B62FE1457164200B8B4F4</string>
 											<string>BE8B632514571E2B00B8B4F4</string>
 											<string>BE8B63B41457C11A00B8B4F4</string>
@@ -379,10 +377,12 @@
 											<string>BE8B64AB1457F72300B8B4F4</string>
 											<string>BE8B64BE1457F99D00B8B4F4</string>
 											<string>BE8B64BF1457F99D00B8B4F4</string>
-											<string>BE8B64D71457FCD300B8B4F4</string>
-											<string>BE8B64E41457FEB600B8B4F4</string>
-											<string>BE8B64E51457FEB600B8B4F4</string>
-											<string>BE8B64E61457FEB600B8B4F4</string>
+											<string>BE8B65161458060200B8B4F4</string>
+											<string>BE8B651D1458080500B8B4F4</string>
+											<string>BE8B651F1458080500B8B4F4</string>
+											<string>BE8B65201458080500B8B4F4</string>
+											<string>BE8B65251458085F00B8B4F4</string>
+											<string>BE8B65261458085F00B8B4F4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -394,14 +394,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {872, 578}}</string>
+								<string>{{0, 0}, {872, 574}}</string>
 								<key>RubberWindowFrame</key>
 								<string>474 233 1152 750 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>578pt</string>
+							<string>574pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -414,14 +414,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 583}, {872, 126}}</string>
+								<string>{{0, 579}, {872, 130}}</string>
 								<key>RubberWindowFrame</key>
 								<string>474 233 1152 750 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>126pt</string>
+							<string>130pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -440,9 +440,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>BE8B64AF1457F72300B8B4F4</string>
+				<string>BE8B6505145803BF00B8B4F4</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>BE8B64B01457F72300B8B4F4</string>
+				<string>BE8B6506145803BF00B8B4F4</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -581,9 +581,9 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>BE8B639D1457BF9000B8B4F4</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>BE759CEE140FA527003D8A75</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/sergejusov/github/LsReader/lsReader/lsReader.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -664,7 +664,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>BE759CEE140FA527003D8A75</string>
-				<string>BE8B64B11457F72300B8B4F4</string>
+				<string>BE8B6507145803BF00B8B4F4</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -786,13 +786,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>BE8B64B21457F72300B8B4F4</string>
+				<string>BE8B6508145803BF00B8B4F4</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>BE8B64B31457F72300B8B4F4</string>
-				<string>BE8B64B41457F72300B8B4F4</string>
-				<string>BE8B64B51457F72300B8B4F4</string>
-				<string>BE8B64B61457F72300B8B4F4</string>
-				<string>BE8B64B71457F72300B8B4F4</string>
+				<string>BE8B6509145803BF00B8B4F4</string>
+				<string>BE8B650A145803BF00B8B4F4</string>
+				<string>BE8B650B145803BF00B8B4F4</string>
+				<string>BE8B650C145803BF00B8B4F4</string>
+				<string>BE8B650D145803BF00B8B4F4</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -911,8 +911,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -948,7 +946,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>BE8B64B81457F72300B8B4F4</string>
+				<string>BE8B650E145803BF00B8B4F4</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -958,7 +956,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
@@ -1453,7 +1451,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>BE8B639D1457BF9000B8B4F4</string>
-				<string>BE8B64C91457FAA800B8B4F4</string>
+				<string>BE8B65281458085F00B8B4F4</string>
 				<string>BE8B639C1457BF9000B8B4F4</string>
 			</array>
 			<key>WindowString</key>

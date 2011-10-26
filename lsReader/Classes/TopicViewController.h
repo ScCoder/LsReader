@@ -15,7 +15,7 @@
 	NSString *tiopicId;
 	UIToolbar *voteBar;
 	UISegmentedControl *voteSegControl;
-	UISegmentedControl *voteSegControl1;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView *webView; 
