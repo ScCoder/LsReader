@@ -33,8 +33,6 @@ static Communicator * communicator =  NULL;
 		communicator.publicationPeriods = [NSArray arrayWithObjects:@"24h",@"7d",@"30d",@"all",nil];
 		communicator.publicationShowType = [NSArray arrayWithObjects:@"good",@"bad",@"new",nil];
 		
-		//communicator.publicTypes = [NSArray arrayWithObjects:@"Лучшие", @"Новые", @"Коллективные", @"Персональные",@"Лента",@"Активность",nil];
-		
 		communicator.publicTypes = [NSArray arrayWithObjects:PT_TOP,PT_NEW,PT_COLLECTIV
 									,PT_PERSONAL,PT_LINE,PT_ACTIVITY,nil];
 		
