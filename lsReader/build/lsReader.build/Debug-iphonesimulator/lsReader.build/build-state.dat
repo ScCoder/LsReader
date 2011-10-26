@@ -1,7 +1,7 @@
 TlsReader
 v7
 r0
-t341337749.780907
+t341338011.897311
 cCheck dependencies
 cProcessInfoPlistFile /Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/Info.plist lsReader-Info.plist
 cCompileXIB /Users/sergejusov/github/LsReader/lsReader/MainWindow.xib
@@ -736,7 +736,7 @@ s909
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies341337749#341337749#0(0"0(0#1#0"8661597280#0"0#
+lSLF07#2@18"Check dependencies341338011#341338011#0(0"0(0#1#0"8664434464#0"0#
 
 CCompileC build/lsReader.build/Debug-iphonesimulator/lsReader.build/Objects-normal/i386/BlogsViewController.o /Users/sergejusov/github/LsReader/lsReader/Classes/BlogsViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s341335272.421294

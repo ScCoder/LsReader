@@ -114,8 +114,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 341312444;
-			PBXWorkspaceStateSaveDate = 341312444;
+			PBXPerProjectTemplateStateSaveDate = 341338008;
+			PBXWorkspaceStateSaveDate = 341338008;
 		};
 		perUserProjectItems = {
 			BE04AA9514556D160035F71A /* PBXTextBookmark */ = BE04AA9514556D160035F71A /* PBXTextBookmark */;
@@ -150,8 +150,8 @@
 			BE8B65B41458635F00B8B4F4 /* PBXTextBookmark */ = BE8B65B41458635F00B8B4F4 /* PBXTextBookmark */;
 			BE8B65CA145865FC00B8B4F4 /* PBXTextBookmark */ = BE8B65CA145865FC00B8B4F4 /* PBXTextBookmark */;
 			BE8B65D11458667D00B8B4F4 /* PBXTextBookmark */ = BE8B65D11458667D00B8B4F4 /* PBXTextBookmark */;
-			BE8B65D21458667D00B8B4F4 /* PBXTextBookmark */ = BE8B65D21458667D00B8B4F4 /* PBXTextBookmark */;
 			BE8B65D6145866B200B8B4F4 /* PBXTextBookmark */ = BE8B65D6145866B200B8B4F4 /* PBXTextBookmark */;
+			BE8B65F5145867AA00B8B4F4 /* PBXTextBookmark */ = BE8B65F5145867AA00B8B4F4 /* PBXTextBookmark */;
 			BE8CCC3A1445984D0049AC52 /* PBXTextBookmark */ = BE8CCC3A1445984D0049AC52 /* PBXTextBookmark */;
 			BE8CCD1B1445F7E70049AC52 /* PBXTextBookmark */ = BE8CCD1B1445F7E70049AC52 /* PBXTextBookmark */;
 			BE8CCD8714472F870049AC52 /* PBXTextBookmark */ = BE8CCD8714472F870049AC52 /* PBXTextBookmark */;
@@ -353,7 +353,7 @@
 		ignoreCount = 0;
 		lineNumber = 191;
 		location = lsReader;
-		modificationTime = 341336272.619061;
+		modificationTime = 341336272.6190611;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -650,9 +650,9 @@
 	};
 	BE867EC8141CEC03001DAD18 /* Communicator.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {727, 4940}}";
+			sepNavIntBoundsRect = "{{0, 0}, {811, 4992}}";
 			sepNavSelRange = "{1342, 0}";
-			sepNavVisRange = "{981, 390}";
+			sepNavVisRange = "{342, 1078}";
 			sepNavWindowFrame = "{{38, 275}, {947, 757}}";
 		};
 	};
@@ -895,17 +895,17 @@
 		vrLen = 1341;
 		vrLoc = 846;
 	};
-	BE8B65D21458667D00B8B4F4 /* PBXTextBookmark */ = {
+	BE8B65D6145866B200B8B4F4 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = BE867EC8141CEC03001DAD18 /* Communicator.m */;
-		name = "Communicator.m: 55";
+		name = "Communicator.m: 51";
 		rLen = 0;
 		rLoc = 1342;
 		rType = 0;
-		vrLen = 1189;
+		vrLen = 1078;
 		vrLoc = 342;
 	};
-	BE8B65D6145866B200B8B4F4 /* PBXTextBookmark */ = {
+	BE8B65F5145867AA00B8B4F4 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = BE867EC8141CEC03001DAD18 /* Communicator.m */;
 		name = "Communicator.m: 51";
