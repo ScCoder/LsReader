@@ -1,7 +1,7 @@
 TlsReader
 v7
 r0
-t341339130.033398
+t341339300.406557
 cCheck dependencies
 cProcessInfoPlistFile /Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/Info.plist lsReader-Info.plist
 cCompileXIB /Users/sergejusov/github/LsReader/lsReader/MainWindow.xib
@@ -508,11 +508,11 @@ t1319646322
 s39367
 
 N/Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app
-t1319646330
+t1319646445
 s544
 
 N/Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app.dSYM
-t1319646330
+t1319646500
 s102
 
 N/Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/BlogsViewController.nib
@@ -568,7 +568,7 @@ t1317310244
 s550
 
 N/Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/lsReader
-t1319646329
+t1319646445
 s240064
 
 N/Users/sergejusov/github/LsReader/lsReader/build/lsReader.build/Debug-iphonesimulator/lsReader.build/Objects-normal/i386/BlogsViewController.o
@@ -686,7 +686,7 @@ s909
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies341339127#341339127#0(0"0(0#1#0"3343187568374212096#0"0#
+lSLF07#2@18"Check dependencies341339300#341339300#0(0"0(0#1#0"8601585952#0"0#
 
 CCompileC build/lsReader.build/Debug-iphonesimulator/lsReader.build/Objects-normal/i386/BlogsViewController.o /Users/sergejusov/github/LsReader/lsReader/Classes/BlogsViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s341339128.945760
@@ -1034,13 +1034,13 @@ xClasses/checkmarkControllerIcon.png
 lSLF07#2@40"Copy Classes/checkmarkControllerIcon.png339003044#339003044#0(0"0(0#0#78"/Users/sergejusov/github/LsReader/lsReader/Classes/checkmarkControllerIcon.png8614333216#506"    cd /Users/sergejusov/github/LsReader/lsReader    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/sergejusov/github/LsReader/lsReader/Classes/checkmarkControllerIcon.png /Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app0#
 
 CGenerateDSYMFile /Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app.dSYM /Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/lsReader
-s341339129.989601
-e341339130.030726
+s341339300.364106
+e341339300.406398
 r1
 xGenerateDSYMFile
 x/Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app.dSYM
 x/Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/lsReader
-lSLF07#2@112"GenerateDSYMFile build/Debug-iphonesimulator/lsReader.app.dSYM build/Debug-iphonesimulator/lsReader.app/lsReader341339129#341339130#0(0"0(0#0#92"/Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/lsReader8596954688#398"    cd /Users/sergejusov/github/LsReader/lsReader    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/lsReader -o /Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app.dSYM0#
+lSLF07#2@112"GenerateDSYMFile build/Debug-iphonesimulator/lsReader.app.dSYM build/Debug-iphonesimulator/lsReader.app/lsReader341339300#341339300#0(0"0(0#0#92"/Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/lsReader8610063616#398"    cd /Users/sergejusov/github/LsReader/lsReader    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/lsReader -o /Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app.dSYM0#
 
 CLd /Users/sergejusov/github/LsReader/lsReader/build/Debug-iphonesimulator/lsReader.app/lsReader normal i386
 s341339129.943381
