@@ -20,7 +20,9 @@
 @synthesize ls_cache;
 @synthesize publicationPeriods;
 @synthesize publicTypes;
+@synthesize publicTypesIcons;
 @synthesize publicationShowType;
+
 static Communicator * communicator =  NULL;
 
 
@@ -33,8 +35,13 @@ static Communicator * communicator =  NULL;
 		communicator.publicationPeriods = [NSArray arrayWithObjects:@"24h",@"7d",@"30d",@"all",nil];
 		communicator.publicationShowType = [NSArray arrayWithObjects:@"good",@"bad",@"new",nil];
 		
+		
 		communicator.publicTypes = [NSArray arrayWithObjects:PT_TOP,PT_NEW,PT_COLLECTIV
 									,PT_PERSONAL,PT_LINE,PT_ACTIVITY,nil];
+		
+		communicator.publicTypesIcons = [NSArray arrayWithObjects:@"28-star.png",@"06-magnify.png"
+										 ,@"112-group.png",@"111-user.png",@"58-bookmark.png"
+										 ,@"81-dashboard.png",nil];
 		
 		
 	}

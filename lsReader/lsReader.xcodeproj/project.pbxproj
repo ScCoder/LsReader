@@ -21,6 +21,32 @@
 		BE166A1914586E3A0005EDAC /* Marine-star-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A1314586E3A0005EDAC /* Marine-star-32.png */; };
 		BE166A1A14586E3A0005EDAC /* Star-full-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A1414586E3A0005EDAC /* Star-full-32.png */; };
 		BE166A1B14586E3A0005EDAC /* Website-User-32.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A1514586E3A0005EDAC /* Website-User-32.png */; };
+		BE166A8814591DB80005EDAC /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A6E14591DB80005EDAC /* 01-refresh.png */; };
+		BE166A8914591DB80005EDAC /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A6F14591DB80005EDAC /* 06-magnify.png */; };
+		BE166A8A14591DB80005EDAC /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7014591DB80005EDAC /* 19-gear.png */; };
+		BE166A8B14591DB80005EDAC /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7114591DB80005EDAC /* 20-gear2.png */; };
+		BE166A8C14591DB80005EDAC /* 28-star.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7214591DB80005EDAC /* 28-star.png */; };
+		BE166A8D14591DB80005EDAC /* 44-shoebox.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7314591DB80005EDAC /* 44-shoebox.png */; };
+		BE166A8E14591DB80005EDAC /* 45-movie-1.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7414591DB80005EDAC /* 45-movie-1.png */; };
+		BE166A8F14591DB80005EDAC /* 54-lock.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7514591DB80005EDAC /* 54-lock.png */; };
+		BE166A9014591DB80005EDAC /* 57-download.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7614591DB80005EDAC /* 57-download.png */; };
+		BE166A9114591DB80005EDAC /* 58-bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7714591DB80005EDAC /* 58-bookmark.png */; };
+		BE166A9214591DB80005EDAC /* 81-dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7814591DB80005EDAC /* 81-dashboard.png */; };
+		BE166A9314591DB80005EDAC /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7914591DB80005EDAC /* 83-calendar.png */; };
+		BE166A9414591DB80005EDAC /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7A14591DB80005EDAC /* 86-camera.png */; };
+		BE166A9514591DB80005EDAC /* 87-wine-glass.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7B14591DB80005EDAC /* 87-wine-glass.png */; };
+		BE166A9614591DB80005EDAC /* 90-life-buoy.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7C14591DB80005EDAC /* 90-life-buoy.png */; };
+		BE166A9714591DB80005EDAC /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7D14591DB80005EDAC /* 96-book.png */; };
+		BE166A9814591DB80005EDAC /* 102-walk.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7E14591DB80005EDAC /* 102-walk.png */; };
+		BE166A9914591DB80005EDAC /* 108-badge.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A7F14591DB80005EDAC /* 108-badge.png */; };
+		BE166A9A14591DB80005EDAC /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A8014591DB80005EDAC /* 111-user.png */; };
+		BE166A9B14591DB80005EDAC /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A8114591DB80005EDAC /* 112-group.png */; };
+		BE166A9C14591DB80005EDAC /* 117-todo.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A8214591DB80005EDAC /* 117-todo.png */; };
+		BE166A9D14591DB80005EDAC /* 123-id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A8314591DB80005EDAC /* 123-id-card.png */; };
+		BE166A9E14591DB80005EDAC /* 158-wrench-2.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A8414591DB80005EDAC /* 158-wrench-2.png */; };
+		BE166A9F14591DB80005EDAC /* 162-receipt.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A8514591DB80005EDAC /* 162-receipt.png */; };
+		BE166AA014591DB80005EDAC /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A8614591DB80005EDAC /* 179-notepad.png */; };
+		BE166AA114591DB80005EDAC /* 184-warning.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A8714591DB80005EDAC /* 184-warning.png */; };
 		BE759D0C140FA8C0003D8A75 /* SiteParamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE759D0A140FA8C0003D8A75 /* SiteParamsViewController.m */; };
 		BE759D0D140FA8C0003D8A75 /* SiteParamsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE759D0B140FA8C0003D8A75 /* SiteParamsViewController.xib */; };
 		BE759D4E140FAFB4003D8A75 /* BlogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE759D40140FAFB4003D8A75 /* BlogsViewController.m */; };
@@ -63,6 +89,32 @@
 		BE166A1314586E3A0005EDAC /* Marine-star-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Marine-star-32.png"; path = "../icons/Marine-star-32.png"; sourceTree = SOURCE_ROOT; };
 		BE166A1414586E3A0005EDAC /* Star-full-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Star-full-32.png"; path = "../icons/Star-full-32.png"; sourceTree = SOURCE_ROOT; };
 		BE166A1514586E3A0005EDAC /* Website-User-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Website-User-32.png"; path = "../icons/Website-User-32.png"; sourceTree = SOURCE_ROOT; };
+		BE166A6E14591DB80005EDAC /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "01-refresh.png"; path = "../icons/01-refresh.png"; sourceTree = SOURCE_ROOT; };
+		BE166A6F14591DB80005EDAC /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "06-magnify.png"; path = "../icons/06-magnify.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7014591DB80005EDAC /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "19-gear.png"; path = "../icons/19-gear.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7114591DB80005EDAC /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "20-gear2.png"; path = "../icons/20-gear2.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7214591DB80005EDAC /* 28-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "28-star.png"; path = "../icons/28-star.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7314591DB80005EDAC /* 44-shoebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "44-shoebox.png"; path = "../icons/44-shoebox.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7414591DB80005EDAC /* 45-movie-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "45-movie-1.png"; path = "../icons/45-movie-1.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7514591DB80005EDAC /* 54-lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "54-lock.png"; path = "../icons/54-lock.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7614591DB80005EDAC /* 57-download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "57-download.png"; path = "../icons/57-download.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7714591DB80005EDAC /* 58-bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "58-bookmark.png"; path = "../icons/58-bookmark.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7814591DB80005EDAC /* 81-dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "81-dashboard.png"; path = "../icons/81-dashboard.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7914591DB80005EDAC /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "83-calendar.png"; path = "../icons/83-calendar.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7A14591DB80005EDAC /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "86-camera.png"; path = "../icons/86-camera.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7B14591DB80005EDAC /* 87-wine-glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "87-wine-glass.png"; path = "../icons/87-wine-glass.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7C14591DB80005EDAC /* 90-life-buoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "90-life-buoy.png"; path = "../icons/90-life-buoy.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7D14591DB80005EDAC /* 96-book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "96-book.png"; path = "../icons/96-book.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7E14591DB80005EDAC /* 102-walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "102-walk.png"; path = "../icons/102-walk.png"; sourceTree = SOURCE_ROOT; };
+		BE166A7F14591DB80005EDAC /* 108-badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "108-badge.png"; path = "../icons/108-badge.png"; sourceTree = SOURCE_ROOT; };
+		BE166A8014591DB80005EDAC /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "111-user.png"; path = "../icons/111-user.png"; sourceTree = SOURCE_ROOT; };
+		BE166A8114591DB80005EDAC /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "112-group.png"; path = "../icons/112-group.png"; sourceTree = SOURCE_ROOT; };
+		BE166A8214591DB80005EDAC /* 117-todo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "117-todo.png"; path = "../icons/117-todo.png"; sourceTree = SOURCE_ROOT; };
+		BE166A8314591DB80005EDAC /* 123-id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "123-id-card.png"; path = "../icons/123-id-card.png"; sourceTree = SOURCE_ROOT; };
+		BE166A8414591DB80005EDAC /* 158-wrench-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "158-wrench-2.png"; path = "../icons/158-wrench-2.png"; sourceTree = SOURCE_ROOT; };
+		BE166A8514591DB80005EDAC /* 162-receipt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "162-receipt.png"; path = "../icons/162-receipt.png"; sourceTree = SOURCE_ROOT; };
+		BE166A8614591DB80005EDAC /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "179-notepad.png"; path = "../icons/179-notepad.png"; sourceTree = SOURCE_ROOT; };
+		BE166A8714591DB80005EDAC /* 184-warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "184-warning.png"; path = "../icons/184-warning.png"; sourceTree = SOURCE_ROOT; };
 		BE759D09140FA8C0003D8A75 /* SiteParamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteParamsViewController.h; sourceTree = "<group>"; };
 		BE759D0A140FA8C0003D8A75 /* SiteParamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteParamsViewController.m; sourceTree = "<group>"; };
 		BE759D0B140FA8C0003D8A75 /* SiteParamsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SiteParamsViewController.xib; path = Classes/SiteParamsViewController.xib; sourceTree = "<group>"; };
@@ -177,6 +229,32 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE166A6E14591DB80005EDAC /* 01-refresh.png */,
+				BE166A6F14591DB80005EDAC /* 06-magnify.png */,
+				BE166A7014591DB80005EDAC /* 19-gear.png */,
+				BE166A7114591DB80005EDAC /* 20-gear2.png */,
+				BE166A7214591DB80005EDAC /* 28-star.png */,
+				BE166A7314591DB80005EDAC /* 44-shoebox.png */,
+				BE166A7414591DB80005EDAC /* 45-movie-1.png */,
+				BE166A7514591DB80005EDAC /* 54-lock.png */,
+				BE166A7614591DB80005EDAC /* 57-download.png */,
+				BE166A7714591DB80005EDAC /* 58-bookmark.png */,
+				BE166A7814591DB80005EDAC /* 81-dashboard.png */,
+				BE166A7914591DB80005EDAC /* 83-calendar.png */,
+				BE166A7A14591DB80005EDAC /* 86-camera.png */,
+				BE166A7B14591DB80005EDAC /* 87-wine-glass.png */,
+				BE166A7C14591DB80005EDAC /* 90-life-buoy.png */,
+				BE166A7D14591DB80005EDAC /* 96-book.png */,
+				BE166A7E14591DB80005EDAC /* 102-walk.png */,
+				BE166A7F14591DB80005EDAC /* 108-badge.png */,
+				BE166A8014591DB80005EDAC /* 111-user.png */,
+				BE166A8114591DB80005EDAC /* 112-group.png */,
+				BE166A8214591DB80005EDAC /* 117-todo.png */,
+				BE166A8314591DB80005EDAC /* 123-id-card.png */,
+				BE166A8414591DB80005EDAC /* 158-wrench-2.png */,
+				BE166A8514591DB80005EDAC /* 162-receipt.png */,
+				BE166A8614591DB80005EDAC /* 179-notepad.png */,
+				BE166A8714591DB80005EDAC /* 184-warning.png */,
 				BE166A1014586E3A0005EDAC /* 3D-Book-32.png */,
 				BE166A1114586E3A0005EDAC /* Blogs-32.png */,
 				BE166A1214586E3A0005EDAC /* Book-32.png */,
@@ -276,6 +354,32 @@
 				BE166A1914586E3A0005EDAC /* Marine-star-32.png in Resources */,
 				BE166A1A14586E3A0005EDAC /* Star-full-32.png in Resources */,
 				BE166A1B14586E3A0005EDAC /* Website-User-32.png in Resources */,
+				BE166A8814591DB80005EDAC /* 01-refresh.png in Resources */,
+				BE166A8914591DB80005EDAC /* 06-magnify.png in Resources */,
+				BE166A8A14591DB80005EDAC /* 19-gear.png in Resources */,
+				BE166A8B14591DB80005EDAC /* 20-gear2.png in Resources */,
+				BE166A8C14591DB80005EDAC /* 28-star.png in Resources */,
+				BE166A8D14591DB80005EDAC /* 44-shoebox.png in Resources */,
+				BE166A8E14591DB80005EDAC /* 45-movie-1.png in Resources */,
+				BE166A8F14591DB80005EDAC /* 54-lock.png in Resources */,
+				BE166A9014591DB80005EDAC /* 57-download.png in Resources */,
+				BE166A9114591DB80005EDAC /* 58-bookmark.png in Resources */,
+				BE166A9214591DB80005EDAC /* 81-dashboard.png in Resources */,
+				BE166A9314591DB80005EDAC /* 83-calendar.png in Resources */,
+				BE166A9414591DB80005EDAC /* 86-camera.png in Resources */,
+				BE166A9514591DB80005EDAC /* 87-wine-glass.png in Resources */,
+				BE166A9614591DB80005EDAC /* 90-life-buoy.png in Resources */,
+				BE166A9714591DB80005EDAC /* 96-book.png in Resources */,
+				BE166A9814591DB80005EDAC /* 102-walk.png in Resources */,
+				BE166A9914591DB80005EDAC /* 108-badge.png in Resources */,
+				BE166A9A14591DB80005EDAC /* 111-user.png in Resources */,
+				BE166A9B14591DB80005EDAC /* 112-group.png in Resources */,
+				BE166A9C14591DB80005EDAC /* 117-todo.png in Resources */,
+				BE166A9D14591DB80005EDAC /* 123-id-card.png in Resources */,
+				BE166A9E14591DB80005EDAC /* 158-wrench-2.png in Resources */,
+				BE166A9F14591DB80005EDAC /* 162-receipt.png in Resources */,
+				BE166AA014591DB80005EDAC /* 179-notepad.png in Resources */,
+				BE166AA114591DB80005EDAC /* 184-warning.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

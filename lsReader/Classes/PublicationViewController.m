@@ -46,7 +46,9 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
 	
-	UIImage *image = [UIImage imageNamed:@"Star-full-32.png"];
+	UIImage *image = [UIImage imageNamed:
+					  [[Communicator sharedCommunicator].publicTypesIcons objectAtIndex:indexPath.row]];
+	//[UIImage imageNamed:@"Star-full-32.png"];
 	
 	cell.textLabel.text = [self.publicTypes objectAtIndex:indexPath.row];
 	

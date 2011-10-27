@@ -18,6 +18,7 @@
 	BOOL showPics; 
 	NSArray *publicationPeriods;
 	NSArray *publicTypes;
+	NSArray *publicTypesIcons;
 
 }
 
@@ -28,6 +29,7 @@
 @property BOOL showPics;
 @property (nonatomic, retain) NSArray *publicationPeriods;
 @property (nonatomic, retain) NSArray *publicTypes;
+@property (nonatomic, retain) NSArray *publicTypesIcons;
 @property (nonatomic, retain) NSArray *publicationShowType;
 
 
