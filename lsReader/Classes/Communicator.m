@@ -310,6 +310,8 @@ static Communicator * communicator =  NULL;
 	
 	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"vote" params:tmpParams]; 
 	
+	NSLog("vote by topic response = %@",response);
+	
 	return [response objectForKey:@"rating"];
 	
 

@@ -109,31 +109,18 @@
 	
 }
 
--(IBAction) voting{
-	
-		NSLog(@"voting ");
-	
-	NSInteger value;
-	
-	switch (self.voteSegControl.selectedSegmentIndex) {
-		case 0:
-			value = 1;
-			break;
-		case 1:
-			value = 0;
-			break;
-		case 2:
-			value = -1;
-			break;
 
-		default:
-			break;
-	}
-	
-   NSString *newRating = [[Communicator sharedCommunicator] voteByTopicId:self.topicId value:value];
-	
-   NSLog(@"new Rating = %@",newRating);
 
+-(IBAction) votingForTopic:(id) sender{
+ 
+	NSLog( @" %i",[(UIBarButtonItem *)sender tag] );
+	
+	NSString *newRating = [[Communicator sharedCommunicator] voteByTopicId:self.topicId 
+																	 value:[(UIBarButtonItem *)sender tag]
+						   ];
+	
+	NSLog(@"new Rating = %@",newRating);
+		
 }
 
 -(void) cutImagesFromText:(NSMutableString *) intext{
