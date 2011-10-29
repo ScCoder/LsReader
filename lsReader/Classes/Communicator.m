@@ -310,9 +310,9 @@ static Communicator * communicator =  NULL;
 	
 	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"vote" params:tmpParams]; 
 	
-	NSLog("vote by topic response = %@",response);
+	return response;
 	
-	return [response objectForKey:@"rating"];
+	//return [response objectForKey:@"rating"];
 	
 
 }
@@ -355,6 +355,7 @@ static Communicator * communicator =  NULL;
 
 }
 -(void) loadContent{
+	
     NSLog(@"start load content");
 	// Загрузка публикацийыы
 	
