@@ -7,7 +7,7 @@
 //
 
 #import "TopicViewController.h"
-
+#import "commentsViewController.h"
 
 @implementation TopicViewController
 
@@ -283,6 +283,7 @@
 }
 
 -(IBAction) showComents{
+	/*
 	NSString *alert_title = @"Заглушка сдесь должен быть метод показа топиков";
 	
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alert_title 
@@ -293,6 +294,14 @@
 	
 	[alert show]; 
 	[alert release];
+	
+		*/
+	commentsViewController *commentVC = [[commentsViewController alloc] initWithNibName:@"commentsViewController" bundle:nil];
+	
+	[self.navigationController pushViewController:commentVC animated:YES];
+	
+	[commentVC release];
+	
 	
 
 }
