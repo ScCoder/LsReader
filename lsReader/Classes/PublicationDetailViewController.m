@@ -188,7 +188,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-	CGFloat cellHeight = 112.0f;
+	CGFloat cellHeight = 129.0f;
       
 	return cellHeight;
 	
@@ -232,6 +232,10 @@
 	cell.blog_title.text = [[topic objectForKey:@"blog"] objectForKey:@"blog_title"];
 	
     cell.topic_description.text = [topicTitles objectForKey: [self.keys objectAtIndex:indexPath.row]];
+	
+	cell.topic_author.text =  [[topic objectForKey:@"user"] objectForKey:@"user_login"];  
+	
+	cell.topic_date.text = [topic objectForKey: @"topic_date_add"];
 	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	

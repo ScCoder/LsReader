@@ -15,6 +15,9 @@
 @synthesize blog_title;
 @synthesize topic_title;
 @synthesize topic_description;
+@synthesize topic_author;
+@synthesize topic_date;
+
 
 #pragma mark -
 #pragma mark View lifecycle
