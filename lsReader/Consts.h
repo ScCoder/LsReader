@@ -22,7 +22,7 @@
 #define PT_PERSONAL @"Персональные"
 #define PT_LINE @"Лента"
 #define PT_ACTIVITY @"Активность"
-
+#define FIELDS_FILTER @"topic_title,topic_id,topic_text_short,blog[blog_title]"
 
 
 //extern const 

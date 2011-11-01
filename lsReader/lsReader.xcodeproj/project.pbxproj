@@ -51,6 +51,8 @@
 		BE29088B145C79CC00807F5C /* commentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE290889145C79CB00807F5C /* commentsViewController.xib */; };
 		BE2909B8145D7A4E00807F5C /* 08-chat.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2909B7145D7A4E00807F5C /* 08-chat.png */; };
 		BE2909C0145D7AE200807F5C /* 180-stickynote.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2909BF145D7AE200807F5C /* 180-stickynote.png */; };
+		BE290B6B1460323100807F5C /* PubDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE290B691460323100807F5C /* PubDetailCell.m */; };
+		BE290B6C1460323100807F5C /* PubDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE290B6A1460323100807F5C /* PubDetailCell.xib */; };
 		BE759D0C140FA8C0003D8A75 /* SiteParamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE759D0A140FA8C0003D8A75 /* SiteParamsViewController.m */; };
 		BE759D0D140FA8C0003D8A75 /* SiteParamsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE759D0B140FA8C0003D8A75 /* SiteParamsViewController.xib */; };
 		BE759D4E140FAFB4003D8A75 /* BlogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE759D40140FAFB4003D8A75 /* BlogsViewController.m */; };
@@ -124,6 +126,9 @@
 		BE290889145C79CB00807F5C /* commentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = commentsViewController.xib; path = Classes/commentsViewController.xib; sourceTree = "<group>"; };
 		BE2909B7145D7A4E00807F5C /* 08-chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "08-chat.png"; path = "../icons/08-chat.png"; sourceTree = SOURCE_ROOT; };
 		BE2909BF145D7AE200807F5C /* 180-stickynote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "180-stickynote.png"; path = "../icons/180-stickynote.png"; sourceTree = SOURCE_ROOT; };
+		BE290B681460323100807F5C /* PubDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubDetailCell.h; sourceTree = "<group>"; };
+		BE290B691460323100807F5C /* PubDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubDetailCell.m; sourceTree = "<group>"; };
+		BE290B6A1460323100807F5C /* PubDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PubDetailCell.xib; path = Classes/PubDetailCell.xib; sourceTree = "<group>"; };
 		BE759D09140FA8C0003D8A75 /* SiteParamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteParamsViewController.h; sourceTree = "<group>"; };
 		BE759D0A140FA8C0003D8A75 /* SiteParamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteParamsViewController.m; sourceTree = "<group>"; };
 		BE759D0B140FA8C0003D8A75 /* SiteParamsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SiteParamsViewController.xib; path = Classes/SiteParamsViewController.xib; sourceTree = "<group>"; };
@@ -199,6 +204,8 @@
 				BE9F67451430D2850038D619 /* TopicViewController.m */,
 				BE290887145C79CB00807F5C /* commentsViewController.h */,
 				BE290888145C79CB00807F5C /* commentsViewController.m */,
+				BE290B681460323100807F5C /* PubDetailCell.h */,
+				BE290B691460323100807F5C /* PubDetailCell.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -226,6 +233,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BE290B6A1460323100807F5C /* PubDetailCell.xib */,
 				BE8CCDDF1447F2520049AC52 /* Consts.h */,
 				BE81E70A14134BF80097D271 /* S7ViewSlider.h */,
 				BE81E70B14134BF80097D271 /* S7ViewSlider.m */,
@@ -397,6 +405,7 @@
 				BE29088B145C79CC00807F5C /* commentsViewController.xib in Resources */,
 				BE2909B8145D7A4E00807F5C /* 08-chat.png in Resources */,
 				BE2909C0145D7AE200807F5C /* 180-stickynote.png in Resources */,
+				BE290B6C1460323100807F5C /* PubDetailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +431,7 @@
 				BEC2BE25142F36E400244915 /* PublicationDetailViewController.m in Sources */,
 				BE9F67471430D2850038D619 /* TopicViewController.m in Sources */,
 				BE29088A145C79CB00807F5C /* commentsViewController.m in Sources */,
+				BE290B6B1460323100807F5C /* PubDetailCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import "PublicationDetailViewController.h"
 #import "lsReaderAppDelegate.h"
 #import "Consts.h"
+#import "PubDetailCell.h"
 
 @implementation PublicationDetailViewController
 
@@ -187,7 +188,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-	CGFloat cellHeight = 80.0f;
+	CGFloat cellHeight = 112.0f;
       
 	return cellHeight;
 	
@@ -195,45 +196,47 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 	
-	static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
-    }
 	
+	static NSString *CellIdentifier = @"CustomCell";
+	PubDetailCell *cell = (PubDetailCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil) {
+		NSArray *outlets = [[NSBundle mainBundle] loadNibNamed:@"PubDetailCell" owner:self options:nil];
+		for (id currentObject in outlets) {
+			if ([currentObject isKindOfClass:[UITableViewCell class]]){
+				cell =  (PubDetailCell *) currentObject;
+				break;
+			}
+		}
+	}
 	
-	
-	
+		
 	NSMutableDictionary *topic = [self.topics_collection objectForKey: [self.keys objectAtIndex:indexPath.row]];
 		
-	cell.textLabel.text = [topic objectForKey: @"topic_title"] ;
-	//cell.detailTextLabel.text = [topic objectForKey:@"topic_text_short"];
-	
-	
-	
-
+	//Сохранение урезанных версий описания
 	if (![topicTitles objectForKey: [self.keys objectAtIndex:indexPath.row]]) {
-			
+		
 		NSMutableString *str = [[NSMutableString alloc] initWithCapacity:10];
-			
+		
 		[str appendString:[topic objectForKey: @"topic_text_short"]]; 	
-			
+		
 		[self cutHtmlTagsFromText: str];
-			
+		
 		[topicTitles setObject:str forKey:[self.keys objectAtIndex:indexPath.row]];
-			
+		
 		[str release];
 	}
 	
-    cell.detailTextLabel.text = [topicTitles objectForKey: [self.keys objectAtIndex:indexPath.row]];	
 	
-	cell.detailTextLabel.numberOfLines = 3;
-		
+	cell.topic_title.text = [topic objectForKey: @"topic_title"] ;
+	    
+	cell.blog_title.text = [[topic objectForKey:@"blog"] objectForKey:@"blog_title"];
+	
+    cell.topic_description.text = [topicTitles objectForKey: [self.keys objectAtIndex:indexPath.row]];
+	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
 	return cell;
-		
+	
 }
 
 

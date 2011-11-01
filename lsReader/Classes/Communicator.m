@@ -241,7 +241,7 @@ static Communicator * communicator =  NULL;
 
 -(NSDictionary *) topPublicationsByPeriod:(NSString*)period {
 	
-	NSString *tmpParams = [NSString stringWithFormat:@"period=%@&fields=topic_title,topic_id,topic_text_short",period];
+	NSString *tmpParams = [NSString stringWithFormat:@"period=%@&fields=%@",period,FIELDS_FILTER];
 	
 	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"top" params:tmpParams]; 
 	
@@ -251,7 +251,7 @@ static Communicator * communicator =  NULL;
 
 -(NSDictionary *) newPublications{
 	
-	NSString *tmpParams = [NSString stringWithFormat:@"fields=topic_title,topic_id,topic_text_short"];
+	NSString *tmpParams = [NSString stringWithFormat:@"fields=%@",FIELDS_FILTER];
 	
 	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"new" params:tmpParams]; 
 	
@@ -274,7 +274,7 @@ static Communicator * communicator =  NULL;
 -(NSDictionary *) personalPublications:(NSString *) showType page:(NSInteger *)page{
 	
 	
-	NSString *tmpParams = [NSString stringWithFormat:@"show_type=%@&fields=topic_title,topic_id,topic_text_short&per_page=%@&page=%i",showType,self.countPerPage,page];
+	NSString *tmpParams = [NSString stringWithFormat:@"show_type=%@&fields=%@&per_page=%@&page=%i",showType,FIELDS_FILTER,self.countPerPage,page];
 	
 	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"personal" params:tmpParams]; 
 	

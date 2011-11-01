@@ -1,2 +1,0 @@
-/Users/sergejusov/github/LsReader/lsReader/Classes/SiteParamsViewController.m: In function '-[SiteParamsViewController testConnection]':
-/Users/sergejusov/github/LsReader/lsReader/Classes/SiteParamsViewController.m:128: warning: pointer targets in initialization differ in signedness
