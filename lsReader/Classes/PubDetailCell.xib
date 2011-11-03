@@ -65,7 +65,7 @@
 								</object>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC41MzI2MDg2OTU3IDAuNTMyNjA4Njk1NyAwLjUzMjYwODY5NTcAA</bytes>
+									<bytes key="NSRGB">MC41MzI2MDg2OTU3IDAuMjUwMTcxODA2NyAwLjM2Njc5NTM2NzIAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUIHighlightedColor" id="479321718">
 									<int key="NSColorSpace">3</int>
@@ -115,7 +115,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">sdddddf</string>
+								<string key="IBUIText">fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</string>
 								<object class="NSFont" key="IBUIFont">
 									<string key="NSName">Helvetica</string>
 									<double key="NSSize">13</double>
@@ -129,9 +129,8 @@
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
 								<int key="IBUINumberOfLines">3</int>
-								<int key="IBUILineBreakMode">0</int>
 							</object>
-							<object class="IBUILabel" id="374015316">
+							<object class="IBUILabel" id="31087354">
 								<reference key="NSNextResponder" ref="239398346"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{20, 102}, {79, 21}}</string>
@@ -142,7 +141,7 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">автор</string>
-								<object class="NSFont" key="IBUIFont" id="895530232">
+								<object class="NSFont" key="IBUIFont" id="435830936">
 									<string key="NSName">Helvetica</string>
 									<double key="NSSize">11</double>
 									<int key="NSfFlags">16</int>
@@ -155,7 +154,7 @@
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
 							</object>
-							<object class="IBUILabel" id="786660005">
+							<object class="IBUILabel" id="924644864">
 								<reference key="NSNextResponder" ref="239398346"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{191, 102}, {93, 21}}</string>
@@ -166,7 +165,7 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">дата</string>
-								<reference key="IBUIFont" ref="895530232"/>
+								<reference key="IBUIFont" ref="435830936"/>
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC4xMDY4MjU0Mjc3IDAuNjE0MTMwNDM0OCAwLjUzNDEyNTcxMDkAA</bytes>
@@ -230,7 +229,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">topic_author</string>
 						<reference key="source" ref="80513917"/>
-						<reference key="destination" ref="374015316"/>
+						<reference key="destination" ref="31087354"/>
 					</object>
 					<int key="connectionID">24</int>
 				</object>
@@ -238,7 +237,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">topic_date</string>
 						<reference key="source" ref="80513917"/>
-						<reference key="destination" ref="786660005"/>
+						<reference key="destination" ref="924644864"/>
 					</object>
 					<int key="connectionID">25</int>
 				</object>
@@ -269,8 +268,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="748278398"/>
-							<reference ref="786660005"/>
-							<reference ref="374015316"/>
+							<reference ref="924644864"/>
+							<reference ref="31087354"/>
 							<reference ref="27202364"/>
 							<reference ref="188358501"/>
 						</object>
@@ -293,12 +292,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">22</int>
-						<reference key="object" ref="374015316"/>
+						<reference key="object" ref="31087354"/>
 						<reference key="parent" ref="80513917"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">23</int>
-						<reference key="object" ref="786660005"/>
+						<reference key="object" ref="924644864"/>
 						<reference key="parent" ref="80513917"/>
 					</object>
 				</object>

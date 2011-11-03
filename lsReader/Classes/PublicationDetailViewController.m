@@ -235,7 +235,20 @@
 	
 	cell.topic_author.text =  [[topic objectForKey:@"user"] objectForKey:@"user_login"];  
 	
-	cell.topic_date.text = [topic objectForKey: @"topic_date_add"];
+	
+	//форматирование даты
+	
+	NSDateFormatter *formater = [[NSDateFormatter alloc] init];
+	[formater setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+	NSDate *date = [formater dateFromString:[topic objectForKey: @"topic_date_add"]];
+	
+	[formater setDateFormat:@"dd.MM.YYYY HH:mm"];
+	NSString *strDate = [formater stringFromDate:date]; 
+	//[formater release];
+	
+	cell.topic_date.text = [formater stringFromDate:date]; //[topic objectForKey: @"topic_date_add"];
+	
+	
 	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	

@@ -244,9 +244,20 @@
 
 -(IBAction) showTopicInfo{
 
-	NSString *alert_title = [NSString stringWithFormat:@"Автор %@ \n дата публикации %@ "
+	
+	NSDateFormatter *formater = [[NSDateFormatter alloc] init];
+	[formater setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+	
+	NSDate *date = [formater dateFromString:[topic_data objectForKey: @"topic_date_add"]];
+	
+	[formater setDateFormat:@"dd.MM.YYYY HH:mm"];
+	NSString *strDate = [formater stringFromDate:date]; 
+	[formater release];
+	
+	
+	NSString *alert_title = [NSString stringWithFormat:@"Автор %@ \n Дата %@ "
 							,[(NSDictionary *)[topic_data objectForKey: @"user"] objectForKey:@"user_login"]
-							,[topic_data objectForKey: @"topic_date_add"] 
+							,strDate//[topic_data objectForKey: @"topic_date_add"] 
 							];
 							
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alert_title 
