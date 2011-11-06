@@ -8,6 +8,7 @@
 
 #import "TopicViewController.h"
 #import "commentsViewController.h"
+#import "Consts.h"
 
 @implementation TopicViewController
 
@@ -45,33 +46,13 @@
   [self.voteBar setHidden:NO];
 	
   [self.voteBtn setEnabled:[[Communicator sharedCommunicator] isLogedIn]];
-
-	
-  /*	
-	
-  if ([[Communicator sharedCommunicator] isLogedIn]) {
-	
-		[self.voteBtn setEnabled:YES];
-		
-	
-	//  webView.frame = CGRectMake(webView.frame.origin.x
-	//								 ,webView.frame.origin.y
-	//								 ,webView.frame.size.width
-	//								 ,self.view.frame.size.height - voteBar.frame.size.height);
-	 
-	 }
-	 else{
-		 [self.voteBtn setEnabled:NO];
-		 webView.frame = CGRectMake(webView.frame.origin.x
-									 ,webView.frame.origin.y
-									 ,webView.frame.size.width
-									 ,self.view.frame.size.height);
-		 
-	 }
-*/
 	
 }
 -(void) viewWillAppear:(BOOL)animated{
+	
+	
+	[[Communicator sharedCommunicator] cacheImages:self.topicId];//TODO: Убрать
+	
 
 	topic_data = [[Communicator sharedCommunicator] readTopicById:self.topicId];
 		
@@ -91,17 +72,33 @@
 	
 	[self.autorLabel setTitle:[(NSDictionary *)[topic_data objectForKey: @"user"] objectForKey:@"user_login"]];
 		
-	if (![Communicator sharedCommunicator].showPics) {
 	
-	  //Обрезать картинки
+	if ([Communicator sharedCommunicator].showPics) {
+	
+		[self changeImageNamesToCashed:topicContent];
+	 	
+	} else {
+		
 		[self cutImagesFromText:topicContent];
 		
 	}
+
 	
 	
-	NSURL *base_url = [NSURL URLWithString: [@"http://www." stringByAppendingString: [Communicator sharedCommunicator].siteURL ]];	
-		
-	[webView loadHTMLString:topicContent baseURL:base_url];//
+	//NSURL *base_url = [NSURL URLWithString: [@"http://www." stringByAppendingString: [Communicator sharedCommunicator].siteURL ]];	
+	
+
+	NSMutableString *imagePath = [NSMutableString stringWithString: DOCUMENTS];
+	imagePath = [imagePath stringByReplacingOccurrencesOfString:@"/" withString:@"//"];
+	imagePath = [imagePath stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+	
+	
+	
+	NSURL *base_url = [NSURL URLWithString: [NSString stringWithFormat:@"file:/%@//%@//%@//"
+									,imagePath,LS_READER_DIR,CACHE_IMAGES_DIR]];
+
+	
+	[webView loadHTMLString:topicContent baseURL:base_url];
 
 	[topicContent release];
 	
@@ -294,27 +291,13 @@
 }
 
 -(IBAction) showComents{
-	/*
-	NSString *alert_title = @"Заглушка сдесь должен быть метод показа топиков";
 	
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alert_title 
-													message:nil
-												   delegate:self 
-										  cancelButtonTitle:@"Ok"
-										  otherButtonTitles:nil]; 
-	
-	[alert show]; 
-	[alert release];
-	
-		*/
 	commentsViewController *commentVC = [[commentsViewController alloc] initWithNibName:@"commentsViewController" bundle:nil];
 	
 	[self.navigationController pushViewController:commentVC animated:YES];
 	
 	[commentVC release];
 	
-	
-
 }
 
 -(IBAction) bookmarkTopic{
@@ -331,6 +314,44 @@
 	
 	
 };
+
+-(void) changeImageNamesToCashed:(NSMutableString*) topicContent {
+	
+	
+	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern: @"<img[^>]src=\"([^>\"]+)\"[^>]*>"
+																			options:NSRegularExpressionCaseInsensitive
+																			  error:NULL];
+	
+	for (NSTextCheckingResult *match in [regExp matchesInString:topicContent options:0 range:NSMakeRange(0,[topicContent length])]){
+		
+		NSString* url = [topicContent substringWithRange:[match rangeAtIndex:1]]; 
+				
+		NSMutableString *imgFileExt = [[NSMutableString alloc] initWithCapacity:4];
+		
+		if ([url rangeOfString:@".png"].location > 0){
+			
+			imgFileExt = @"png";
+			
+		} else if ([url rangeOfString:@".jpg"].location > 0) {
+			
+			imgFileExt = @"jpg";
+		}else {
+			NSLog(@"Error Unsupprted image file format, file url = %@",url );
+			return;
+		}
+		
+		
+        NSString *cacheImageFileName = [NSString stringWithFormat:@"img_%d.%@",[url hash],imgFileExt];
+		
+		[imgFileExt release];
+		
+		[topicContent replaceOccurrencesOfString:url withString: cacheImageFileName options:NSLiteralSearch range:NSMakeRange(0, [topicContent length])];
+	}
+	
+    //[regExp replaceMatchesInString:content options:0 range:NSMakeRange(0,[content length]) withTemplate:@"<a href = $1> picture </a>"];
+	
+}
+
 
 /*
  // Override to allow orientations other than the default portrait orientation.

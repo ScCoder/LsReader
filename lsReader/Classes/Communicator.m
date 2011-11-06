@@ -65,10 +65,10 @@ static Communicator * communicator =  NULL;
 
 -(void) loadCache {
 	
+	[self createDirs];
+	
 	// Получаем и запоминаем путь до файла кеша
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
-	NSString *documentsDirectoryPath = [paths objectAtIndex:0];	
-	self.casheFilePath = [documentsDirectoryPath stringByAppendingString:CACHE_FILE_NAME];
+	self.casheFilePath = [NSString stringWithFormat:@"%@/%@/%@",DOCUMENTS,LS_READER_DIR,CACHE_FILE_NAME];
 	
 	// Пытаемся загрузить кешь
 
@@ -104,6 +104,12 @@ static Communicator * communicator =  NULL;
 
 }
 
+-(void) cleanCache{
+
+	[self.ls_cache removeAllObjects];
+	
+}
+
 
 -(NSDictionary *)commandByModule:(NSString*)module site:(NSString*)site  method:(NSString*)method params:(NSString*)params
 {
@@ -119,7 +125,7 @@ static Communicator * communicator =  NULL;
 	
 	NSString *api_cmd_hash = [NSString stringWithFormat:@"hash =%d",[api_command hash]];
 	
-	NSLog(@"api_comand=%@",api_command);
+	NSLog(@"api_comand=%@", api_command);
 	
 	
 	// Пробуем взять из кеша 
@@ -149,7 +155,7 @@ static Communicator * communicator =  NULL;
 		
 		JSONDecoder *decoder = [JSONDecoder decoder];
 	
-		response = [decoder parseJSONData:tmpContainer];
+		response = [[decoder parseJSONData:tmpContainer] copy];
 		
 		
 		if (!response) {
@@ -177,13 +183,20 @@ static Communicator * communicator =  NULL;
 		} else {
 			
 			// Все ок ложим в кеш !!!!!
-			response = [response objectForKey:@"response"];						
+			response = [response objectForKey:@"response"];		
 			
-			// Ложим в кеш
+			// Кешируем картинки топиков			
+			if (self.showPics&&[module isEqualToString: @"topic"]&&[method isEqualToString: @"read"]) {
+				
+			    [self cacheImages : [response objectForKey: @"topic_text" ]];
+				
+			}
+			
+			
 			
 			[self.ls_cache setObject:response forKey:api_cmd_hash];
-
-			NSLog(@"put to cache!");
+			
+			NSLog(@"put to cache ok!");
 			//NSLog(@"cache count =%d",[self.ls_cache count]);			
 		   
 		}
@@ -340,7 +353,7 @@ static Communicator * communicator =  NULL;
 	
 }
 
-- (void) loadTopicsToStorage: (NSDictionary *) response  {
+- (void) saveTopicsToStorage: (NSDictionary *) response  {
  
 	NSMutableDictionary *topics_collection = [[NSMutableDictionary alloc] initWithCapacity:1];
 			
@@ -354,9 +367,9 @@ static Communicator * communicator =  NULL;
 	}
 
 }
--(void) loadContent{
+-(void) saveContentToStorage{
 	
-    NSLog(@"start load content");
+    NSLog(@"start save content");
 	// Загрузка публикацийыы
 	
 	//NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
@@ -366,23 +379,90 @@ static Communicator * communicator =  NULL;
 	
 	  //response = [self topPublicationsByPeriod:period];
 		
-	  [self loadTopicsToStorage: [self topPublicationsByPeriod:period]];
+	  [self saveTopicsToStorage: [self topPublicationsByPeriod:period]];
 	}
 	
 	//[self loadTopicsToStorage: response];
 
 	// Новые публикации
 	
-	[self loadTopicsToStorage: [[Communicator sharedCommunicator] newPublications]];
+	[self saveTopicsToStorage: [[Communicator sharedCommunicator] newPublications]];
 	
 	//Персональные публикации
 	
-	 [self loadTopicsToStorage: 
+	 [self saveTopicsToStorage: 
 	  [[Communicator sharedCommunicator] personalPublications:@"good" page:10]];
 	
 	 NSLog(@"end load content");	
 
 
 }
+
+-(void) createDirs {
+	
+	// Создание директории
+	
+	
+	NSFileManager *NSFm= [NSFileManager defaultManager]; 
+	BOOL isDir = YES;
+    
+	NSString *lsReaderDir = [NSString stringWithFormat:@"%@/%@",DOCUMENTS,LS_READER_DIR];
+						
+	if(![NSFm fileExistsAtPath:lsReaderDir isDirectory:&isDir])
+		if(![NSFm createDirectoryAtPath:lsReaderDir attributes:nil])
+			NSLog(@"Error: Create folder failed");
+	
+  	
+	NSString *cacheImagesDir = [NSString stringWithFormat:@"%@/%@/%@",DOCUMENTS,LS_READER_DIR,CACHE_IMAGES_DIR];
+	
+	if(![NSFm fileExistsAtPath:cacheImagesDir isDirectory:&isDir])
+		if(![NSFm createDirectoryAtPath:cacheImagesDir attributes:nil])
+			NSLog(@"Error: Create folder failed");
+
+}
+-(void) cacheImages:(NSString*) topicContent {
+
+	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern: @"<img[^>]src=\"([^>\"]+)\"[^>]*>"
+																			options:NSRegularExpressionCaseInsensitive
+																			  error:NULL];
+	
+	for (NSTextCheckingResult *match in [regExp matchesInString:topicContent options:0 range:NSMakeRange(0,[topicContent length])]){
+		
+		NSString* url = [topicContent substringWithRange:[match rangeAtIndex:1]]; 
+				
+		UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+		
+		
+		NSMutableString *imgFileExt = [[NSMutableString alloc] initWithCapacity:4];
+		
+		if ([url rangeOfString:@".png"].location > 0){
+		
+			imgFileExt = @"png";
+			
+		} else if ([url rangeOfString:@".jpg"].location > 0) {
+		
+			imgFileExt = @"jpg";
+		}else {
+			NSLog(@"Error Unsupprted image file format, file url = %@",url );
+			return;
+		}
+		
+		
+		
+		NSString *cacheImageFilePath = [NSString stringWithFormat:@"%@/%@/%@/img_%d.%@"
+									,DOCUMENTS,LS_READER_DIR,CACHE_IMAGES_DIR,[url hash],imgFileExt];
+		
+		[imgFileExt release];
+		//Сохранение файла
+		
+		NSData *data1 = [NSData dataWithData:UIImagePNGRepresentation(image)];
+		[data1 writeToFile:cacheImageFilePath atomically:YES];
+		
+		[image release];
+	
+	}
+		
+}
+
 
 @end

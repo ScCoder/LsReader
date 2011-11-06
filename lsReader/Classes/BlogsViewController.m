@@ -16,7 +16,7 @@
 
 	//[[Communicator sharedCommunicator] showCacheToLog];
 
-	[[Communicator sharedCommunicator] loadContent];
+	[[Communicator sharedCommunicator] saveContentToStorage];
 	
 	
 }

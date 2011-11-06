@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
-#define CACHE_FILE_NAME  @"/lsReaderCache63.txt"
+#define CACHE_FILE_NAME  @"cachestorage.dat"
+#define LS_READER_DIR @"LsReader"
+#define CACHE_IMAGES_DIR @"images"
 #define SITE_URL @"url"
 #define SITE_LOGIN @"login"
 #define SITE_PASSWD @"passwd"
@@ -23,6 +25,9 @@
 #define PT_LINE @"Лента"
 #define PT_ACTIVITY @"Активность"
 #define FIELDS_FILTER @"topic_title,topic_id,topic_text_short,blog[blog_title],topic_date_add,user[user_login]"
+
+#define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
 
 
 //extern const 

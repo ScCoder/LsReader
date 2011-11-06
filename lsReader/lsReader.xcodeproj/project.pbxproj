@@ -233,7 +233,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BE290B6A1460323100807F5C /* PubDetailCell.xib */,
 				BE8CCDDF1447F2520049AC52 /* Consts.h */,
 				BE81E70A14134BF80097D271 /* S7ViewSlider.h */,
 				BE81E70B14134BF80097D271 /* S7ViewSlider.m */,
@@ -248,6 +247,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE290B6A1460323100807F5C /* PubDetailCell.xib */,
 				BE290889145C79CB00807F5C /* commentsViewController.xib */,
 				BE166A6E14591DB80005EDAC /* 01-refresh.png */,
 				BE2909BF145D7AE200807F5C /* 180-stickynote.png */,
