@@ -40,7 +40,10 @@
 
 -(void) saveCache;
 
+-(void) cleanCache;
+
 -(void) showCacheToLog;
+
 
 
 -(NSDictionary *)commandByModule:(NSString*)module site:(NSString*)site method:(NSString*)method params:(NSString*)params;  
@@ -59,7 +62,9 @@
 
 -(Boolean *) isLogedIn;
 
--(void) loadContent;
+-(void) saveContentToStorage;
+
+-(void) cacheImages:(NSString*) topicContent;
 
 
 @end
