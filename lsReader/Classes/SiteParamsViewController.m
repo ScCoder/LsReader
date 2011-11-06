@@ -114,7 +114,6 @@
 	
 	[self.siteParams writeToFile:appDeligate.settingsFilePath atomically:YES];
 
-	[[Communicator sharedCommunicator] cleanCache];
 	
 	[self.navigationController popViewControllerAnimated:YES];
 	
