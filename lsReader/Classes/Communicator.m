@@ -123,15 +123,14 @@ static Communicator * communicator =  NULL;
 	NSString *api_command = [NSString stringWithFormat:@"http://%@/api/%@/%@/?%@&response_type=json",
 							 site,module,method,params];
 	
-	NSString *api_cmd_hash = [NSString stringWithFormat:@"hash =%d",[api_command hash]];
-	
 	NSLog(@"api_comand=%@", api_command);
 	
 	
 	// Пробуем взять из кеша 
 	
-	NSDictionary *response = [self.ls_cache objectForKey:api_cmd_hash];
-		
+	NSDictionary *response = [self.ls_cache objectForKey:api_command];
+
+	
 	// Если нет в кеше то берем с сайта
 	if (!response) {
 		
@@ -192,9 +191,7 @@ static Communicator * communicator =  NULL;
 				
 			}
 			
-			
-			
-			[self.ls_cache setObject:response forKey:api_cmd_hash];
+			[self.ls_cache setObject:response forKey:api_command];
 			
 			NSLog(@"put to cache ok!");
 			//NSLog(@"cache count =%d",[self.ls_cache count]);			
