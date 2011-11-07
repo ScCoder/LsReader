@@ -294,6 +294,8 @@
 	
 	commentsViewController *commentVC = [[commentsViewController alloc] initWithNibName:@"commentsViewController" bundle:nil];
 	
+	commentVC.topicId = self.topicId;
+	
 	[self.navigationController pushViewController:commentVC animated:YES];
 	
 	[commentVC release];

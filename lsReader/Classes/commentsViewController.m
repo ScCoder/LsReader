@@ -11,18 +11,28 @@
 
 @implementation commentsViewController
 
-
+@synthesize topicId;
+@synthesize keys;
+@synthesize commentsCollection;
 #pragma mark -
 #pragma mark View lifecycle
 
-/*
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
+	response = [[Communicator sharedCommunicator] commentsByTopicId:self.topicId];
+	NSLog(@"%@",response);
+	
+	self.commentsCollection = [[NSDictionary alloc] initWithDictionary:[response objectForKey:@"collection"]];
+	self.keys = [[NSArray alloc] initWithArray: [self.commentsCollection allKeys]];
+	NSLog(@"%@",self.keys);
+	NSLog(@"%@",self.commentsCollection);
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-*/
+
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -58,7 +68,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 3;
+    return [self.keys count];
 }
 
 
@@ -76,13 +86,17 @@
 - (NSString *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
 	
 
+	NSDictionary *comment = [self.commentsCollection objectForKey:[self.keys objectAtIndex:section]];
+	
 	UIView *footerView = [[UIView alloc] init];
 
 
 	footerView.frame = CGRectMake(0.0, 0.0,	self.tableView.frame.size.width , 15);
 	
 	UILabel *lbAutor = [[UILabel alloc] init];
-	lbAutor.text = @"sc_coder";	
+	//lbAutor.text = @"sc_coder";
+	
+	lbAutor.text = [[comment objectForKey: @"user"] objectForKey:@"user_login"];
 
 	[lbAutor setBackgroundColor:[UIColor clearColor]];
 	lbAutor.font = [UIFont fontWithName:@"Arial"size:12];
@@ -95,7 +109,28 @@
 	
 	
 	UILabel *lbTime = [[UILabel alloc] init];
-	lbTime.text = @"10:22";	
+	
+	
+	
+	//форматирование даты
+	
+	NSDateFormatter *formater = [[NSDateFormatter alloc] init];
+	[formater setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+	NSDate *date = [formater dateFromString:[comment objectForKey: @"comment_date"]];
+	
+	[formater setDateFormat:@"HH:mm"];
+	//NSString *strDate = [formater stringFromDate:date]; 
+	
+	
+	lbTime.text = [formater stringFromDate:date]; //[topic objectForKey: @"topic_date_add"];
+	[formater release];
+	
+	
+	
+
+	
+	
+	
 	[lbTime setBackgroundColor:[UIColor clearColor]];
 	lbTime.font = [UIFont fontWithName:@"Arial"size:12];
 	lbTime.textColor = [UIColor grayColor];
@@ -128,8 +163,9 @@
 									   reuseIdentifier:ControlRowIdentifier] autorelease];
     }
     
+	
     // Configure the cell...
-	cell.text = @"text";
+
  
 	
 	UIImage *image = [UIImage imageNamed:@"180-stickynote.png"];
@@ -141,7 +177,13 @@
 	[button setTitle: @"2" forState:UIControlStateNormal];
 	[button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
 	cell.accessoryView = button;
-	cell.textLabel.text =@"textLabel.text";
+	NSLog(@"%d",indexPath.section);
+	cell.lineBreakMode = UILineBreakModeWordWrap;
+
+	
+	cell.font = [UIFont fontWithName:@"Arial"size:12];
+	cell.textLabel.text = [[self.commentsCollection objectForKey:[self.keys objectAtIndex:indexPath.section]] objectForKey:@"comment_text"];
+	//@"textLabel.text";
 	
 	
     
@@ -215,7 +257,13 @@
 }
 
 - (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
+
+	[self.commentsCollection release];
+	[self.keys release];
+	self.commentsCollection = nil;
+	self.keys = nil;
+    
+	// Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 }
 

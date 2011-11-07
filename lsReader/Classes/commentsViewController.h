@@ -10,7 +10,15 @@
 
 
 @interface commentsViewController : UITableViewController {
+	NSString *tiopicId;
+	NSArray *keys;
+	NSDictionary *commentsCollection;
 
 }
+
+
+@property (nonatomic, retain) NSString *topicId;
+@property (nonatomic, retain) NSArray *keys;
+@property (nonatomic, retain) NSDictionary *commentsCollection;
 
 @end

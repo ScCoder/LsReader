@@ -243,11 +243,11 @@
 	NSDate *date = [formater dateFromString:[topic objectForKey: @"topic_date_add"]];
 	
 	[formater setDateFormat:@"dd.MM.YYYY HH:mm"];
-	NSString *strDate = [formater stringFromDate:date]; 
-	//[formater release];
+	//NSString *strDate = [formater stringFromDate:date]; 
+	
 	
 	cell.topic_date.text = [formater stringFromDate:date]; //[topic objectForKey: @"topic_date_add"];
-	
+	[formater release];
 	
 	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

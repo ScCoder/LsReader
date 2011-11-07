@@ -64,6 +64,8 @@ Communicator : NSObject {
 
 -(Boolean *) isLogedIn;
 
+-(NSDictionary *) commentsByTopicId:(NSString *) topic_id;
+
 -(void) saveContentToStorage;
 
 -(void) cacheImages:(NSString*) topicContent;
