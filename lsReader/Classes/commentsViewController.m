@@ -14,6 +14,8 @@
 @synthesize topicId;
 @synthesize keys;
 @synthesize commentsCollection;
+@synthesize commentParentId;
+@synthesize commentLevel;
 #pragma mark -
 #pragma mark View lifecycle
 
@@ -21,24 +23,72 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+	
+	
 	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
 	response = [[Communicator sharedCommunicator] commentsByTopicId:self.topicId];
-	NSLog(@"%@",response);
+	//NSLog(@"%@",response);
 	
 	self.commentsCollection = [[NSDictionary alloc] initWithDictionary:[response objectForKey:@"collection"]];
-	self.keys = [[NSArray alloc] initWithArray: [self.commentsCollection allKeys]];
-	NSLog(@"%@",self.keys);
-	NSLog(@"%@",self.commentsCollection);
+	
+	
+	//NSLog (@"cl = %d",[[self.commentsCollection objectForKey:[self.keys objectAtIndex: 1]] objectForKey:@"commnet_level" ]);
+	
+	NSSet *mySet = [self.commentsCollection keysOfEntriesPassingTest:^(id key, id obj, BOOL *stop) {
+		
+		//Если нулевой левел, то просто выбираем с уровнем ноль
+		// иначе сортируем по парент_ид
+		if ([self.commentLevel isEqualToNumber: [NSNumber numberWithInt: 0]]) {
+			
+		    if ([[obj objectForKey:@"comment_level"]  isEqualToNumber:self.commentLevel ]) 
+			{
+				return YES;
+			}
+		    else
+			{
+				return NO;
+			}
+						
+		}
+		else 
+		{
+			if ([obj objectForKey:@"comment_pid"] == (id)[NSNull null])
+			{
+				return NO;
+
+			}
+			else 
+			{
+				NSLog(@"pid = %@",[obj objectForKey:@"comment_pid"]);
+				if ([[obj objectForKey:@"comment_pid"] isEqualToString: self.commentParentId ]) {
+					return YES;
+				}
+				else {
+					return NO;
+				}
+			}
+			
+			
+		}
+	}	];
+					
+	//NSLog(@"myset = %d",[mySet count]);	
+	
+	self.keys = [mySet allObjects]; 
+	
+	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-
 /*
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+	 
+	
+	
 }
-*/
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -163,9 +213,23 @@
 									   reuseIdentifier:ControlRowIdentifier] autorelease];
     }
     
+    NSNumber *nextLevel = [NSNumber numberWithInt: [self.commentLevel intValue] + 1];
+	
+	//NSNumber *comment_pid = [NSNumber numberWithInt:
+							 
+	//						 : [self.keys objectAtIndex:indexPath.section]] ;
+	
+	NSSet *mySet = [self.commentsCollection keysOfEntriesPassingTest:^(id key, id obj, BOOL *stop) {
+		
+		if ( ([[obj objectForKey:@"comment_level"]  isEqualToNumber: nextLevel])
+			&& ([[obj objectForKey:@"comment_pid"] isEqualToString:[self.keys objectAtIndex:indexPath.section]])  )
+			return YES;
+		else
+		    return NO;
+	}	];
 	
     // Configure the cell...
-
+    NSString *childCount = [NSString stringWithFormat:@"%d",[mySet count]];
  
 	
 	UIImage *image = [UIImage imageNamed:@"180-stickynote.png"];
@@ -174,10 +238,10 @@
 	button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
 	
 	[button setBackgroundImage:image forState:UIControlStateNormal];
-	[button setTitle: @"2" forState:UIControlStateNormal];
+	[button setTitle: childCount forState:UIControlStateNormal];
 	[button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
 	cell.accessoryView = button;
-	NSLog(@"%d",indexPath.section);
+	
 	cell.lineBreakMode = UILineBreakModeWordWrap;
 
 	
@@ -235,6 +299,8 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	
     // Navigation logic may go here. Create and push another view controller.
     /*
     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -243,6 +309,25 @@
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
     */
+	
+	
+	commentsViewController *commentVC = [[commentsViewController alloc] initWithNibName:@"commentsViewController" bundle:nil];
+	
+	
+	commentVC.topicId = self.topicId;
+	
+	NSNumber *nextLevel = [NSNumber numberWithInt: [self.commentLevel intValue] + 1];
+	
+	commentVC.commentLevel = nextLevel;
+	commentVC.commentParentId = [self.keys objectAtIndex:indexPath.section];
+	
+	[self.navigationController pushViewController:commentVC animated:YES];
+	
+	[commentVC release];
+	
+	
+	
+	
 }
 
 

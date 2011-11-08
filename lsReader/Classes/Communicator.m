@@ -330,7 +330,7 @@ static Communicator * communicator =  NULL;
 -(NSDictionary *) commentsByTopicId:(NSString *) topic_id{
 	
 	NSString *tmpParams = [NSString stringWithFormat:
-	  @"id=%@&type=topic&fields=user[user_login],comment_date,comment_text,comment_level,comment_id,target_id,target_parent_id,target_type",topic_id];
+	  @"id=%@&type=topic&fields=user[user_login],comment_date,comment_text,comment_level,comment_id,comment_pid,target_id,target_parent_id,target_type",topic_id];
 	
 	NSDictionary *response = [self commandByModule:@"comment" site:self.siteURL method:@"list" params:tmpParams]; 
 	

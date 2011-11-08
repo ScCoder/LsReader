@@ -13,6 +13,9 @@
 	NSString *tiopicId;
 	NSArray *keys;
 	NSDictionary *commentsCollection;
+	NSString *commentParentId;
+	NSArray *childComentsCounts;
+	NSNumber *commentLevel;
 
 }
 
@@ -20,5 +23,11 @@
 @property (nonatomic, retain) NSString *topicId;
 @property (nonatomic, retain) NSArray *keys;
 @property (nonatomic, retain) NSDictionary *commentsCollection;
+@property (nonatomic, retain) NSString *commentParentId;
+@property (nonatomic, retain) NSArray *childComentsCounts;
+@property (nonatomic, retain) NSNumber *commentLevel;
+
+
+
 
 @end
