@@ -527,7 +527,7 @@
 	};
 	BE290887145C79CB00807F5C /* commentsViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {888, 606}}";
+			sepNavIntBoundsRect = "{{0, 0}, {888, 629}}";
 			sepNavSelRange = "{738, 12}";
 			sepNavVisRange = "{0, 807}";
 			sepNavWindowFrame = "{{38, 275}, {947, 757}}";
