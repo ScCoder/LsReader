@@ -16,6 +16,7 @@
 @synthesize commentsCollection;
 @synthesize commentParentId;
 @synthesize commentLevel;
+@synthesize level;
 #pragma mark -
 #pragma mark View lifecycle
 

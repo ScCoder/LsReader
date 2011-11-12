@@ -16,6 +16,7 @@
 	NSString *commentParentId;
 	NSArray *childComentsCounts;
 	NSNumber *commentLevel;
+	NSNumber *level;
 
 }
 
@@ -26,7 +27,7 @@
 @property (nonatomic, retain) NSString *commentParentId;
 @property (nonatomic, retain) NSArray *childComentsCounts;
 @property (nonatomic, retain) NSNumber *commentLevel;
-
+@property (nonatomic, retain) NSNumber *level;
 
 
 

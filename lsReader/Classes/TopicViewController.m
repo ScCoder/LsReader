@@ -296,7 +296,12 @@
 	
 		
 	commentVC.topicId = self.topicId;
-	commentVC.commentLevel = [NSNumber numberWithInt:0];
+	
+	NSNumber *nextLevel = [NSNumber numberWithInt: 0];
+	
+	commentVC.level = nextLevel;
+	
+	[commentVC setCommentLevel:nextLevel ];//= nextLevel;
 	
 	[self.navigationController pushViewController:commentVC animated:YES];
 	
