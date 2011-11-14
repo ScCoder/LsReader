@@ -17,6 +17,9 @@
 	NSArray *childComentsCounts;
 	NSNumber *commentLevel;
 	NSNumber *level;
+	NSMutableDictionary *comentsTexts;
+	UILabel *headerText;
+	NSString *headerTextString;
 
 }
 
@@ -28,6 +31,8 @@
 @property (nonatomic, retain) NSArray *childComentsCounts;
 @property (nonatomic, retain) NSNumber *commentLevel;
 @property (nonatomic, retain) NSNumber *level;
+@property (nonatomic, retain) IBOutlet UILabel *headerText;
+@property (nonatomic, retain) NSString *headerTextString;
 
 
 

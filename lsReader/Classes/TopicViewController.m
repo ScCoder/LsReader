@@ -299,6 +299,11 @@
 	
 	NSNumber *nextLevel = [NSNumber numberWithInt: 0];
 	
+	
+	
+	commentVC.headerTextString =  [topic_data objectForKey: @"topic_text" ];
+	
+	
 	commentVC.level = nextLevel;
 	
 	[commentVC setCommentLevel:nextLevel ];//= nextLevel;

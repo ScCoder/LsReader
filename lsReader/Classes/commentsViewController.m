@@ -17,6 +17,8 @@
 @synthesize commentParentId;
 @synthesize commentLevel;
 @synthesize level;
+@synthesize headerText;
+@synthesize headerTextString;
 #pragma mark -
 #pragma mark View lifecycle
 
@@ -24,8 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+	self.headerText.text = headerTextString;
 	
-	
+	comentsTexts = [[NSMutableDictionary alloc] initWithCapacity:1];
+		
 	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
 	response = [[Communicator sharedCommunicator] commentsByTopicId:self.topicId];
 	//NSLog(@"%@",response);
@@ -175,12 +179,7 @@
 	
 	lbTime.text = [formater stringFromDate:date]; //[topic objectForKey: @"topic_date_add"];
 	[formater release];
-	
-	
-	
 
-	
-	
 	
 	[lbTime setBackgroundColor:[UIColor clearColor]];
 	lbTime.font = [UIFont fontWithName:@"Arial"size:12];
@@ -202,6 +201,24 @@
 	return 25;
 
 }
+
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+   
+
+	NSString *cellText = [[self.commentsCollection objectForKey:[self.keys objectAtIndex:indexPath.section]] objectForKey:@"comment_text"];
+    UIFont *cellFont = [UIFont fontWithName:@"Arial" size:12];
+    CGSize constraintSize = CGSizeMake(320.0f, MAXFLOAT);
+    CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+	
+    return labelSize.height + 25;  
+	 
+	//return 400;
+}
+
+
+
+
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -237,19 +254,46 @@
 	
 	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 	button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
-	
+	button.tag = [mySet count]; 
 	[button setBackgroundImage:image forState:UIControlStateNormal];
 	[button setTitle: childCount forState:UIControlStateNormal];
-	[button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+	//[button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+	[button addTarget:self action:@selector(buttonTapped:event:) forControlEvents:UIControlEventTouchUpInside];
+
+	
+	
 	cell.accessoryView = button;
 	
-	cell.lineBreakMode = UILineBreakModeWordWrap;
+	//cell.lineBreakMode = UILineBreakModeWordWrap;
 
 	
 	cell.font = [UIFont fontWithName:@"Arial"size:12];
-	cell.textLabel.text = [[self.commentsCollection objectForKey:[self.keys objectAtIndex:indexPath.section]] objectForKey:@"comment_text"];
-	//@"textLabel.text";
 	
+
+	//cell.textLabel.text = [[self.commentsCollection objectForKey:[self.keys objectAtIndex:indexPath.section]] objectForKey:@"comment_text"];
+
+	
+	//Сохранение урезанных версий коментов
+	if (![comentsTexts objectForKey: [self.keys objectAtIndex:indexPath.section]]) {
+		
+		NSMutableString *str = [[NSMutableString alloc] initWithCapacity:10];
+		
+		[str appendString:[[self.commentsCollection objectForKey:[self.keys objectAtIndex:indexPath.section]] objectForKey:@"comment_text"]]; 	
+		
+		[[Communicator sharedCommunicator] cutHtmlTagsFromText: str];
+				
+		[comentsTexts setObject:str forKey:[self.keys objectAtIndex:indexPath.section]];
+		
+		[str release];
+	}
+	
+	cell.textLabel.text = [comentsTexts objectForKey: [self.keys objectAtIndex:indexPath.section]];
+	
+	cell.textLabel.lineBreakMode = UILineBreakModeWordWrap; 
+
+	[cell.textLabel setNumberOfLines:0];
+	
+	[cell.textLabel sizeToFit];
 	
     
     return cell;
@@ -299,6 +343,44 @@
 #pragma mark -
 #pragma mark Table view delegate
 
+- (void)buttonTapped:(id)sender event:(id)event
+{
+	if ( ((UIButton *)sender).tag == 0) {
+		
+		return;
+		
+	}
+	
+    CGPoint touchPosition = [[[event allTouches] anyObject] locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPosition];
+    if (indexPath != nil)
+    {
+	
+		commentsViewController *commentVC = [[commentsViewController alloc] initWithNibName:@"commentsViewController" bundle:nil];
+		
+		
+		commentVC.topicId = self.topicId;
+		
+		NSNumber *nextLevel = [NSNumber numberWithInt: [self.commentLevel intValue] + 1];
+		
+		
+		if ([comentsTexts objectForKey: [self.keys objectAtIndex:indexPath.section]]){
+			
+			commentVC.headerTextString = [comentsTexts objectForKey: [self.keys objectAtIndex:indexPath.section]]; 
+			
+		}
+		
+		commentVC.commentLevel = nextLevel;
+		commentVC.commentParentId = [self.keys objectAtIndex:indexPath.section];
+		
+		[self.navigationController pushViewController:commentVC animated:YES];
+		
+		[commentVC release];
+    }
+}
+
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	
@@ -311,7 +393,7 @@
     [detailViewController release];
     */
 	
-	
+	/*
 	commentsViewController *commentVC = [[commentsViewController alloc] initWithNibName:@"commentsViewController" bundle:nil];
 	
 	
@@ -326,7 +408,7 @@
 	
 	[commentVC release];
 	
-	
+	*/
 	
 	
 }
@@ -348,7 +430,8 @@
 	[self.keys release];
 	self.commentsCollection = nil;
 	self.keys = nil;
-    
+    [comentsTexts release];
+	comentsTexts = nil;
 	// Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 }
@@ -356,6 +439,7 @@
 
 - (void)dealloc {
     [super dealloc];
+	
 }
 
 

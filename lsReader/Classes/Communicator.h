@@ -70,5 +70,7 @@ Communicator : NSObject {
 
 -(void) cacheImages:(NSString*) topicContent;
 
+-(void) cutHtmlTagsFromText: (NSMutableString *) intext;
+
 
 @end

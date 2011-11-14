@@ -474,5 +474,27 @@ static Communicator * communicator =  NULL;
 		
 }
 
+-(void)cutHtmlTagsFromText: (NSMutableString *) intext
+{
+	
+	
+	NSError *error = NULL;
+	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern:@"<[^>]*>"             //@"</?([a-oq-z][^>]*|p[^>]+)>" // @"<img([^<]+)>" 
+																			options:NSRegularExpressionCaseInsensitive
+																			  error:&error];
+	
+    [regExp replaceMatchesInString:intext options:0 range:NSMakeRange(0,[intext length]) withTemplate:@""];
+	
+	
+	//if ([intext length] > 100) {
+		
+	//	[intext deleteCharactersInRange:NSMakeRange(100,[intext length]-100)];
+	//}
+	
+	
+
+}
+
+
 
 @end
