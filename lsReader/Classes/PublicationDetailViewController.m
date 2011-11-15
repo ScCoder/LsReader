@@ -27,6 +27,8 @@
 @synthesize showTypeSegControl;	
 @synthesize showTypeToolBar;
 
+@synthesize activityIndicator;
+
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -49,7 +51,10 @@
 	
 	current_page = 1;
 
+	[self.activityIndicator  setHidden:NO];
 	[self loadTopicsList];
+	[self.activityIndicator setHidden:YES];
+	
 	
 }
 
@@ -162,6 +167,9 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+	
+	
+	
 	
 	//Смена видимости контроллеров навгации
 	

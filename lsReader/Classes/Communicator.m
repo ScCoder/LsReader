@@ -154,8 +154,9 @@ static Communicator * communicator =  NULL;
 		
 		JSONDecoder *decoder = [JSONDecoder decoder];
 	
-		response = [[decoder parseJSONData:tmpContainer] copy];
+		//response = [[decoder parseJSONData:tmpContainer] copy];
 		
+		response = [decoder parseJSONData:tmpContainer];
 		
 		if (!response) {
 			NSLog(@"commandByModule ошибка response = nill");
@@ -494,6 +495,26 @@ static Communicator * communicator =  NULL;
 	
 
 }
+
+-(NSString *)cutHtmlTagsFromString: (NSString *) instring{
+	
+	NSError *error = NULL;
+	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern:@"<[^>]*>"             //@"</?([a-oq-z][^>]*|p[^>]+)>" // @"<img([^<]+)>" 
+																			options:NSRegularExpressionCaseInsensitive
+																			  error:&error];
+	
+	NSMutableString *str = [[NSMutableString alloc] initWithCapacity:10];
+	
+	[str appendString: instring]; 	
+	
+	
+	
+    [regExp replaceMatchesInString:str options:0 range:NSMakeRange(0,[str length]) withTemplate:@""];
+	
+	return [str autorelease];
+
+}
+
 
 
 

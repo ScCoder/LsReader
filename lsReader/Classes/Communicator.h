@@ -72,5 +72,6 @@ Communicator : NSObject {
 
 -(void) cutHtmlTagsFromText: (NSMutableString *) intext;
 
+-(NSString *)cutHtmlTagsFromString: (NSString *) instring;
 
 @end

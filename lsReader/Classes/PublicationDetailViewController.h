@@ -23,6 +23,7 @@
 	
 	UISegmentedControl *showTypeSegControl;	
 	UIToolbar *showTypeToolBar;
+	UIActivityIndicatorView *activityIndicator;
 
 
 
@@ -36,7 +37,7 @@
 @property (nonatomic, retain) IBOutlet UIToolbar *topPeriodToolBar;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *showTypeSegControl;	
 @property (nonatomic, retain) IBOutlet UIToolbar *showTypeToolBar;
-
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 
 

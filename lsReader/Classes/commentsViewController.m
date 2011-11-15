@@ -26,19 +26,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	self.headerText.text = headerTextString;
-	
-	comentsTexts = [[NSMutableDictionary alloc] initWithCapacity:1];
+
+	self.headerText.text = [[Communicator sharedCommunicator] cutHtmlTagsFromString:headerTextString];
 		
+
 	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
 	response = [[Communicator sharedCommunicator] commentsByTopicId:self.topicId];
 	//NSLog(@"%@",response);
 	
-	self.commentsCollection = [[NSDictionary alloc] initWithDictionary:[response objectForKey:@"collection"]];
-	
+	//self.commentsCollection = [[NSDictionary alloc] initWithDictionary:[response objectForKey:@"collection"]];
+	self.commentsCollection = [response objectForKey:@"collection"];
 	
 	//NSLog (@"cl = %d",[[self.commentsCollection objectForKey:[self.keys objectAtIndex: 1]] objectForKey:@"commnet_level" ]);
 	
+	//NSSet *mySet = [NSSet alloc];
 	NSSet *mySet = [self.commentsCollection keysOfEntriesPassingTest:^(id key, id obj, BOOL *stop) {
 		
 		//Если нулевой левел, то просто выбираем с уровнем ноль
@@ -79,7 +80,9 @@
 					
 	//NSLog(@"myset = %d",[mySet count]);	
 	
-	self.keys = [mySet allObjects]; 
+	self.keys = [mySet allObjects];
+		
+
 	
 	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -233,9 +236,6 @@
     
     NSNumber *nextLevel = [NSNumber numberWithInt: [self.commentLevel intValue] + 1];
 	
-	//NSNumber *comment_pid = [NSNumber numberWithInt:
-							 
-	//						 : [self.keys objectAtIndex:indexPath.section]] ;
 	
 	NSSet *mySet = [self.commentsCollection keysOfEntriesPassingTest:^(id key, id obj, BOOL *stop) {
 		
@@ -247,47 +247,35 @@
 	}	];
 	
     // Configure the cell...
+	
     NSString *childCount = [NSString stringWithFormat:@"%d",[mySet count]];
  
 	
 	UIImage *image = [UIImage imageNamed:@"180-stickynote.png"];
 	
 	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+	
 	button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
+	
 	button.tag = [mySet count]; 
+	
 	[button setBackgroundImage:image forState:UIControlStateNormal];
+	
 	[button setTitle: childCount forState:UIControlStateNormal];
-	//[button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+	
 	[button addTarget:self action:@selector(buttonTapped:event:) forControlEvents:UIControlEventTouchUpInside];
 
 	
-	
 	cell.accessoryView = button;
-	
-	//cell.lineBreakMode = UILineBreakModeWordWrap;
-
-	
+		
 	cell.font = [UIFont fontWithName:@"Arial"size:12];
 	
-
-	//cell.textLabel.text = [[self.commentsCollection objectForKey:[self.keys objectAtIndex:indexPath.section]] objectForKey:@"comment_text"];
-
+	NSDictionary *comment = [self.commentsCollection objectForKey:[self.keys objectAtIndex:indexPath.section]];
+		
+	NSString *str = [NSString stringWithString: [comment objectForKey:@"comment_text"]];
 	
-	//Сохранение урезанных версий коментов
-	if (![comentsTexts objectForKey: [self.keys objectAtIndex:indexPath.section]]) {
-		
-		NSMutableString *str = [[NSMutableString alloc] initWithCapacity:10];
-		
-		[str appendString:[[self.commentsCollection objectForKey:[self.keys objectAtIndex:indexPath.section]] objectForKey:@"comment_text"]]; 	
-		
-		[[Communicator sharedCommunicator] cutHtmlTagsFromText: str];
-				
-		[comentsTexts setObject:str forKey:[self.keys objectAtIndex:indexPath.section]];
-		
-		[str release];
-	}
 	
-	cell.textLabel.text = [comentsTexts objectForKey: [self.keys objectAtIndex:indexPath.section]];
+	cell.textLabel.text = [[Communicator sharedCommunicator] cutHtmlTagsFromString:str];
 	
 	cell.textLabel.lineBreakMode = UILineBreakModeWordWrap; 
 
@@ -363,14 +351,13 @@
 		
 		NSNumber *nextLevel = [NSNumber numberWithInt: [self.commentLevel intValue] + 1];
 		
+		NSString *str = [NSString stringWithString:
+						 [[self.commentsCollection objectForKey:[self.keys objectAtIndex:indexPath.section]] objectForKey:@"comment_text"]];
 		
-		if ([comentsTexts objectForKey: [self.keys objectAtIndex:indexPath.section]]){
-			
-			commentVC.headerTextString = [comentsTexts objectForKey: [self.keys objectAtIndex:indexPath.section]]; 
-			
-		}
+		commentVC.headerTextString = str;
 		
 		commentVC.commentLevel = nextLevel;
+		
 		commentVC.commentParentId = [self.keys objectAtIndex:indexPath.section];
 		
 		[self.navigationController pushViewController:commentVC animated:YES];
@@ -430,8 +417,6 @@
 	[self.keys release];
 	self.commentsCollection = nil;
 	self.keys = nil;
-    [comentsTexts release];
-	comentsTexts = nil;
 	// Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 }

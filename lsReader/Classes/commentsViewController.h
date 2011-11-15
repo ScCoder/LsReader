@@ -17,7 +17,6 @@
 	NSArray *childComentsCounts;
 	NSNumber *commentLevel;
 	NSNumber *level;
-	NSMutableDictionary *comentsTexts;
 	UILabel *headerText;
 	NSString *headerTextString;
 

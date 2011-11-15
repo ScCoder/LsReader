@@ -73,6 +73,8 @@
 	[self.autorLabel setTitle:[(NSDictionary *)[topic_data objectForKey: @"user"] objectForKey:@"user_login"]];
 		
 	
+	//[topic_data release];
+	
 	if ([Communicator sharedCommunicator].showPics) {
 	
 		[self changeImageNamesToCashed:topicContent];
@@ -340,15 +342,19 @@
 		
 		NSString* url = [topicContent substringWithRange:[match rangeAtIndex:1]]; 
 				
-		NSMutableString *imgFileExt = [[NSMutableString alloc] initWithCapacity:4];
+		NSString *imgFileExt;//= [[NSMutableString alloc] initWithCapacity:4];
 		
 		if ([url rangeOfString:@".png"].location > 0){
+			
+
+
 			
 			imgFileExt = @"png";
 			
 		} else if ([url rangeOfString:@".jpg"].location > 0) {
 			
-			imgFileExt = @"jpg";
+				imgFileExt = @"jpg";
+	
 		}else {
 			NSLog(@"Error Unsupprted image file format, file url = %@",url );
 			return;
@@ -357,9 +363,11 @@
 		
         NSString *cacheImageFileName = [NSString stringWithFormat:@"img_%d.%@",[url hash],imgFileExt];
 		
-		[imgFileExt release];
+		//[imgFileExt release];
 		
 		[topicContent replaceOccurrencesOfString:url withString: cacheImageFileName options:NSLiteralSearch range:NSMakeRange(0, [topicContent length])];
+		
+		//[cacheImageFileName release];
 	}
 	
     //[regExp replaceMatchesInString:content options:0 range:NSMakeRange(0,[content length]) withTemplate:@"<a href = $1> picture </a>"];
@@ -384,14 +392,18 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
+	[voteSegControl release];
+	//[topic_data release];
+	[webView release];
+	
+
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
 
 - (void)dealloc {
-	[voteSegControl release];
-	[webView release];
+
     [super dealloc];
 }
 
