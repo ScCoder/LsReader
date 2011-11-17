@@ -275,7 +275,7 @@
 	NSString *str = [NSString stringWithString: [comment objectForKey:@"comment_text"]];
 	
 	
-	cell.textLabel.text = [[Communicator sharedCommunicator] cutHtmlTagsFromString:str];
+	cell.textLabel.text = [SharedCommunicator cutHtmlTagsFromString:str];
 	
 	cell.textLabel.lineBreakMode = UILineBreakModeWordWrap; 
 

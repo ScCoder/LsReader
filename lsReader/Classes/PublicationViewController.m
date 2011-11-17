@@ -20,11 +20,14 @@
 @synthesize publicTypes;
 @synthesize activityIndicator;
 @synthesize parentNav;
+
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+	if (self) {
         // Custom initialization.
     }
     return self;
@@ -32,8 +35,10 @@
 
 
 // Customize the number of rows in the table view.
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.publicTypes count];
+    
+	return [self.publicTypes count];
 	
 }
 
@@ -48,34 +53,26 @@
 	
 	UIImage *image = [UIImage imageNamed:
 					  [[Communicator sharedCommunicator].publicTypesIcons objectAtIndex:indexPath.row]];
-	//[UIImage imageNamed:@"Star-full-32.png"];
-	
+		
 	cell.textLabel.text = [self.publicTypes objectAtIndex:indexPath.row];
-	
-	
+		
     cell.imageView.image = image;
+	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	
-	
+		
 	return cell;
 	
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-	NSLog(@" DidSelect: ");	
 	
 	PublicationDetailViewController *pdVC = [[PublicationDetailViewController alloc] initWithNibName:@"PublicationDetailViewController" bundle:nil];
 	
 	pdVC.publication_type = [self.publicTypes objectAtIndex:indexPath.row];
 	
-	//[pdVC autorelease];
-	
-	// TODO: Здесь возможно утечка, нужно подумать где сделать релеазе для pdVC
-	[self.navigationController pushViewController:[pdVC retain] animated:YES];
+	[self.navigationController pushViewController:pdVC animated:YES];
 	
 	[pdVC release];
-	
 	
 }
 
@@ -89,22 +86,21 @@
 	[super viewDidLoad];
 	
 	self.title = @"Публикации";
-	
-	
+		
 	self.publicTypes = [Communicator sharedCommunicator].publicTypes;  
 	
 }
 
 - (void) viewWillAppear:(BOOL)animated{
-	
-	
+		
   [self.navigationController setNavigationBarHidden:YES];	
+  
   lsReaderAppDelegate *appDeligate;
  
   appDeligate = (lsReaderAppDelegate *) [[UIApplication sharedApplication] delegate];
+  
   [appDeligate.navigationController setNavigationBarHidden:NO];
 	
- 
 }
 
 /*

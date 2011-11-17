@@ -21,9 +21,7 @@
 	UITextField *countPerPage;
 	
 	UISwitch *showPics;
-	
 	UIButton *applyButton;
-	
 	
 	NSMutableDictionary *siteParams;
 	NSString *key;

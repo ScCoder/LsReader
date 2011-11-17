@@ -28,8 +28,14 @@
 
 #define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
+#define SharedCommunicator [Communicator sharedCommunicator] 
 
 
+#define MSG_CONNECTION_OK @"Соединие установленно успешно!!"
+#define MSG_CONNECTION_FAILED @"Ошибка!!! Проверьте введенные данные..."
+
+
+#define PUB_DETAIL_CELL_HEIGHT 129.0f
 //extern const 
 /*
  

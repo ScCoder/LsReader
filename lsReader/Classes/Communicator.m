@@ -507,8 +507,6 @@ static Communicator * communicator =  NULL;
 	
 	[str appendString: instring]; 	
 	
-	
-	
     [regExp replaceMatchesInString:str options:0 range:NSMakeRange(0,[str length]) withTemplate:@""];
 	
 	return [str autorelease];

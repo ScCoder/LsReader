@@ -116,30 +116,25 @@
 	
 	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
 
-	
 	if ([self.publication_type isEqualToString: PT_TOP]) {
 			
-		NSString *period = [[Communicator sharedCommunicator].publicationPeriods 
-							objectAtIndex:topPeriodSegControl.selectedSegmentIndex];
+		NSString *period = [ SharedCommunicator.publicationPeriods objectAtIndex: topPeriodSegControl.selectedSegmentIndex];
 		
-		response = [[Communicator sharedCommunicator] topPublicationsByPeriod:period];
+		response = [SharedCommunicator topPublicationsByPeriod:period];
 				   
 				
 	}
 	else if ( [self.publication_type isEqualToString: PT_NEW]){
 		
-		response = [[Communicator sharedCommunicator] newPublications];
+		response = [SharedCommunicator newPublications];
 		
 	}
 	else if ( [self.publication_type isEqualToString: PT_PERSONAL]){
 		
 		
-		NSString *showType = [[Communicator sharedCommunicator].publicationShowType 
-							objectAtIndex:showTypeSegControl.selectedSegmentIndex];
+		NSString *showType = [SharedCommunicator.publicationShowType objectAtIndex: showTypeSegControl.selectedSegmentIndex];
 		
-		
-		
-	    response = [[Communicator sharedCommunicator] personalPublications:showType page:current_page];
+	    response = [SharedCommunicator personalPublications:showType page: current_page];
 		
 	}
 	else {
@@ -150,7 +145,6 @@
 	
 	self.topics_collection = [[NSMutableDictionary alloc] initWithCapacity:1];
 	
-	topicTitles = [[NSMutableDictionary alloc] initWithCapacity:1];
 	
 	[self.topics_collection addEntriesFromDictionary: [response objectForKey:@"collection"]];	
 	
@@ -167,10 +161,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-	
-	
-	
-	
+
 	//Смена видимости контроллеров навгации
 	
 	lsReaderAppDelegate *appDeligate;
@@ -196,10 +187,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-	CGFloat cellHeight = 129.0f;
-      
-	return cellHeight;
-	
+	return PUB_DETAIL_CELL_HEIGHT;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -220,43 +208,31 @@
 		
 	NSMutableDictionary *topic = [self.topics_collection objectForKey: [self.keys objectAtIndex:indexPath.row]];
 		
-	//Сохранение урезанных версий описания
-	if (![topicTitles objectForKey: [self.keys objectAtIndex:indexPath.row]]) {
-		
-		NSMutableString *str = [[NSMutableString alloc] initWithCapacity:10];
-		
-		[str appendString:[topic objectForKey: @"topic_text_short"]]; 	
-		
-		[self cutHtmlTagsFromText: str];
-		
-		[topicTitles setObject:str forKey:[self.keys objectAtIndex:indexPath.row]];
-		
-		[str release];
-	}
-	
-	
 	cell.topic_title.text = [topic objectForKey: @"topic_title"] ;
 	    
 	cell.blog_title.text = [[topic objectForKey:@"blog"] objectForKey:@"blog_title"];
 	
-    cell.topic_description.text = [topicTitles objectForKey: [self.keys objectAtIndex:indexPath.row]];
-	
 	cell.topic_author.text =  [[topic objectForKey:@"user"] objectForKey:@"user_login"];  
+	
+	
+	NSString *str = [NSString stringWithString: [topic objectForKey: @"topic_text_short"]];
+	
+	cell.topic_description.text = [SharedCommunicator cutHtmlTagsFromString:str];
 	
 	
 	//форматирование даты
 	
 	NSDateFormatter *formater = [[NSDateFormatter alloc] init];
+	
 	[formater setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+	
 	NSDate *date = [formater dateFromString:[topic objectForKey: @"topic_date_add"]];
 	
 	[formater setDateFormat:@"dd.MM.YYYY HH:mm"];
-	//NSString *strDate = [formater stringFromDate:date]; 
+			
+	cell.topic_date.text = [formater stringFromDate:date];
 	
-	
-	cell.topic_date.text = [formater stringFromDate:date]; //[topic objectForKey: @"topic_date_add"];
 	[formater release];
-	
 	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
@@ -313,23 +289,6 @@
 	[self.myTable scrollsToTop];	
 }
 
--(void)cutHtmlTagsFromText: (NSMutableString *) intext
-{
-
-	NSError *error = NULL;
-	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern:@"<[^>]*>"             //@"</?([a-oq-z][^>]*|p[^>]+)>" // @"<img([^<]+)>" 
-																			options:NSRegularExpressionCaseInsensitive
-																			  error:&error];
-	
-    [regExp replaceMatchesInString:intext options:0 range:NSMakeRange(0,[intext length]) withTemplate:@""];
-	
-
-	if ([intext length] > 100) {
-		
-		[intext deleteCharactersInRange:NSMakeRange(100,[intext length]-100)];
-	}
-								   
-}
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -348,9 +307,7 @@
 
 - (void)viewDidUnload {
 	[self.topics_collection release];
-	[topicTitles release];
-	self.topics_collection = nil;
-	topicTitles = nil;
+	self.topics_collection = nil;	
     [super viewDidUnload];
 	
 

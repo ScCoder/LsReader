@@ -14,7 +14,6 @@
 	UITableView *myTable;
 	NSMutableArray *keys;
 	NSMutableDictionary *topics_collection;
-	NSMutableDictionary *topicTitles;
 	NSString *publication_type;
 	NSInteger *current_page;
 	UIButton *addNextButton;
@@ -42,8 +41,6 @@
 
 
 -(IBAction) addNext;
-
--(void)cutHtmlTagsFromText: (NSMutableString *) intext;
 
 -(IBAction)loadTopicsList;
 

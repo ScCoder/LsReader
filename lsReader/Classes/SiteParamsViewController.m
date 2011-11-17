@@ -86,8 +86,6 @@
 		
 	}
 	
-
-	//NSLog(@" %@",showPics.on);
 	
 	NSDictionary *siteVals = [NSDictionary dictionaryWithObjectsAndKeys:
 							  siteURL.text,SITE_URL,
@@ -114,7 +112,7 @@
 	
 	[self.siteParams writeToFile:appDeligate.settingsFilePath atomically:YES];
 
-	[[Communicator sharedCommunicator] cleanCache];
+	[SharedCommunicator cleanCache];
 	
 	[self.navigationController popViewControllerAnimated:YES];
 	
@@ -124,20 +122,20 @@
 -(IBAction)testConnection{
 	
 	
-	BOOL * connOk = [[Communicator sharedCommunicator] checkConnectionBySite:siteURL.text
+	BOOL * connOk = [SharedCommunicator checkConnectionBySite:siteURL.text
 													  login:siteLogin.text
 												   password:sitePasswd.text];
 	
 	NSString *msg;
 	
-	if (connOk) {
+	if (connOk) {		
 		
-		msg = @"Соединие установленно успешно!!";
+		msg = MSG_CONNECTION_OK;
 		
 	}
 	else {
 		
-		msg = @"Ошибка!!! Проверьте введенные данные...";
+		msg = MSG_CONNECTION_FAILED;
 		
 	}
 

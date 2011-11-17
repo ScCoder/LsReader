@@ -1,8 +1,0 @@
-/Users/sergejusov/github/LsReader/lsReader/Classes/commentsViewController.m: In function '-[commentsViewController tableView:viewForFooterInSection:]':
-/Users/sergejusov/github/LsReader/lsReader/Classes/commentsViewController.m:144: warning: incompatible Objective-C types initializing 'struct UIView *', expected 'struct NSString *'
-/Users/sergejusov/github/LsReader/lsReader/Classes/commentsViewController.m:197: warning: incompatible Objective-C types returning 'struct UIView *', expected 'struct NSString *'
-/Users/sergejusov/github/LsReader/lsReader/Classes/commentsViewController.m: In function '-[commentsViewController tableView:cellForRowAtIndexPath:]':
-/Users/sergejusov/github/LsReader/lsReader/Classes/commentsViewController.m:271: warning: 'setFont:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:213)
-/Users/sergejusov/github/LsReader/lsReader/Classes/commentsViewController.m: At top level:
-/Users/sergejusov/github/LsReader/lsReader/Classes/commentsViewController.m:431: warning: property 'childComentsCounts' requires method '-childComentsCounts' to be defined - use @synthesize, @dynamic or provide a method implementation
-/Users/sergejusov/github/LsReader/lsReader/Classes/commentsViewController.m:431: warning: property 'childComentsCounts' requires the method 'setChildComentsCounts:' to be defined - use @synthesize, @dynamic or provide a method implementation
