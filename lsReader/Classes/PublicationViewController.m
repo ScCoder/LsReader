@@ -52,7 +52,7 @@
     }
 	
 	UIImage *image = [UIImage imageNamed:
-					  [[Communicator sharedCommunicator].publicTypesIcons objectAtIndex:indexPath.row]];
+					  [SharedCommunicator.publicTypesIcons objectAtIndex:indexPath.row]];
 		
 	cell.textLabel.text = [self.publicTypes objectAtIndex:indexPath.row];
 		
@@ -122,11 +122,12 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	publicTypes = nil;
 }
 
 
 - (void)dealloc {
-    [self.publicTypes release];
+    [publicTypes release];
 	[super dealloc];
 	
 }

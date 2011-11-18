@@ -26,13 +26,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
+	NSLog(@"start comments");
 	self.headerText.text = [[Communicator sharedCommunicator] cutHtmlTagsFromString:headerTextString];
 		
 
 	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
 	response = [[Communicator sharedCommunicator] commentsByTopicId:self.topicId];
-	//NSLog(@"%@",response);
+	NSLog(@"%@",response);
 	
 	//self.commentsCollection = [[NSDictionary alloc] initWithDictionary:[response objectForKey:@"collection"]];
 	self.commentsCollection = [response objectForKey:@"collection"];
@@ -412,17 +412,18 @@
 }
 
 - (void)viewDidUnload {
-
-	[self.commentsCollection release];
-	[self.keys release];
-	self.commentsCollection = nil;
-	self.keys = nil;
 	// Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
+	commentsCollection = nil;
+	keys = nil;
 }
 
 
 - (void)dealloc {
+	
+	[keys release];
+	[commentsCollection release];
+	
     [super dealloc];
 	
 }

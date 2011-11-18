@@ -17,8 +17,8 @@
 
 
 @synthesize myTable;
-@synthesize keys;
-@synthesize topics_collection;
+//@synthesize keys;
+//@synthesize topics_collection;
 @synthesize publication_type;
 @synthesize addNextButton;
 @synthesize topPeriodSegControl;
@@ -51,8 +51,14 @@
 	
 	current_page = 1;
 
+	topics_collection = [[NSMutableDictionary alloc] initWithCapacity:10];	
+	
 	[self.activityIndicator  setHidden:NO];
+	
+	keys = [[NSMutableArray alloc] initWithCapacity:10];
+	
 	[self loadTopicsList];
+	
 	[self.activityIndicator setHidden:YES];
 	
 	
@@ -114,7 +120,7 @@
 
    // Получение данных
 	
-	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil] ;
+	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil]  ;
 
 	if ([self.publication_type isEqualToString: PT_TOP]) {
 			
@@ -137,23 +143,50 @@
 	    response = [SharedCommunicator personalPublications:showType page: current_page];
 		
 	}
-	else {
-		NSLog(@"other");
-	}
+//	
+//	else {
+//		NSLog(@"other");
+//	}
 	
 	
 	
-	self.topics_collection = [[NSMutableDictionary alloc] initWithCapacity:1];
+	//self.topics_collection = [[NSMutableDictionary alloc] initWithCapacity:1];
 	
 	
-	[self.topics_collection addEntriesFromDictionary: [response objectForKey:@"collection"]];	
+	[topics_collection addEntriesFromDictionary: [[response objectForKey:@"collection"]retain ]];	
+	
+	//[response release];
 	
 	
+	//NSMutableArray *tmpKeys = nil;
+	
+	//[keys removeAllObjects];
+	[keys addObjectsFromArray:[topics_collection allKeys]]; 
+	
+	
+	[keys sortUsingSelector:@selector(compare:) ];	
+	
+	[[ keys reverseObjectEnumerator] allObjects];
+	
+	//[keys removeAllObjects];
+	//[keys addObjectsFromArray:[[ tmpKeys reverseObjectEnumerator] allObjects]];
+	
+	
+	
+	
+	//[tmpKeys release];
+	
+	
+	
+	/*
 	self.keys = [NSMutableArray arrayWithArray: [topics_collection allKeys]];	
 	
 	[self.keys sortUsingSelector:@selector(compare:) ];	
 	
+
 	self.keys = [[ self.keys reverseObjectEnumerator] allObjects];
+	*/
+
 	
 	[self.myTable reloadData];
 	
@@ -206,7 +239,7 @@
 	}
 	
 		
-	NSMutableDictionary *topic = [self.topics_collection objectForKey: [self.keys objectAtIndex:indexPath.row]];
+	NSMutableDictionary *topic = [topics_collection objectForKey: [keys objectAtIndex:indexPath.row]];
 		
 	cell.topic_title.text = [topic objectForKey: @"topic_title"] ;
 	    
@@ -250,10 +283,11 @@
 	
 	TopicViewController *topicVC = [[TopicViewController alloc] initWithNibName:@"TopicViewController" bundle:nil];
 		
-	NSDictionary *topic = [self.topics_collection objectForKey: [self.keys objectAtIndex:indexPath.row]];
+	NSDictionary *topic = [topics_collection objectForKey: [keys objectAtIndex:indexPath.row]];
 
     NSString *topic_id =  [topic objectForKey:@"topic_id"];
 
+	
 	topicVC.topicId = topic_id;
 	
 	[self.navigationController pushViewController:topicVC animated:YES];
@@ -264,28 +298,12 @@
 }
 
 -(IBAction) addNext{
-
-	//TODO Сделать что бы добавлялись из нужного метода зависит от pubType( персональные, новые и т.п.)
+	
+	
 	current_page++;
 	
-	NSDictionary *response;
+	[self loadTopicsList];
 
-	response = [[Communicator sharedCommunicator] personalPublications:@"good" page:current_page];
-	
-	
-	[self.topics_collection addEntriesFromDictionary: [response objectForKey:@"collection"]];
-	
-
-	
-    self.keys = [NSMutableArray arrayWithArray: [topics_collection allKeys]];	
-	
-	[self.keys sortUsingSelector:@selector(compare:)];
-	
-	self.keys = [[ self.keys reverseObjectEnumerator] allObjects];
-	
-	
-	[self.myTable reloadData];	
-	
 	[self.myTable scrollsToTop];	
 }
 
@@ -306,8 +324,9 @@
 }
 
 - (void)viewDidUnload {
-	[self.topics_collection release];
-	self.topics_collection = nil;	
+	
+	topics_collection = nil;
+	keys = nil;
     [super viewDidUnload];
 	
 
@@ -317,6 +336,9 @@
 
 
 - (void)dealloc {
+	
+	[topics_collection release];
+	[keys release];
     [super dealloc];
 }
 

@@ -28,8 +28,8 @@
 
 }
 @property (nonatomic, retain) IBOutlet UITableView *myTable;
-@property (nonatomic, retain) NSMutableArray *keys;
-@property (nonatomic, retain) NSMutableDictionary *topics_collection;
+//@property (nonatomic, retain) NSMutableArray *keys;
+//@property (nonatomic, retain) NSMutableDictionary *topics_collection;
 @property (nonatomic, retain) NSString *publication_type;
 @property (nonatomic, retain) IBOutlet UIButton *addNextButton;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *topPeriodSegControl;

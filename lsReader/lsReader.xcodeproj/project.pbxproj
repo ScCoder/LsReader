@@ -47,6 +47,7 @@
 		BE166A9F14591DB80005EDAC /* 162-receipt.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A8514591DB80005EDAC /* 162-receipt.png */; };
 		BE166AA014591DB80005EDAC /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A8614591DB80005EDAC /* 179-notepad.png */; };
 		BE166AA114591DB80005EDAC /* 184-warning.png in Resources */ = {isa = PBXBuildFile; fileRef = BE166A8714591DB80005EDAC /* 184-warning.png */; };
+		BE1D40401474C34B00CF9D78 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE1D403F1474C34B00CF9D78 /* Settings.bundle */; };
 		BE29088A145C79CB00807F5C /* commentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE290888145C79CB00807F5C /* commentsViewController.m */; };
 		BE29088B145C79CC00807F5C /* commentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE290889145C79CB00807F5C /* commentsViewController.xib */; };
 		BE2909B8145D7A4E00807F5C /* 08-chat.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2909B7145D7A4E00807F5C /* 08-chat.png */; };
@@ -121,6 +122,7 @@
 		BE166A8514591DB80005EDAC /* 162-receipt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "162-receipt.png"; path = "../icons/162-receipt.png"; sourceTree = SOURCE_ROOT; };
 		BE166A8614591DB80005EDAC /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "179-notepad.png"; path = "../icons/179-notepad.png"; sourceTree = SOURCE_ROOT; };
 		BE166A8714591DB80005EDAC /* 184-warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "184-warning.png"; path = "../icons/184-warning.png"; sourceTree = SOURCE_ROOT; };
+		BE1D403F1474C34B00CF9D78 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BE290887145C79CB00807F5C /* commentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commentsViewController.h; sourceTree = "<group>"; };
 		BE290888145C79CB00807F5C /* commentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = commentsViewController.m; sourceTree = "<group>"; };
 		BE290889145C79CB00807F5C /* commentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = commentsViewController.xib; path = Classes/commentsViewController.xib; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				BE290888145C79CB00807F5C /* commentsViewController.m */,
 				BE290B681460323100807F5C /* PubDetailCell.h */,
 				BE290B691460323100807F5C /* PubDetailCell.m */,
+				BE1D403F1474C34B00CF9D78 /* Settings.bundle */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				BE2909B8145D7A4E00807F5C /* 08-chat.png in Resources */,
 				BE2909C0145D7AE200807F5C /* 180-stickynote.png in Resources */,
 				BE290B6C1460323100807F5C /* PubDetailCell.xib in Resources */,
+				BE1D40401474C34B00CF9D78 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

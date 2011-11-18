@@ -22,6 +22,7 @@ Communicator : NSObject {
 	NSArray *publicTypes;
 	NSArray *publicTypesIcons;
 
+
 }
 
 @property (nonatomic, retain) NSString *siteURL;

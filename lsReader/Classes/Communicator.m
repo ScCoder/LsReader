@@ -44,6 +44,7 @@ static Communicator * communicator =  NULL;
 										 ,@"81-dashboard.png",nil];
 		
 		
+		
 	}
 	return communicator;
 }
@@ -110,7 +111,104 @@ static Communicator * communicator =  NULL;
 	
 }
 
+/*
 
+-(NSDictionary *)commandByModule:(NSString*)module site:(NSString*)site  method:(NSString*)method params:(NSString*)params
+{
+	
+	
+	UIApplication *app = [UIApplication sharedApplication];
+	
+	app.networkActivityIndicatorVisible = YES;
+	
+	
+	NSString *api_command = [NSString stringWithFormat:@"http://%@/api/%@/%@/?%@&response_type=json",
+							 site,module,method,params];
+	
+	NSLog(@"api_comand=%@", api_command);
+	
+	
+	
+	
+	
+	
+	
+	
+
+		
+		NSURL *url = [NSURL URLWithString:api_command];
+	
+		NSDictionary *response;
+
+	
+	
+		NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad
+											 timeoutInterval:10];
+		
+		
+		
+		//NSURLRequest *request = [NSURLRequest requestWithURL:url];
+		
+		NSData *tmpContainer = [NSURLConnection sendSynchronousRequest:request 
+													 returningResponse:nil 
+																 error:nil];
+		
+		if (!tmpContainer) {
+			
+			NSLog(@"commandByModule ошибка tmpContainer = nill");
+			app.networkActivityIndicatorVisible = NO;
+			return nil;
+		}
+		
+		
+		JSONDecoder *decoder = [JSONDecoder decoder];
+		
+		//response = [[decoder parseJSONData:tmpContainer] copy];
+		
+		response = [decoder parseJSONData:tmpContainer];
+		
+		if (!response) {
+			NSLog(@"commandByModule ошибка response = nill");
+			app.networkActivityIndicatorVisible = NO;
+			return nil;
+		}
+		
+		
+		if (![response objectForKey:@"response"]) {
+			
+			if ([response objectForKey:@"bStateError"]) {
+				
+				// Ошибка 
+				NSLog(@"bStateError = %@",[response objectForKey:@"bStateError"]);
+				NSLog(@"sMSG = %@", [response objectForKey:@"sMsg"]);
+				NSLog(@"sMsgTitle = %@", [response objectForKey:@"sMsgTitle"]);
+				
+			} else {
+				
+				NSLog(@"Неизвестная ошибка(Нет response в ответе) текущий ответ = @%",response);
+				
+			}
+			
+		} else {
+		
+		
+
+	
+		    response = [response objectForKey:@"response"];		
+
+	        if (self.showPics&&[module isEqualToString: @"topic"]&&[method isEqualToString: @"read"]) {
+	
+	            [self cacheImages : [response objectForKey: @"topic_text" ]];
+	     }
+		}
+
+	app.networkActivityIndicatorVisible = NO;
+	
+	return response;
+	
+}
+*/
+// Старая версия перед пробое cachePolicy
 -(NSDictionary *)commandByModule:(NSString*)module site:(NSString*)site  method:(NSString*)method params:(NSString*)params
 {
 		
@@ -129,7 +227,10 @@ static Communicator * communicator =  NULL;
 	// Пробуем взять из кеша 
 	
 	NSDictionary *response = [self.ls_cache objectForKey:api_command];
+	
+	//NSDictionary *response = nil ;// [self.ls_cache objectForKey:api_command];
 
+	
 	
 	// Если нет в кеше то берем с сайта
 	if (!response) {
@@ -138,6 +239,11 @@ static Communicator * communicator =  NULL;
 	
 		NSURL *url = [NSURL URLWithString:api_command];
 	
+		//NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad
+		//									 timeoutInterval:900];
+								 
+						 
+								 
 		NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	
 		NSData *tmpContainer = [NSURLConnection sendSynchronousRequest:request 
@@ -153,8 +259,6 @@ static Communicator * communicator =  NULL;
 		
 		
 		JSONDecoder *decoder = [JSONDecoder decoder];
-	
-		//response = [[decoder parseJSONData:tmpContainer] copy];
 		
 		response = [decoder parseJSONData:tmpContainer];
 		
@@ -195,7 +299,7 @@ static Communicator * communicator =  NULL;
 			[self.ls_cache setObject:response forKey:api_command];
 			
 			NSLog(@"put to cache ok!");
-			//NSLog(@"cache count =%d",[self.ls_cache count]);			
+			NSLog(@"cache count =%d",[self.ls_cache count]);			
 		   
 		}
 		
@@ -206,6 +310,7 @@ static Communicator * communicator =  NULL;
 	return response;
 			
 }
+//*/
 
 -(Boolean *)checkConnectionBySite:(NSString*)site  login:(NSString*)login password:(NSString*)password{
 	
@@ -264,7 +369,7 @@ static Communicator * communicator =  NULL;
 	
 	NSString *tmpParams = [NSString stringWithFormat:@"fields=%@",FIELDS_FILTER];
 	
-	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"new" params:tmpParams]; 
+	NSDictionary *response = [ [self commandByModule:@"topic" site:self.siteURL method:@"new" params:tmpParams] retain]; 
 	
 	NSString *tmp = [response objectForKey:@"count"];
 	
@@ -277,7 +382,7 @@ static Communicator * communicator =  NULL;
 	 }
 	 else {
 	 
-		 return response;
+		 return response ;
 	 }
 	
 }
@@ -513,6 +618,17 @@ static Communicator * communicator =  NULL;
 
 }
 
+-(void) testCache{
+	
+	
+	
+	NSURLCache *sharedCache = 
+	[[NSURLCache alloc] initWithMemoryCapacity:10 * 1000000 
+								  diskCapacity:10 * 1000000 
+									  diskPath:self.casheFilePath];
+	[NSURLCache setSharedURLCache:sharedCache];
+	[sharedCache release];
+}
 
 
 
