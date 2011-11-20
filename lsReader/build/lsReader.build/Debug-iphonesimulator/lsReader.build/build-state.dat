@@ -492,9 +492,9 @@ s1880
 i<Foundation/Foundation.h>
 
 N/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m
-c000000004EC88174000000000000316E
-t1321763188
-s12654
+c000000004EC882280000000000003116
+t1321763368
+s12566
 i"Communicator.h"
 i"JSONKit.h"
 i"Consts.h"

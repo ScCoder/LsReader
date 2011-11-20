@@ -69,6 +69,7 @@
 		BE81E70C14134BF80097D271 /* S7ViewSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = BE81E70B14134BF80097D271 /* S7ViewSlider.m */; };
 		BE867EC9141CEC03001DAD18 /* Communicator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE867EC8141CEC03001DAD18 /* Communicator.m */; };
 		BE8984231417AE3300065DCB /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8984221417AE3300065DCB /* JSONKit.m */; };
+		BE9A84691478C646004C2334 /* SDURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9A84681478C646004C2334 /* SDURLCache.m */; };
 		BE9F67471430D2850038D619 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9F67451430D2850038D619 /* TopicViewController.m */; };
 		BE9F67481430D2850038D619 /* TopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9F67461430D2850038D619 /* TopicViewController.xib */; };
 		BEC2BE1E142F363F00244915 /* checkmarkControllerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BEC2BE1D142F363F00244915 /* checkmarkControllerIcon.png */; };
@@ -156,6 +157,8 @@
 		BE8984211417AE3300065DCB /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = "../libs/johnezang-JSONKit-c2146ff/JSONKit.h"; sourceTree = SOURCE_ROOT; };
 		BE8984221417AE3300065DCB /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = "../libs/johnezang-JSONKit-c2146ff/JSONKit.m"; sourceTree = SOURCE_ROOT; };
 		BE8CCDDF1447F2520049AC52 /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
+		BE9A84671478C646004C2334 /* SDURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDURLCache.h; sourceTree = "<group>"; };
+		BE9A84681478C646004C2334 /* SDURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDURLCache.m; sourceTree = "<group>"; };
 		BE9F67441430D2850038D619 /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
 		BE9F67451430D2850038D619 /* TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
 		BE9F67461430D2850038D619 /* TopicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TopicViewController.xib; path = Classes/TopicViewController.xib; sourceTree = "<group>"; };
@@ -241,6 +244,7 @@
 				BE81E70B14134BF80097D271 /* S7ViewSlider.m */,
 				BE8984211417AE3300065DCB /* JSONKit.h */,
 				BE8984221417AE3300065DCB /* JSONKit.m */,
+				BE9A84661478C646004C2334 /* SDURLCache */,
 				28A0AAE50D9B0CCF005BE974 /* lsReader_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -311,6 +315,16 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
+		};
+		BE9A84661478C646004C2334 /* SDURLCache */ = {
+			isa = PBXGroup;
+			children = (
+				BE9A84671478C646004C2334 /* SDURLCache.h */,
+				BE9A84681478C646004C2334 /* SDURLCache.m */,
+			);
+			name = SDURLCache;
+			path = ../libs/SDURLCache;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -436,6 +450,7 @@
 				BE9F67471430D2850038D619 /* TopicViewController.m in Sources */,
 				BE29088A145C79CB00807F5C /* commentsViewController.m in Sources */,
 				BE290B6B1460323100807F5C /* PubDetailCell.m in Sources */,
+				BE9A84691478C646004C2334 /* SDURLCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
