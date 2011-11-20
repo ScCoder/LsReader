@@ -1,0 +1,22 @@
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator isLogedIn]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:61: warning: return makes pointer from integer without a cast
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator loadCache]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:69: warning: 'Communicator' may not respond to '-createDirs'
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:69: warning: (Messages without a matching method signature
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:69: warning: will be assumed to return 'id' and accept
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:69: warning: '...' as arguments.)
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator commandByModule:site:method:params:]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:156: warning: 'parseJSONData:' is deprecated (declared at /Users/sergejusov/github/LsReader/lsReader/../libs/johnezang-JSONKit-c2146ff/JSONKit.h:155)
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator checkConnectionBySite:login:password:]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:228: warning: return makes pointer from integer without a cast
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:240: warning: return makes pointer from integer without a cast
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator voteByTopicId:value:]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:322: warning: incompatible Objective-C types returning 'struct NSDictionary *', expected 'struct NSString *'
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator saveContentToStorage]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:398: warning: passing argument 2 of 'personalPublications:page:' makes pointer from integer without a cast
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator createDirs]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:416: warning: 'createDirectoryAtPath:attributes:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h:168)
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:423: warning: 'createDirectoryAtPath:attributes:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h:168)
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m: In function '-[Communicator cacheImages:]':
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:444: warning: incompatible Objective-C types assigning 'struct NSString *', expected 'struct NSMutableString *'
+/Users/sergejusov/github/LsReader/lsReader/Classes/Communicator.m:448: warning: incompatible Objective-C types assigning 'struct NSString *', expected 'struct NSMutableString *'

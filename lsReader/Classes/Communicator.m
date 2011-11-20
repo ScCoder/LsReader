@@ -111,104 +111,7 @@ static Communicator * communicator =  NULL;
 	
 }
 
-/*
 
--(NSDictionary *)commandByModule:(NSString*)module site:(NSString*)site  method:(NSString*)method params:(NSString*)params
-{
-	
-	
-	UIApplication *app = [UIApplication sharedApplication];
-	
-	app.networkActivityIndicatorVisible = YES;
-	
-	
-	NSString *api_command = [NSString stringWithFormat:@"http://%@/api/%@/%@/?%@&response_type=json",
-							 site,module,method,params];
-	
-	NSLog(@"api_comand=%@", api_command);
-	
-	
-	
-	
-	
-	
-	
-	
-
-		
-		NSURL *url = [NSURL URLWithString:api_command];
-	
-		NSDictionary *response;
-
-	
-	
-		NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad
-											 timeoutInterval:10];
-		
-		
-		
-		//NSURLRequest *request = [NSURLRequest requestWithURL:url];
-		
-		NSData *tmpContainer = [NSURLConnection sendSynchronousRequest:request 
-													 returningResponse:nil 
-																 error:nil];
-		
-		if (!tmpContainer) {
-			
-			NSLog(@"commandByModule ошибка tmpContainer = nill");
-			app.networkActivityIndicatorVisible = NO;
-			return nil;
-		}
-		
-		
-		JSONDecoder *decoder = [JSONDecoder decoder];
-		
-		//response = [[decoder parseJSONData:tmpContainer] copy];
-		
-		response = [decoder parseJSONData:tmpContainer];
-		
-		if (!response) {
-			NSLog(@"commandByModule ошибка response = nill");
-			app.networkActivityIndicatorVisible = NO;
-			return nil;
-		}
-		
-		
-		if (![response objectForKey:@"response"]) {
-			
-			if ([response objectForKey:@"bStateError"]) {
-				
-				// Ошибка 
-				NSLog(@"bStateError = %@",[response objectForKey:@"bStateError"]);
-				NSLog(@"sMSG = %@", [response objectForKey:@"sMsg"]);
-				NSLog(@"sMsgTitle = %@", [response objectForKey:@"sMsgTitle"]);
-				
-			} else {
-				
-				NSLog(@"Неизвестная ошибка(Нет response в ответе) текущий ответ = @%",response);
-				
-			}
-			
-		} else {
-		
-		
-
-	
-		    response = [response objectForKey:@"response"];		
-
-	        if (self.showPics&&[module isEqualToString: @"topic"]&&[method isEqualToString: @"read"]) {
-	
-	            [self cacheImages : [response objectForKey: @"topic_text" ]];
-	     }
-		}
-
-	app.networkActivityIndicatorVisible = NO;
-	
-	return response;
-	
-}
-*/
-// Старая версия перед пробое cachePolicy
 -(NSDictionary *)commandByModule:(NSString*)module site:(NSString*)site  method:(NSString*)method params:(NSString*)params
 {
 		
@@ -217,9 +120,7 @@ static Communicator * communicator =  NULL;
 	
 	app.networkActivityIndicatorVisible = YES;
 	
-	
-	NSString *api_command = [NSString stringWithFormat:@"http://%@/api/%@/%@/?%@&response_type=json",
-							 site,module,method,params];
+	NSString *api_command = [NSString stringWithFormat:@"http://%@/api/%@/%@/?%@&response_type=json",site,module,method,params];
 	
 	NSLog(@"api_comand=%@", api_command);
 	
@@ -228,22 +129,14 @@ static Communicator * communicator =  NULL;
 	
 	NSDictionary *response = [self.ls_cache objectForKey:api_command];
 	
-	//NSDictionary *response = nil ;// [self.ls_cache objectForKey:api_command];
-
-	
-	
+		
 	// Если нет в кеше то берем с сайта
 	if (!response) {
 		
 		NSLog(@"not in cache");
 	
 		NSURL *url = [NSURL URLWithString:api_command];
-	
-		//NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad
-		//									 timeoutInterval:900];
-								 
-						 
-								 
+									 
 		NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	
 		NSData *tmpContainer = [NSURLConnection sendSynchronousRequest:request 
@@ -369,7 +262,7 @@ static Communicator * communicator =  NULL;
 	
 	NSString *tmpParams = [NSString stringWithFormat:@"fields=%@",FIELDS_FILTER];
 	
-	NSDictionary *response = [ [self commandByModule:@"topic" site:self.siteURL method:@"new" params:tmpParams] retain]; 
+	NSDictionary *response =  [self commandByModule:@"topic" site:self.siteURL method:@"new" params:tmpParams]; 
 	
 	NSString *tmp = [response objectForKey:@"count"];
 	
@@ -427,9 +320,6 @@ static Communicator * communicator =  NULL;
 	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"vote" params:tmpParams]; 
 	
 	return response;
-	
-	//return [response objectForKey:@"rating"];
-	
 
 }
 
@@ -439,8 +329,6 @@ static Communicator * communicator =  NULL;
 	  @"id=%@&type=topic&fields=user[user_login],comment_date,comment_text,comment_level,comment_id,comment_pid,target_id,target_parent_id,target_type",topic_id];
 	
 	NSDictionary *response = [self commandByModule:@"comment" site:self.siteURL method:@"list" params:tmpParams]; 
-	
-//	NSLog(@"comments = %@",response);
 	
     return response;	
 	
