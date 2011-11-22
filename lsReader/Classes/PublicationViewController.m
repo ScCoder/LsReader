@@ -15,11 +15,9 @@
 
 @implementation PublicationViewController
 
-@synthesize testLabel;
 @synthesize myTable;
 @synthesize publicTypes;
 @synthesize activityIndicator;
-@synthesize parentNav;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 
@@ -47,12 +45,14 @@
 	static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    
+	if (cell == nil) {
+		
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+		
     }
 	
-	UIImage *image = [UIImage imageNamed:
-					  [SharedCommunicator.publicTypesIcons objectAtIndex:indexPath.row]];
+	UIImage *image = [UIImage imageNamed:[SharedCommunicator.publicTypesIcons objectAtIndex:indexPath.row]];
 		
 	cell.textLabel.text = [self.publicTypes objectAtIndex:indexPath.row];
 		
@@ -122,11 +122,15 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-	publicTypes = nil;
+	
+	self.myTable = nil;
+	self.activityIndicator = nil;
+	
 }
 
 
 - (void)dealloc {
+	
     [publicTypes release];
 	[super dealloc];
 	

@@ -38,6 +38,9 @@
 	
     [super viewDidLoad];
 	
+	topic_data = [[NSMutableDictionary alloc] initWithCapacity:1];
+	
+	[topic_data addEntriesFromDictionary:[SharedCommunicator readTopicById:self.topicId]];
 }
 
 
@@ -45,19 +48,11 @@
 	
   [self.voteBar setHidden:NO];
 	
-  [self.voteBtn setEnabled:[[Communicator sharedCommunicator] isLogedIn]];
+  [self.voteBtn setEnabled:[SharedCommunicator isLogedIn]];
+	
 	
 }
 -(void) viewWillAppear:(BOOL)animated{
-	
-	
-	[[Communicator sharedCommunicator] cacheImages:self.topicId];//TODO: Убрать
-	
-
-	topic_data = [[Communicator sharedCommunicator] readTopicById:self.topicId];
-		
-	//OLD   NSString *topicContent =	[topic_data objectForKey: @"topic_text" ];
-	
 	
 	
 	NSMutableString *topicContent = [[NSMutableString alloc] initWithCapacity:10];
@@ -73,11 +68,10 @@
 	[self.autorLabel setTitle:[(NSDictionary *)[topic_data objectForKey: @"user"] objectForKey:@"user_login"]];
 		
 	
-	//[topic_data release];
+	if (SharedCommunicator.showPics) {
 	
-	if ([Communicator sharedCommunicator].showPics) {
-	
-		[self changeImageNamesToCashed:topicContent];
+		//когда буду кешироватся нужно раскоментировать
+		//[self changeImageNamesToCashed:topicContent];
 	 	
 	} else {
 		
@@ -87,9 +81,10 @@
 
 	
 	
-	//NSURL *base_url = [NSURL URLWithString: [@"http://www." stringByAppendingString: [Communicator sharedCommunicator].siteURL ]];	
+	NSURL *base_url = [NSURL URLWithString: [@"http://www." stringByAppendingString: SharedCommunicator.siteURL ]];	
 	
-
+/* Не удалять!!! Для кешированных картинок
+ 
 	NSMutableString *imagePath = [NSMutableString stringWithString: DOCUMENTS];
 	imagePath = [imagePath stringByReplacingOccurrencesOfString:@"/" withString:@"//"];
 	imagePath = [imagePath stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
@@ -99,7 +94,7 @@
 	NSURL *base_url = [NSURL URLWithString: [NSString stringWithFormat:@"file:/%@//%@//%@//"
 									,imagePath,LS_READER_DIR,CACHE_IMAGES_DIR]];
 
-	
+*/	
 	[webView loadHTMLString:topicContent baseURL:base_url];
 
 	[topicContent release];
@@ -112,37 +107,23 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
 	
-
 	if (navigationType != UIWebViewNavigationTypeLinkClicked) {
 	
-		return YES;
+		return YES;		
 	}
     else {
-
+		
 		// Запуск сафари
 		[[UIApplication sharedApplication] openURL:request.URL ];
-	
-	return NO;
+		return NO;		
 	}
-	
-	 
-	
-	
 	
 }
 
 
 
 -(IBAction) votingForTopic:(id) sender{
- 
-	NSLog( @" %i",[(UIBarButtonItem *)sender tag] );
-	
-	//NSString *newRating = [[Communicator sharedCommunicator] voteByTopicId:self.topicId 
-	//																 value:[(UIBarButtonItem *)sender tag]
-	//					   ];
-	
-	//NSLog(@"new Rating = %@",newRating);
-	
+		
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Голосование за топик" 
 													message:@"Понравился топик?" 
 												   delegate:self 
@@ -162,27 +143,29 @@
 		return;
 	}
 	
-	int val1 = buttonIndex;
-	int val;
-	
-	// Преобразуем buttonIndex в вал
-	switch (val1) {
-		case 1:
-			val = 1;
-			break;
-		case 2:
-			val = 0;
-			break;
-		case 3:
-			val = -1;
-			break;
-		default:
-			break;
-	}
 
 	
-	NSDictionary *response = [[Communicator sharedCommunicator] voteByTopicId:self.topicId  value: val];
-		
+	int val1 = buttonIndex;
+	int val = 0;
+	
+	// Преобразуем buttonIndex в вал
+	switch (val1) { 
+		case 1:{ 
+			val = 1; 
+			break;
+		}
+		case 2:{
+			val = 0; 
+			break;
+		}
+		case 3:{
+			val = -1;
+			break;
+		}
+		default: break;
+	}
+
+	NSDictionary *response = [[NSDictionary alloc] initWithDictionary:[SharedCommunicator voteByTopicId:self.topicId  value: val] ];
 
 	// Сообщаем что голос принят если все ок
 	
@@ -207,9 +190,7 @@
 	// Вывод ошибки если была
 	
 	if ([response objectForKey:@"bStateError"]) {
-		
-		NSString *msg = [NSString stringWithFormat:@"Новый рейтинг = %@",[response objectForKey:@"rating"]];
-		
+				
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ошибка" 
 														message:[response objectForKey:@"sMsg"]
 													   delegate:self 
@@ -222,9 +203,7 @@
 				
 	} 		
 	
-	
-	
-	
+	[response release];
 
 }
 
@@ -300,8 +279,8 @@
 	commentVC.topicId = self.topicId;
 	
 	NSNumber *nextLevel = [NSNumber numberWithInt: 0];
-	
-	
+		
+	NSLog(@"topic_text = %@",[topic_data objectForKey: @"topic_text" ]);
 	
 	commentVC.headerTextString =  [topic_data objectForKey: @"topic_text" ];
 	
@@ -317,7 +296,8 @@
 }
 
 -(IBAction) bookmarkTopic{
-	NSString *alert_title = @"Заглушка сдесь будет добавление в закладки";
+	
+	NSString *alert_title = @"Заглушка здесь будет добавление в закладки";
 	
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alert_title 
 													message:nil
@@ -333,6 +313,7 @@
 
 -(void) changeImageNamesToCashed:(NSMutableString*) topicContent {
 	
+	// когда картинки кешируются(сохраняются в каталог) то потм это метод заменяет все пути на локальные, временно отключено 
 	
 	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern: @"<img[^>]src=\"([^>\"]+)\"[^>]*>"
 																			options:NSRegularExpressionCaseInsensitive
@@ -342,35 +323,26 @@
 		
 		NSString* url = [topicContent substringWithRange:[match rangeAtIndex:1]]; 
 				
-		NSString *imgFileExt;//= [[NSMutableString alloc] initWithCapacity:4];
+		NSString *imgFileExt;
 		
 		if ([url rangeOfString:@".png"].location > 0){
-			
-
-
 			
 			imgFileExt = @"png";
 			
 		} else if ([url rangeOfString:@".jpg"].location > 0) {
 			
-				imgFileExt = @"jpg";
+			imgFileExt = @"jpg";
 	
 		}else {
 			NSLog(@"Error Unsupprted image file format, file url = %@",url );
 			return;
 		}
 		
-		
         NSString *cacheImageFileName = [NSString stringWithFormat:@"img_%d.%@",[url hash],imgFileExt];
-		
-		//[imgFileExt release];
-		
+				
 		[topicContent replaceOccurrencesOfString:url withString: cacheImageFileName options:NSLiteralSearch range:NSMakeRange(0, [topicContent length])];
 		
-		//[cacheImageFileName release];
 	}
-	
-    //[regExp replaceMatchesInString:content options:0 range:NSMakeRange(0,[content length]) withTemplate:@"<a href = $1> picture </a>"];
 	
 }
 
@@ -392,17 +364,23 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-	[voteSegControl release];
-	//[topic_data release];
-	[webView release];
 	
-
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	self.webView = nil;
+	self.voteBar = nil;
+	self.voteSegControl = nil;
+	self.ratingLabel = nil;
+	self.comentsBtn = nil;
+	self.voteBtn = nil;
+	self.autorLabel = nil;
 }
 
 
 - (void)dealloc {
+	[topic_data release];
+	[voteSegControl release];
+	[webView release];
 
     [super dealloc];
 }

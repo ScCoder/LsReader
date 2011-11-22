@@ -18,7 +18,7 @@
 @synthesize sites;
 @synthesize tabBarController;
 @synthesize siteParams;
-@synthesize innerNavController;
+
 
 
 #pragma mark -
@@ -35,9 +35,7 @@
 	[super viewDidLoad];
 	
 	self.title = @"Ваши сайты";
-	
-
-	
+		
 	// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -116,7 +114,6 @@
 	UIImage *image = [UIImage imageNamed:@"rightArrow.png"];
 	
 	
-	
 	NSArray *tmpSiteNames = [self.siteParams allKeys];
 
 	cell.textLabel.text = [tmpSiteNames objectAtIndex: indexPath.row];
@@ -124,11 +121,12 @@
 	cell.detailTextLabel.text = [[siteParams objectForKey:cell.textLabel.text] objectForKey:SITE_URL];
 
     cell.imageView.image = image;
+	
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
     return cell;
-	//
-	[tmpSiteNames release];
+
+	
 }
 
 
@@ -215,7 +213,7 @@
 			UITabBarController *tabBar = [[UITabBarController alloc] 
 									  initWithNibName:@"RootViewController" bundle:[NSBundle mainBundle]];
 			self.tabBarController = tabBar;				
-		[	tabBar release];
+		    [tabBar release];
 		
 		}
 		
@@ -230,16 +228,16 @@
 		//[Communicator sharedCommunicator].siteURL = [tmpParams objectForKey:SITE_URL];
 		
 		// Проверка соединения - запоминается хеш и сайт в коммуникаторе
-		[[Communicator sharedCommunicator] checkConnectionBySite:[tmpParams objectForKey: SITE_URL] 
+		[SharedCommunicator checkConnectionBySite:[tmpParams objectForKey: SITE_URL] 
 														   login: [tmpParams objectForKey: SITE_LOGIN]
 														password:[tmpParams objectForKey: SITE_PASSWD]];
 		 
 		
-		[Communicator sharedCommunicator].countPerPage =[[self.siteParams objectForKey:tmpKey] objectForKey:COUNT_PER_PAGE];
+		SharedCommunicator.countPerPage =[[self.siteParams objectForKey:tmpKey] objectForKey:COUNT_PER_PAGE];
 		
 		// Показывать ли картинки
 		
-		[Communicator sharedCommunicator].showPics = [[[siteParams objectForKey:tmpKey] objectForKey:SHOW_PICS] isEqualToString: @"YES"];
+		SharedCommunicator.showPics = [[[siteParams objectForKey:tmpKey] objectForKey:SHOW_PICS] isEqualToString: @"YES"];
 		
 		
 		
@@ -314,7 +312,6 @@
 - (void)viewDidUnload {
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
-	self.sites = nil;
 	self.tabBarController = nil;
 }
 

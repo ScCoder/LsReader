@@ -17,8 +17,6 @@
 
 
 @synthesize myTable;
-//@synthesize keys;
-//@synthesize topics_collection;
 @synthesize publication_type;
 @synthesize addNextButton;
 @synthesize topPeriodSegControl;
@@ -60,6 +58,8 @@
 	[self loadTopicsList];
 	
 	[self.activityIndicator setHidden:YES];
+	
+	
 	
 	
 }
@@ -118,21 +118,21 @@
 
 -(IBAction)loadTopicsList{
 
-   // Получение данных
+    // Получение данных
 	
-	NSDictionary *response = [NSDictionary dictionaryWithObjectsAndKeys:nil]  ;
 
+	
 	if ([self.publication_type isEqualToString: PT_TOP]) {
 			
 		NSString *period = [ SharedCommunicator.publicationPeriods objectAtIndex: topPeriodSegControl.selectedSegmentIndex];
-		
-		response = [SharedCommunicator topPublicationsByPeriod:period];
-				   
-				
+	
+		receivedData = [SharedCommunicator topPublicationsByPeriod:period];
+	
 	}
 	else if ( [self.publication_type isEqualToString: PT_NEW]){
 		
-		response = [SharedCommunicator newPublications];
+		receivedData = [SharedCommunicator newPublications];
+		
 		
 	}
 	else if ( [self.publication_type isEqualToString: PT_PERSONAL]){
@@ -140,57 +140,32 @@
 		
 		NSString *showType = [SharedCommunicator.publicationShowType objectAtIndex: showTypeSegControl.selectedSegmentIndex];
 		
-	    response = [SharedCommunicator personalPublications:showType page: current_page];
+	    receivedData = [SharedCommunicator personalPublications:showType page: current_page];
 		
 	}
-//	
-//	else {
-//		NSLog(@"other");
-//	}
+	
+	else {
+		NSLog(@"other");
+	}
 	
 	
+	[keys removeAllObjects];
 	
-	//self.topics_collection = [[NSMutableDictionary alloc] initWithCapacity:1];
+	if (receivedData) {
 	
+	  [topics_collection addEntriesFromDictionary: [receivedData objectForKey:@"collection"] ];	
 	
-	[topics_collection addEntriesFromDictionary: [[response objectForKey:@"collection"]retain ]];	
+	  [keys addObjectsFromArray:[topics_collection allKeys]]; 
 	
-	//[response release];
+	  [keys sortUsingSelector:@selector(compare:) ];	
 	
-	
-	//NSMutableArray *tmpKeys = nil;
-	
-	//[keys removeAllObjects];
-	[keys addObjectsFromArray:[topics_collection allKeys]]; 
-	
-	
-	[keys sortUsingSelector:@selector(compare:) ];	
-	
-	[[ keys reverseObjectEnumerator] allObjects];
-	
-	//[keys removeAllObjects];
-	//[keys addObjectsFromArray:[[ tmpKeys reverseObjectEnumerator] allObjects]];
-	
-	
-	
-	
-	//[tmpKeys release];
-	
-	
-	
-	/*
-	self.keys = [NSMutableArray arrayWithArray: [topics_collection allKeys]];	
-	
-	[self.keys sortUsingSelector:@selector(compare:) ];	
-	
-
-	self.keys = [[ self.keys reverseObjectEnumerator] allObjects];
-	*/
-
+	  [[keys reverseObjectEnumerator] allObjects];
+	}
 	
 	[self.myTable reloadData];
 	
-	
+receivedData = nil;
+		
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -285,8 +260,7 @@
 		
 	NSDictionary *topic = [topics_collection objectForKey: [keys objectAtIndex:indexPath.row]];
 
-    NSString *topic_id =  [topic objectForKey:@"topic_id"];
-
+    NSString *topic_id = [topic objectForKey:@"topic_id"];
 	
 	topicVC.topicId = topic_id;
 	
@@ -325,8 +299,17 @@
 
 - (void)viewDidUnload {
 	
-	topics_collection = nil;
-	keys = nil;
+	self.myTable = nil;
+	self.addNextButton = nil;
+	self.topPeriodSegControl = nil;
+	self.topPeriodToolBar = nil;
+	self.showTypeSegControl = nil;	
+	self.showTypeToolBar = nil;
+	self.activityIndicator = nil;
+	self.publication_type = nil;
+	
+	
+	
     [super viewDidUnload];
 	
 
@@ -336,6 +319,17 @@
 
 
 - (void)dealloc {
+	
+	//[receivedData release];
+	[publication_type release];
+	[myTable release];
+	[addNextButton release];
+	[topPeriodSegControl release];
+	[topPeriodToolBar release];
+	[showTypeSegControl release];
+	[showTypeToolBar release];
+	[activityIndicator release];
+	[publication_type release];
 	
 	[topics_collection release];
 	[keys release];

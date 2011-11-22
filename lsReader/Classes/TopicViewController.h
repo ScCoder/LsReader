@@ -20,7 +20,8 @@
 	UIBarButtonItem *voteBtn;
 	
 	UIBarButtonItem *autorLabel;
-	NSDictionary *topic_data;
+	NSMutableDictionary *topic_data;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView *webView; 
@@ -30,7 +31,6 @@
 @property (nonatomic, retain) NSString *topicId;
 
 @property (nonatomic, retain) IBOutlet UISegmentedControl *voteSegControl;
-@property (nonatomic, retain) IBOutlet UISegmentedControl *voteSegControl1;
 
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *ratingLabel;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *comentsBtn;

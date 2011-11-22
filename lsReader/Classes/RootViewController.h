@@ -10,17 +10,12 @@
 
 @interface RootViewController : UITableViewController<UITabBarDelegate> {
 	NSMutableArray *sites;
-	IBOutlet UITabBarController *tabBarController;
+	UITabBarController *tabBarController;
 	NSMutableDictionary *siteParams;
-	IBOutlet UINavigationController * innerNavController; 
 	
-	
-
-
 }
 @property (nonatomic, retain) NSMutableArray *sites;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
-@property (nonatomic, retain) IBOutlet UINavigationController * innerNavController;
 @property (nonatomic, retain) NSMutableDictionary *siteParams;
 
 -(IBAction) editParams;

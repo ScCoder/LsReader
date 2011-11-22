@@ -15,12 +15,14 @@ Communicator : NSObject {
 	NSString *siteURL;
 	NSString *countPerPage;
 	NSMutableDictionary *ls_cache;
-	NSString *hash;
+	NSMutableString *user_login_hash1;
 	NSString *casheFilePath;
 	BOOL showPics; 
 	NSArray *publicationPeriods;
 	NSArray *publicTypes;
 	NSArray *publicTypesIcons;
+	
+	NSMutableDictionary *container;
 
 
 }
@@ -43,8 +45,6 @@ Communicator : NSObject {
 
 -(void) saveCache;
 
--(void) cleanCache;
-
 -(void) showCacheToLog;
 
 
@@ -61,7 +61,7 @@ Communicator : NSObject {
 
 -(NSDictionary *) readTopicById:(NSString*) topic_id;
 
--(NSString *) voteByTopicId:(NSString *) topic_id value: (NSInteger)value;
+-(NSDictionary *) voteByTopicId:(NSString *) topic_id value: (NSInteger)value;
 
 -(Boolean *) isLogedIn;
 

@@ -8,7 +8,7 @@
 
 #import "Communicator.h"
 #import "JSONKit.h"
-#import "Consts.h"
+#import "SDURLCache.h"
 
 
 @implementation Communicator
@@ -25,6 +25,7 @@
 
 static Communicator * communicator =  NULL;
 
+static JSONDecoder *decoder = nil;
 
 +(Communicator *)sharedCommunicator {
 
@@ -52,7 +53,7 @@ static Communicator * communicator =  NULL;
 
 -(Boolean *) isLogedIn {
 
-  if (!hash) {
+  if (!user_login_hash1) {
 	  
 	  NSLog(@"not logged");
 	  return NO;
@@ -89,6 +90,17 @@ static Communicator * communicator =  NULL;
 		
 	}
 	
+	
+	/*
+	SDURLCache *urlCache = [[SDURLCache alloc] initWithMemoryCapacity:1024*1024   // 1MB mem cache
+														 diskCapacity:1024*1024*5 // 5MB disk cache
+															 diskPath:[SDURLCache defaultCachePath]];
+	[NSURLCache setSharedURLCache:urlCache];
+	[urlCache release];	
+	 */
+	
+    container = [[NSMutableDictionary alloc] initWithCapacity:1];
+	user_login_hash1 = [[NSMutableString alloc] initWithCapacity:10];
 }
 
 -(void) saveCache {
@@ -102,19 +114,17 @@ static Communicator * communicator =  NULL;
 		
 		NSLog(@"cache saved FALSE");
 	}
-
-}
-
--(void) cleanCache{
-
-	[self.ls_cache removeAllObjects];
+	[user_login_hash1 release];
 	
+	[container release];
+
 }
+
 
 
 -(NSDictionary *)commandByModule:(NSString*)module site:(NSString*)site  method:(NSString*)method params:(NSString*)params
 {
-		
+	
 	
 	UIApplication *app = [UIApplication sharedApplication];
 	
@@ -125,85 +135,66 @@ static Communicator * communicator =  NULL;
 	NSLog(@"api_comand=%@", api_command);
 	
 	
-	// Пробуем взять из кеша 
-	
-	NSDictionary *response = [self.ls_cache objectForKey:api_command];
+	NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:api_command]];
+		
+	NSData *tmpContainer = [NSURLConnection sendSynchronousRequest:request 
+												 returningResponse:nil 
+															 error:nil];
+		
+	if (!tmpContainer) {
+	  NSLog(@"commandByModule ошибка tmpContainer = nill");
+	  app.networkActivityIndicatorVisible = NO;
+	  return nil;
+	}
+		
+		
+	if (!decoder) 
+		decoder=[[JSONDecoder alloc] init];
 	
 		
-	// Если нет в кеше то берем с сайта
+	NSDictionary *response = [decoder objectWithData:tmpContainer error: nil ] ;
+	
+	
 	if (!response) {
-		
-		NSLog(@"not in cache");
-	
-		NSURL *url = [NSURL URLWithString:api_command];
-									 
-		NSURLRequest *request = [NSURLRequest requestWithURL:url];
-	
-		NSData *tmpContainer = [NSURLConnection sendSynchronousRequest:request 
-													 returningResponse:nil 
-																 error:nil];
-	
-		if (!tmpContainer) {
-			
-			NSLog(@"commandByModule ошибка tmpContainer = nill");
-			app.networkActivityIndicatorVisible = NO;
-			return nil;
-		}
-		
-		
-		JSONDecoder *decoder = [JSONDecoder decoder];
-		
-		response = [decoder parseJSONData:tmpContainer];
-		
-		if (!response) {
-			NSLog(@"commandByModule ошибка response = nill");
-			app.networkActivityIndicatorVisible = NO;
-			return nil;
-		}
+	  NSLog(@"commandByModule ошибка response = nill");
+	  app.networkActivityIndicatorVisible = NO;
+	  return nil;
+	}
 
-		
-		if (![response objectForKey:@"response"]) {
+	if (![response objectForKey:@"response"]) {
 			
-			if ([response objectForKey:@"bStateError"]) {
+		if ([response objectForKey:@"bStateError"]) {
+			NSLog(@"bStateError = %@",[response objectForKey:@"bStateError"]);
+			NSLog(@"sMSG = %@", [response objectForKey:@"sMsg"]);
+			NSLog(@"sMsgTitle = %@", [response objectForKey:@"sMsgTitle"]);
 				
-				// Ошибка 
-				NSLog(@"bStateError = %@",[response objectForKey:@"bStateError"]);
-				NSLog(@"sMSG = %@", [response objectForKey:@"sMsg"]);
-				NSLog(@"sMsgTitle = %@", [response objectForKey:@"sMsgTitle"]);
-				
-			} else {
-				
-				NSLog(@"Неизвестная ошибка(Нет response в ответе) текущий ответ = @%",response);
-				
-			}
-			
 		} else {
-			
-			// Все ок ложим в кеш !!!!!
-			response = [response objectForKey:@"response"];		
-			
-			// Кешируем картинки топиков			
-			if (self.showPics&&[module isEqualToString: @"topic"]&&[method isEqualToString: @"read"]) {
 				
-			    [self cacheImages : [response objectForKey: @"topic_text" ]];
+			NSLog(@"Неизвестная ошибка(Нет response в ответе) текущий ответ = @%",response);
 				
-			}
-			
-			[self.ls_cache setObject:response forKey:api_command];
-			
-			NSLog(@"put to cache ok!");
-			NSLog(@"cache count =%d",[self.ls_cache count]);			
-		   
 		}
-		
-    }
-	
-	app.networkActivityIndicatorVisible = NO;
-	
-	return response;
 			
+	} else {
+			
+		response = [response objectForKey:@"response"];		
+		
+	}
+	
+		
+	app.networkActivityIndicatorVisible = NO;
+		
+	[container removeAllObjects];
+    [container addEntriesFromDictionary:response];
+	
+	[decoder release];
+	decoder = nil;
+
+	//NSLog(@"container = %@ ",container);
+	return container ;		
+	
 }
-//*/
+
+
 
 -(Boolean *)checkConnectionBySite:(NSString*)site  login:(NSString*)login password:(NSString*)password{
 	
@@ -223,7 +214,7 @@ static Communicator * communicator =  NULL;
 			
 			self.siteURL = site;
 			
-			hash = NULL;
+			user_login_hash1 = NULL;
 		    
 			return YES;
 		}
@@ -233,8 +224,10 @@ static Communicator * communicator =  NULL;
 	
 	if ([response objectForKey:@"hash"] ){
 		
-		hash = [response objectForKey:@"hash"];
+		[user_login_hash1 deleteCharactersInRange:NSMakeRange(0, [user_login_hash1 length])];
+		[user_login_hash1 appendString:[response objectForKey:@"hash"]];
 		
+		NSLog(@"hash = %@",user_login_hash1);
 		self.siteURL = site;
 
 		return YES;		
@@ -251,11 +244,9 @@ static Communicator * communicator =  NULL;
 -(NSDictionary *) topPublicationsByPeriod:(NSString*)period {
 	
 	NSString *tmpParams = [NSString stringWithFormat:@"period=%@&fields=%@",period,FIELDS_FILTER];
-	
-	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"top" params:tmpParams]; 
-	
-    return response;
 
+	return [self commandByModule:@"topic" site:self.siteURL method:@"top" params:tmpParams];
+	
 }
 
 -(NSDictionary *) newPublications{
@@ -275,8 +266,10 @@ static Communicator * communicator =  NULL;
 	 }
 	 else {
 	 
-		 return response ;
+		 //return response ;
+		 return container;
 	 }
+	 
 	
 }
 
@@ -313,13 +306,15 @@ static Communicator * communicator =  NULL;
 
 }
 
--(NSString *) voteByTopicId:(NSString *) topic_id value: (NSInteger)value{
+-(NSDictionary *) voteByTopicId:(NSString *) topic_id value: (NSInteger)value{
 
-	NSString *tmpParams = [NSString stringWithFormat:@"id=%@&value=%i&hash=%@",topic_id,value,hash];
+
+	NSLog(@"voteByTopicId =%@",user_login_hash1);
+
+	NSString *tmpParams = [NSString stringWithFormat:@"id=%@&value=%i&hash=%@",topic_id,value,user_login_hash1];
 	
-	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"vote" params:tmpParams]; 
-	
-	return response;
+	NSLog(@"tmpParams = %@",tmpParams);
+	return  [self commandByModule:@"topic" site:self.siteURL method:@"vote" params:tmpParams];
 
 }
 
@@ -327,35 +322,11 @@ static Communicator * communicator =  NULL;
 	
 	NSString *tmpParams = [NSString stringWithFormat:
 	  @"id=%@&type=topic&fields=user[user_login],comment_date,comment_text,comment_level,comment_id,comment_pid,target_id,target_parent_id,target_type",topic_id];
-	
-	NSDictionary *response = [self commandByModule:@"comment" site:self.siteURL method:@"list" params:tmpParams]; 
-	
-    return response;	
-	
-}
-
--(void) showCacheToLog{
-
-	NSArray *keys = [self.ls_cache allKeys];
-	
-	for ( id key in keys){
-	
-		NSLog(@" key = %@", key);
-	}
-	
-	
-	if ([NSKeyedArchiver archiveRootObject:self.ls_cache toFile:self.casheFilePath]) {
-	  NSLog(@"writed OK");
-	}
-	else {
-		NSLog(@"writed FALSE");
-	}
-	
-	NSLog(@"path=%@",self.casheFilePath);
 		
-	NSLog(@"writed");
+    return [self commandByModule:@"comment" site:self.siteURL method:@"list" params:tmpParams]; 	
 	
 }
+
 
 - (void) saveTopicsToStorage: (NSDictionary *) response  {
  
@@ -369,8 +340,10 @@ static Communicator * communicator =  NULL;
 		
 		[self readTopicById:[[topics_collection objectForKey: key] objectForKey:@"topic_id" ]];
 	}
+	[topics_collection release];
 
 }
+
 -(void) saveContentToStorage{
 	
     NSLog(@"start save content");
@@ -437,17 +410,19 @@ static Communicator * communicator =  NULL;
 		UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
 		
 		
-		NSMutableString *imgFileExt = [[NSMutableString alloc] initWithCapacity:4];
+		NSMutableString *imgFileExt;// = [[NSMutableString alloc] init];
 		
 		if ([url rangeOfString:@".png"].location > 0){
 		
-			imgFileExt = @"png";
+			imgFileExt =  [NSMutableString stringWithString: @"png"];
 			
 		} else if ([url rangeOfString:@".jpg"].location > 0) {
 		
-			imgFileExt = @"jpg";
+			imgFileExt =  [NSMutableString stringWithString: @"jpg"];
+		
 		}else {
 			NSLog(@"Error Unsupprted image file format, file url = %@",url );
+			[image release];
 			return;
 		}
 		
@@ -456,7 +431,7 @@ static Communicator * communicator =  NULL;
 		NSString *cacheImageFilePath = [NSString stringWithFormat:@"%@/%@/%@/img_%d.%@"
 									,DOCUMENTS,LS_READER_DIR,CACHE_IMAGES_DIR,[url hash],imgFileExt];
 		
-		[imgFileExt release];
+		//[imgFileExt release];
 		//Сохранение файла
 		
 		NSData *data1 = [NSData dataWithData:UIImagePNGRepresentation(image)];
