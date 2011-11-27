@@ -22,6 +22,12 @@
 	UIBarButtonItem *autorLabel;
 	NSMutableDictionary *topic_data;
 
+	UIView *photosetView;
+	UIImageView *photosetMainImage;
+	UIScrollView *photosetScrollView;
+	UILabel *photosetImageTitle;
+	
+
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView *webView; 
@@ -35,8 +41,14 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *ratingLabel;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *comentsBtn;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *voteBtn;
-
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *autorLabel;
+
+
+@property (nonatomic, retain) IBOutlet UIView *photosetView;
+@property (nonatomic, retain) IBOutlet UIImageView *photosetMainImage;
+@property (nonatomic, retain) IBOutlet UIScrollView *photosetScrollView;
+@property (nonatomic, retain) IBOutlet UILabel *photosetImageTitle;
+
 
 -(void) cutImagesFromText:(NSMutableString *) intext;
 
@@ -45,5 +57,6 @@
 -(IBAction) showRating;
 -(IBAction) showComents;
 -(IBAction) bookmarkTopic;
+-(IBAction) photosetImageTouched:(id) sender;
 
 @end

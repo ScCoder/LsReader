@@ -301,8 +301,10 @@ static JSONDecoder *decoder = nil;
 	NSString *tmpParams = [NSString stringWithFormat:@"id=%@",topic_id];
 	
 	NSDictionary *response = [self commandByModule:@"topic" site:self.siteURL method:@"read" params:tmpParams]; 
-		
-    return response;
+	
+	NSLog(@"topic data = %@",response);
+    
+	return response;
 
 }
 

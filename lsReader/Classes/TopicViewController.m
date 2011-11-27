@@ -21,6 +21,13 @@
 @synthesize voteBtn;
 @synthesize autorLabel;
 
+
+@synthesize photosetView;
+@synthesize photosetMainImage;
+@synthesize photosetScrollView;
+@synthesize photosetImageTitle;
+
+
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -46,9 +53,35 @@
 
 - (void) costomizeView {
 	
-  [self.voteBar setHidden:NO];
+	
+	
+ // [self.voteBar setHidden:NO];
 	
   [self.voteBtn setEnabled:[SharedCommunicator isLogedIn]];
+	
+	if ( [((NSString*)[topic_data objectForKey: @"topic_type"]) isEqualToString: @"photoset" ]   ){
+	
+	
+		[self.webView setHidden:YES];
+		[self.photosetView setHidden:NO];
+		
+		[self.photosetView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.webView.frame.size.height)];
+		[self.photosetMainImage setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.webView.frame.size.height - 100)];
+		[self.photosetImageTitle setFrame:CGRectMake(0, self.webView.frame.size.height - 100, self.view.frame.size.width, 50)];
+		
+		 [self.photosetScrollView setFrame:CGRectMake(0, self.webView.frame.size.height - 50, self.view.frame.size.width, 50)];
+ 
+											
+		
+		
+	} else {
+		
+		[self.webView setHidden:NO];
+		[self.photosetView setHidden:YES];
+		
+		[self.webView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.webView.frame.size.height)];
+	}
+
 	
 	
 }
@@ -79,27 +112,71 @@
 		
 	}
 
-	
-	
-	NSURL *base_url = [NSURL URLWithString: [@"http://www." stringByAppendingString: SharedCommunicator.siteURL ]];	
-	
-/* Не удалять!!! Для кешированных картинок
- 
-	NSMutableString *imagePath = [NSMutableString stringWithString: DOCUMENTS];
-	imagePath = [imagePath stringByReplacingOccurrencesOfString:@"/" withString:@"//"];
-	imagePath = [imagePath stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-	
-	
-	
-	NSURL *base_url = [NSURL URLWithString: [NSString stringWithFormat:@"file:/%@//%@//%@//"
-									,imagePath,LS_READER_DIR,CACHE_IMAGES_DIR]];
+	if ( [((NSString*)[topic_data objectForKey: @"topic_type"]) isEqualToString: @"photoset" ]   ){
+				
+		
+		NSDictionary *photos = [topic_data objectForKey: @"photoset_photos"] ;
+		
+		CGFloat x = 0;
+		CGFloat btnWidth = 50;
+		CGFloat btnHeight = 50;
+		
+		for (id photo in photos){
+			
+			UIButton *btn = [[UIButton alloc] initWithFrame: CGRectMake(x,0,btnWidth, btnHeight)];
+			
+			x += btnWidth;
+			
+			UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[photo objectForKey:@"path"]]]];
+			
+			[btn setImage:image forState:UIControlStateNormal];
+			
+			[image release];
+			
+			[btn addTarget: self action: @selector( photosetImageTouched: ) forControlEvents: UIControlEventTouchDown ];
+			
+			[self.photosetScrollView addSubview:btn];
+			
+			[btn release];
+		}
+		
+		NSDictionary *mainPhoto = [topic_data objectForKey: @"photoset_main_photo"];
+		
+		UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[mainPhoto objectForKey:@"path"]]]];
+		
+		[self.photosetMainImage setImage:image];
+		
+		[image release];
+		
+		[self.photosetImageTitle setText:[mainPhoto objectForKey:@"description"] ];
+		
+		[self.photosetScrollView setContentSize:CGSizeMake(x, btnHeight)];
+		
+		
+	} else { //если не подошло то считаем что это просто топик
+		
+		NSURL *base_url = [NSURL URLWithString: [@"http://www." stringByAppendingString: SharedCommunicator.siteURL ]];	
+		
+		/* Не удалять!!! Для кешированных картинок
+		 
+		 NSMutableString *imagePath = [NSMutableString stringWithString: DOCUMENTS];
+		 imagePath = [imagePath stringByReplacingOccurrencesOfString:@"/" withString:@"//"];
+		 imagePath = [imagePath stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+		 
+		 
+		 
+		 NSURL *base_url = [NSURL URLWithString: [NSString stringWithFormat:@"file:/%@//%@//%@//"
+		 ,imagePath,LS_READER_DIR,CACHE_IMAGES_DIR]];
+		 
+		 */	
+		[webView loadHTMLString:topicContent baseURL:base_url];
+		
+	}
 
-*/	
-	[webView loadHTMLString:topicContent baseURL:base_url];
 
+	
 	[topicContent release];
-	
-	
+		
 	[self costomizeView];
 
     	
@@ -347,6 +424,16 @@
 }
 
 
+-(IBAction) photosetImageTouched:(id) sender{
+	
+	
+	
+    //[self fadeView: self.mainImage fadeOut:YES];
+	[self.photosetMainImage setImage:((UIButton *)sender).imageView.image];
+	//[self fadeView: self.mainImage fadeOut:NO];
+}
+
+
 /*
  // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -374,13 +461,21 @@
 	self.comentsBtn = nil;
 	self.voteBtn = nil;
 	self.autorLabel = nil;
+	
+	self.photosetView = nil;
+	self.photosetMainImage = nil;
+	self.photosetScrollView = nil;
+	self.photosetImageTitle = nil;
+	
+	
 }
 
 
 - (void)dealloc {
 	[topic_data release];
-	[voteSegControl release];
-	[webView release];
+	
+	//[voteSegControl release];
+	//[webView release];
 
     [super dealloc];
 }
