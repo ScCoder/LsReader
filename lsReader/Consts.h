@@ -24,7 +24,7 @@
 #define PT_PERSONAL @"Персональные"
 #define PT_LINE @"Лента"
 #define PT_ACTIVITY @"Активность"
-#define FIELDS_FILTER @"topic_title,topic_id,topic_text_short,blog[blog_title],topic_date_add,user[user_login]"
+#define FIELDS_FILTER @"topic_title,topic_id,topic_text_short,topic_type,topic_extra_array[url],blog[blog_title],topic_date_add,user[user_login]"
 
 #define DOCUMENTS [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 

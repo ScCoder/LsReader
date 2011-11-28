@@ -164,6 +164,7 @@
 	
 	[self.myTable reloadData];
 	
+	
 receivedData = nil;
 		
 }
@@ -256,18 +257,36 @@ receivedData = nil;
 	
 	NSLog(@"read topic");
 	
-	TopicViewController *topicVC = [[TopicViewController alloc] initWithNibName:@"TopicViewController" bundle:nil];
-		
+	
 	NSDictionary *topic = [topics_collection objectForKey: [keys objectAtIndex:indexPath.row]];
-
-    NSString *topic_id = [topic objectForKey:@"topic_id"];
 	
-	topicVC.topicId = topic_id;
 	
-	[self.navigationController pushViewController:topicVC animated:YES];
+	if ([((NSString*)[topic objectForKey: @"topic_type"]) isEqualToString: @"link" ] ) {
+	
 		
-	[topicVC release];
+		NSMutableString *strurl = [NSMutableString stringWithString:[[topic objectForKey: @"topic_extra_array"] objectForKey:@"url" ]];
+		
+		if ( ![[strurl substringToIndex:3] isEqualToString:@"http"]){
+			strurl =  [NSString stringWithFormat:@"http://%@",strurl];
+		}
+
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:strurl]];
+				
+	}
 	
+	else {
+	
+		TopicViewController *topicVC = [[TopicViewController alloc] initWithNibName:@"TopicViewController" bundle:nil];
+			
+		NSString *topic_id = [topic objectForKey:@"topic_id"];
+	
+		topicVC.topicId = topic_id;
+	
+		[self.navigationController pushViewController:topicVC animated:YES];
+		
+		[topicVC release];
+	}
+		
 	
 }
 
