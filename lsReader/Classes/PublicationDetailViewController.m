@@ -243,7 +243,15 @@ receivedData = nil;
 	
 	[formater release];
 	
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	if ([[topic objectForKey:@"topic_type"] isEqualToString:@"link"]  ){
+		
+		cell.accessoryType = UITableViewCellAccessoryNone;
+		
+	}
+	else {
+		
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	}
 	
 	return cell;
 	
@@ -264,14 +272,15 @@ receivedData = nil;
 	if ([((NSString*)[topic objectForKey: @"topic_type"]) isEqualToString: @"link" ] ) {
 	
 		
-		NSMutableString *strurl = [NSMutableString stringWithString:[[topic objectForKey: @"topic_extra_array"] objectForKey:@"url" ]];
+		NSMutableString *str_url = [NSMutableString stringWithString:[[topic objectForKey: @"topic_extra_array"] objectForKey:@"url" ]];
 		
-		if ( ![[strurl substringToIndex:3] isEqualToString:@"http"]){
-			strurl =  [NSString stringWithFormat:@"http://%@",strurl];
+		if ( ![[str_url substringToIndex:3] isEqualToString:@"http"]){
+			str_url =  [NSString stringWithFormat:@"http://%@",str_url];
 		}
 
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:strurl]];
-				
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:str_url]];
+		
+	
 	}
 	
 	else {
