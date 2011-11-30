@@ -28,6 +28,16 @@
 @synthesize photosetImageTitle;
 
 
+@synthesize linkView;
+@synthesize linkBtn;
+@synthesize linkDescription;
+@synthesize linkTitle;
+@synthesize linkURL;
+
+//@synthesize activityIndicator;
+
+
+
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -59,25 +69,34 @@
 	
   [self.voteBtn setEnabled:[SharedCommunicator isLogedIn]];
 	
+	[self.webView setHidden:YES];
+	[self.photosetView setHidden:YES];
+	[self.linkView setHidden:YES];
+	
+	
 	if ( [((NSString*)[topic_data objectForKey: @"topic_type"]) isEqualToString: @"photoset" ]   ){
 	
-	
-		[self.webView setHidden:YES];
 		[self.photosetView setHidden:NO];
 		
 		[self.photosetView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.webView.frame.size.height)];
 		[self.photosetMainImage setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.webView.frame.size.height - 100)];
 		[self.photosetImageTitle setFrame:CGRectMake(0, self.webView.frame.size.height - 100, self.view.frame.size.width, 50)];
 		
-		 [self.photosetScrollView setFrame:CGRectMake(0, self.webView.frame.size.height - 50, self.view.frame.size.width, 50)];
+		[self.photosetScrollView setFrame:CGRectMake(0, self.webView.frame.size.height - 50, self.view.frame.size.width, 50)];
  
 											
 		
 		
-	} else {
+	} else if ([((NSString*)[topic_data objectForKey: @"topic_type"]) isEqualToString: @"link" ]  ) {
+	
+		[self.linkView setHidden:NO];
+		
+		[self.linkView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.webView.frame.size.height)];
+		
+	}
+	else {
 		
 		[self.webView setHidden:NO];
-		[self.photosetView setHidden:YES];
 		
 		[self.webView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.webView.frame.size.height)];
 	}
@@ -97,6 +116,12 @@
 	
 	[self.comentsBtn setTitle:[NSString stringWithFormat:@"%@ коментариев", [topic_data objectForKey: @"topic_count_comment" ]]];
 	
+	if ([[topic_data objectForKey: @"topic_count_comment" ] isEqualToString: @"0"]) {
+	
+		[self.comentsBtn setEnabled:NO];
+		
+	}
+	
 	
 	[self.autorLabel setTitle:[(NSDictionary *)[topic_data objectForKey: @"user"] objectForKey:@"user_login"]];
 		
@@ -112,6 +137,8 @@
 		
 	}
 
+	photosetImages = [[NSMutableArray alloc] initWithCapacity:5];
+	
 	if ( [((NSString*)[topic_data objectForKey: @"topic_type"]) isEqualToString: @"photoset" ]   ){
 				
 		
@@ -121,15 +148,42 @@
 		CGFloat btnWidth = 50;
 		CGFloat btnHeight = 50;
 		
+
+		
+		NSInteger imgIndex = 0;
+		
 		for (id photo in photos){
 			
 			UIButton *btn = [[UIButton alloc] initWithFrame: CGRectMake(x,0,btnWidth, btnHeight)];
 			
 			x += btnWidth;
 			
-			UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[photo objectForKey:@"path"]]]];
 			
+			
+			NSMutableString *img_url = [[NSMutableString alloc] initWithString:[photo objectForKey:@"path"]];			
+			[img_url replaceOccurrencesOfString:@".jpg" withString:@"_50crop.jpg" options:0 range: NSMakeRange(0,[img_url length])];
+			[img_url replaceOccurrencesOfString:@".png" withString:@"_50crop.png" options:0 range: NSMakeRange(0,[img_url length])];
+			
+			
+			UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:img_url]]];
+			
+			[img_url release];
+	
 			[btn setImage:image forState:UIControlStateNormal];
+	
+			[btn setTag:imgIndex];
+			
+			
+			NSMutableString *img_url_hq = [[NSMutableString alloc] initWithString:[photo objectForKey:@"path"]];			
+			[img_url_hq replaceOccurrencesOfString:@".jpg" withString:@"_500.jpg" options:0 range: NSMakeRange(0,[img_url_hq length])];
+			[img_url_hq replaceOccurrencesOfString:@".png" withString:@"_500.png" options:0 range: NSMakeRange(0,[img_url_hq length])];
+			
+			[photosetImages addObject:img_url_hq];
+			
+			[img_url_hq release];
+			
+			imgIndex++;
+			
 			
 			[image release];
 			
@@ -142,7 +196,16 @@
 		
 		NSDictionary *mainPhoto = [topic_data objectForKey: @"photoset_main_photo"];
 		
-		UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[mainPhoto objectForKey:@"path"]]]];
+		
+		NSMutableString *img_url = [[NSMutableString alloc] initWithString:[mainPhoto objectForKey:@"path"]];
+		
+		[img_url replaceOccurrencesOfString:@".jpg" withString:@"_500.jpg" options:0 range: NSMakeRange(0,[img_url length])];
+		[img_url replaceOccurrencesOfString:@".png" withString:@"_500.png" options:0 range: NSMakeRange(0,[img_url length])];
+		
+			
+		UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:img_url]]];
+		
+		[img_url release];
 		
 		[self.photosetMainImage setImage:image];
 		
@@ -153,7 +216,25 @@
 		[self.photosetScrollView setContentSize:CGSizeMake(x, btnHeight)];
 		
 		
-	} else { //если не подошло то считаем что это просто топик
+	} 
+	else if ([((NSString*)[topic_data objectForKey: @"topic_type"]) isEqualToString: @"link" ] ) {
+	
+		
+		self.linkTitle.text = [topic_data objectForKey: @"topic_title"];
+		self.linkDescription.text = [topic_data objectForKey: @"topic_text_short"]; 
+		self.linkURL.text = [[topic_data objectForKey: @"topic_extra_array"] objectForKey:@"url"];  
+		/*
+		NSMutableString *str_url = [NSMutableString stringWithString:[[topic objectForKey: @"topic_extra_array"] objectForKey:@"url" ]];
+		
+		if ( ![[str_url substringToIndex:3] isEqualToString:@"http"]){
+			str_url =  [NSString stringWithFormat:@"http://%@",str_url];
+		}
+		
+		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:str_url]];
+		*/
+		
+	}	
+	else { //если не подошло то считаем что это просто топик
 		
 		NSURL *base_url = [NSURL URLWithString: [@"http://www." stringByAppendingString: SharedCommunicator.siteURL ]];	
 		
@@ -426,13 +507,40 @@
 
 -(IBAction) photosetImageTouched:(id) sender{
 	
-	
-	
     //[self fadeView: self.mainImage fadeOut:YES];
-	[self.photosetMainImage setImage:((UIButton *)sender).imageView.image];
+	
+
+	
+	UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[photosetImages objectAtIndex:((UIButton *)sender).tag]]]];
+	
+	[self.photosetMainImage setImage:image];
+	
+	[image release];
+	
+	
 	//[self fadeView: self.mainImage fadeOut:NO];
 }
 
+-(IBAction) linkBtnTouched:(id) sender{
+
+	
+
+	
+	
+	
+	NSMutableString *str_url = [NSMutableString stringWithString:linkURL.text];
+	
+	if ( ![[str_url substringToIndex:3] isEqualToString:@"http"]){
+		str_url =  [NSString stringWithFormat:@"http://%@",str_url];
+	}
+	
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:str_url]];
+
+	
+	
+	
+
+}
 
 /*
  // Override to allow orientations other than the default portrait orientation.
@@ -466,14 +574,23 @@
 	self.photosetMainImage = nil;
 	self.photosetScrollView = nil;
 	self.photosetImageTitle = nil;
+
 	
+	self.linkView = nil;
+	self.linkBtn = nil;
+	self.linkDescription = nil;
+	self.linkTitle = nil;
+	self.linkURL = nil;
+	
+//	self.activityIndicator = nil;
+
 	
 }
 
 
 - (void)dealloc {
 	[topic_data release];
-	
+	[photosetImages release];
 	//[voteSegControl release];
 	//[webView release];
 

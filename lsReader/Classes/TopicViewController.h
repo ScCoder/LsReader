@@ -26,7 +26,15 @@
 	UIImageView *photosetMainImage;
 	UIScrollView *photosetScrollView;
 	UILabel *photosetImageTitle;
+	NSMutableArray *photosetImages;
 	
+	UIView *linkView;
+	UIButton *linkBtn;
+	UILabel *linkDescription;
+	UILabel *linkTitle;
+	UILabel *linkURL;
+	
+	//UIActivityIndicatorView *activityIndicator;
 
 }
 
@@ -50,6 +58,14 @@
 @property (nonatomic, retain) IBOutlet UILabel *photosetImageTitle;
 
 
+@property (nonatomic, retain) IBOutlet UIView *linkView;
+@property (nonatomic, retain) IBOutlet UIButton *linkBtn;
+@property (nonatomic, retain) IBOutlet UILabel *linkDescription;
+@property (nonatomic, retain) IBOutlet UILabel *linkTitle;
+@property (nonatomic, retain) IBOutlet UILabel *linkURL;
+
+//@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 -(void) cutImagesFromText:(NSMutableString *) intext;
 
 -(IBAction) votingForTopic:(id) sender;
@@ -58,5 +74,7 @@
 -(IBAction) showComents;
 -(IBAction) bookmarkTopic;
 -(IBAction) photosetImageTouched:(id) sender;
+
+-(IBAction) linkBtnTouched:(id) sender;
 
 @end

@@ -243,15 +243,9 @@ receivedData = nil;
 	
 	[formater release];
 	
-	if ([[topic objectForKey:@"topic_type"] isEqualToString:@"link"]  ){
-		
-		cell.accessoryType = UITableViewCellAccessoryNone;
-		
-	}
-	else {
-		
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	}
+
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	
 	
 	return cell;
 	
@@ -268,33 +262,17 @@ receivedData = nil;
 	
 	NSDictionary *topic = [topics_collection objectForKey: [keys objectAtIndex:indexPath.row]];
 	
-	
-	if ([((NSString*)[topic objectForKey: @"topic_type"]) isEqualToString: @"link" ] ) {
-	
 		
-		NSMutableString *str_url = [NSMutableString stringWithString:[[topic objectForKey: @"topic_extra_array"] objectForKey:@"url" ]];
-		
-		if ( ![[str_url substringToIndex:3] isEqualToString:@"http"]){
-			str_url =  [NSString stringWithFormat:@"http://%@",str_url];
-		}
-
-		[[UIApplication sharedApplication] openURL:[NSURL URLWithString:str_url]];
-		
-	
-	}
-	
-	else {
-	
-		TopicViewController *topicVC = [[TopicViewController alloc] initWithNibName:@"TopicViewController" bundle:nil];
+	TopicViewController *topicVC = [[TopicViewController alloc] initWithNibName:@"TopicViewController" bundle:nil];
 			
-		NSString *topic_id = [topic objectForKey:@"topic_id"];
+	NSString *topic_id = [topic objectForKey:@"topic_id"];
 	
-		topicVC.topicId = topic_id;
+	topicVC.topicId = topic_id;
 	
-		[self.navigationController pushViewController:topicVC animated:YES];
+	[self.navigationController pushViewController:topicVC animated:YES];
 		
-		[topicVC release];
-	}
+	[topicVC release];
+	
 		
 	
 }
