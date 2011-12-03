@@ -22,18 +22,10 @@
 	UIBarButtonItem *autorLabel;
 	NSMutableDictionary *topic_data;
 
-	UIView *photosetView;
-	UIImageView *photosetMainImage;
-	UIScrollView *photosetScrollView;
-	UILabel *photosetImageTitle;
-	NSMutableArray *photosetImages;
+
 	
-	UIView *linkView;
-	UIButton *linkBtn;
-	UILabel *linkDescription;
-	UILabel *linkTitle;
-	UILabel *linkURL;
 	
+	UIView *contentView;
 	//UIActivityIndicatorView *activityIndicator;
 
 }
@@ -52,17 +44,8 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *autorLabel;
 
 
-@property (nonatomic, retain) IBOutlet UIView *photosetView;
-@property (nonatomic, retain) IBOutlet UIImageView *photosetMainImage;
-@property (nonatomic, retain) IBOutlet UIScrollView *photosetScrollView;
-@property (nonatomic, retain) IBOutlet UILabel *photosetImageTitle;
 
-
-@property (nonatomic, retain) IBOutlet UIView *linkView;
-@property (nonatomic, retain) IBOutlet UIButton *linkBtn;
-@property (nonatomic, retain) IBOutlet UILabel *linkDescription;
-@property (nonatomic, retain) IBOutlet UILabel *linkTitle;
-@property (nonatomic, retain) IBOutlet UILabel *linkURL;
+@property (nonatomic, retain) IBOutlet UIView *contentView;
 
 //@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
@@ -73,8 +56,6 @@
 -(IBAction) showRating;
 -(IBAction) showComents;
 -(IBAction) bookmarkTopic;
--(IBAction) photosetImageTouched:(id) sender;
 
--(IBAction) linkBtnTouched:(id) sender;
 
 @end

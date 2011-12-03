@@ -54,6 +54,14 @@
 		BE2909C0145D7AE200807F5C /* 180-stickynote.png in Resources */ = {isa = PBXBuildFile; fileRef = BE2909BF145D7AE200807F5C /* 180-stickynote.png */; };
 		BE290B6B1460323100807F5C /* PubDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE290B691460323100807F5C /* PubDetailCell.m */; };
 		BE290B6C1460323100807F5C /* PubDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE290B6A1460323100807F5C /* PubDetailCell.xib */; };
+		BE6449251489E72000723726 /* linkTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6449231489E72000723726 /* linkTopicViewController.m */; };
+		BE6449261489E72000723726 /* linkTopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6449241489E72000723726 /* linkTopicViewController.xib */; };
+		BE6449F4148A034F00723726 /* PhotosetTopicViewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6449F2148A034F00723726 /* PhotosetTopicViewContoller.m */; };
+		BE6449F5148A034F00723726 /* PhotosetTopicViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6449F3148A034F00723726 /* PhotosetTopicViewContoller.xib */; };
+		BE644A41148A1AB000723726 /* QuestionTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE644A3F148A1AB000723726 /* QuestionTopicViewController.m */; };
+		BE644A42148A1AB000723726 /* QuestionTopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE644A40148A1AB000723726 /* QuestionTopicViewController.xib */; };
+		BE644A98148A890300723726 /* radiobutton_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = BE644A96148A890300723726 /* radiobutton_checked.png */; };
+		BE644A99148A890300723726 /* radiobutton_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = BE644A97148A890300723726 /* radiobutton_unchecked.png */; };
 		BE759D0C140FA8C0003D8A75 /* SiteParamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE759D0A140FA8C0003D8A75 /* SiteParamsViewController.m */; };
 		BE759D0D140FA8C0003D8A75 /* SiteParamsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE759D0B140FA8C0003D8A75 /* SiteParamsViewController.xib */; };
 		BE759D4E140FAFB4003D8A75 /* BlogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE759D40140FAFB4003D8A75 /* BlogsViewController.m */; };
@@ -132,6 +140,17 @@
 		BE290B681460323100807F5C /* PubDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubDetailCell.h; sourceTree = "<group>"; };
 		BE290B691460323100807F5C /* PubDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubDetailCell.m; sourceTree = "<group>"; };
 		BE290B6A1460323100807F5C /* PubDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PubDetailCell.xib; path = Classes/PubDetailCell.xib; sourceTree = "<group>"; };
+		BE6449221489E72000723726 /* linkTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = linkTopicViewController.h; sourceTree = "<group>"; };
+		BE6449231489E72000723726 /* linkTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = linkTopicViewController.m; sourceTree = "<group>"; };
+		BE6449241489E72000723726 /* linkTopicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = linkTopicViewController.xib; path = Classes/linkTopicViewController.xib; sourceTree = "<group>"; };
+		BE6449F1148A034F00723726 /* PhotosetTopicViewContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotosetTopicViewContoller.h; path = ../PhotosetTopicViewContoller.h; sourceTree = "<group>"; };
+		BE6449F2148A034F00723726 /* PhotosetTopicViewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotosetTopicViewContoller.m; path = ../PhotosetTopicViewContoller.m; sourceTree = "<group>"; };
+		BE6449F3148A034F00723726 /* PhotosetTopicViewContoller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosetTopicViewContoller.xib; sourceTree = "<group>"; };
+		BE644A3E148A1AB000723726 /* QuestionTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTopicViewController.h; sourceTree = "<group>"; };
+		BE644A3F148A1AB000723726 /* QuestionTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTopicViewController.m; sourceTree = "<group>"; };
+		BE644A40148A1AB000723726 /* QuestionTopicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QuestionTopicViewController.xib; path = Classes/QuestionTopicViewController.xib; sourceTree = "<group>"; };
+		BE644A96148A890300723726 /* radiobutton_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radiobutton_checked.png; sourceTree = "<group>"; };
+		BE644A97148A890300723726 /* radiobutton_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radiobutton_unchecked.png; sourceTree = "<group>"; };
 		BE759D09140FA8C0003D8A75 /* SiteParamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteParamsViewController.h; sourceTree = "<group>"; };
 		BE759D0A140FA8C0003D8A75 /* SiteParamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteParamsViewController.m; sourceTree = "<group>"; };
 		BE759D0B140FA8C0003D8A75 /* SiteParamsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SiteParamsViewController.xib; path = Classes/SiteParamsViewController.xib; sourceTree = "<group>"; };
@@ -209,9 +228,15 @@
 				BE9F67451430D2850038D619 /* TopicViewController.m */,
 				BE290887145C79CB00807F5C /* commentsViewController.h */,
 				BE290888145C79CB00807F5C /* commentsViewController.m */,
+				BE6449F1148A034F00723726 /* PhotosetTopicViewContoller.h */,
+				BE6449F2148A034F00723726 /* PhotosetTopicViewContoller.m */,
 				BE290B681460323100807F5C /* PubDetailCell.h */,
 				BE290B691460323100807F5C /* PubDetailCell.m */,
 				BE1D403F1474C34B00CF9D78 /* Settings.bundle */,
+				BE6449221489E72000723726 /* linkTopicViewController.h */,
+				BE6449231489E72000723726 /* linkTopicViewController.m */,
+				BE644A3E148A1AB000723726 /* QuestionTopicViewController.h */,
+				BE644A3F148A1AB000723726 /* QuestionTopicViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -254,8 +279,14 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE644A40148A1AB000723726 /* QuestionTopicViewController.xib */,
+				BE6449241489E72000723726 /* linkTopicViewController.xib */,
 				BE290B6A1460323100807F5C /* PubDetailCell.xib */,
 				BE290889145C79CB00807F5C /* commentsViewController.xib */,
+				BE9F67461430D2850038D619 /* TopicViewController.xib */,
+				BE6449F3148A034F00723726 /* PhotosetTopicViewContoller.xib */,
+				BE644A96148A890300723726 /* radiobutton_checked.png */,
+				BE644A97148A890300723726 /* radiobutton_unchecked.png */,
 				BE166A6E14591DB80005EDAC /* 01-refresh.png */,
 				BE2909BF145D7AE200807F5C /* 180-stickynote.png */,
 				BE166A6F14591DB80005EDAC /* 06-magnify.png */,
@@ -290,7 +321,6 @@
 				BE166A1314586E3A0005EDAC /* Marine-star-32.png */,
 				BE166A1414586E3A0005EDAC /* Star-full-32.png */,
 				BE166A1514586E3A0005EDAC /* Website-User-32.png */,
-				BE9F67461430D2850038D619 /* TopicViewController.xib */,
 				BEC2BE24142F36E400244915 /* PublicationDetailViewController.xib */,
 				BE759D44140FAFB4003D8A75 /* FavoritesViewController.xib */,
 				BE759D41140FAFB4003D8A75 /* BlogsViewController.xib */,
@@ -424,6 +454,11 @@
 				BE2909C0145D7AE200807F5C /* 180-stickynote.png in Resources */,
 				BE290B6C1460323100807F5C /* PubDetailCell.xib in Resources */,
 				BE1D40401474C34B00CF9D78 /* Settings.bundle in Resources */,
+				BE6449261489E72000723726 /* linkTopicViewController.xib in Resources */,
+				BE6449F5148A034F00723726 /* PhotosetTopicViewContoller.xib in Resources */,
+				BE644A42148A1AB000723726 /* QuestionTopicViewController.xib in Resources */,
+				BE644A98148A890300723726 /* radiobutton_checked.png in Resources */,
+				BE644A99148A890300723726 /* radiobutton_unchecked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +486,9 @@
 				BE29088A145C79CB00807F5C /* commentsViewController.m in Sources */,
 				BE290B6B1460323100807F5C /* PubDetailCell.m in Sources */,
 				BE9A84691478C646004C2334 /* SDURLCache.m in Sources */,
+				BE6449251489E72000723726 /* linkTopicViewController.m in Sources */,
+				BE6449F4148A034F00723726 /* PhotosetTopicViewContoller.m in Sources */,
+				BE644A41148A1AB000723726 /* QuestionTopicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
