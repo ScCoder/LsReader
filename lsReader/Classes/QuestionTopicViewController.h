@@ -14,9 +14,12 @@
 	
 		NSMutableDictionary *topic_data;
 		NSInteger selectedAnswer;
-		NSArray *keys;
+		NSArray *answers;
+	    NSInteger countVote;
+	    UILabel *topic_question;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *topic_data;
+@property (nonatomic, retain) IBOutlet  UILabel *topic_question;
 
 @end

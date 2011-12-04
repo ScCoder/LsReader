@@ -13,18 +13,23 @@
 
 
 @synthesize topic_data;
-
+@synthesize topic_question;
 
 - (void)viewDidLoad {
 	
 	selectedAnswer = -1;
 	
-	keys = [[NSArray alloc] initWithArray:[topic_data allKeys]];
+	answers = [[NSArray alloc] initWithArray:[[topic_data  
+											 objectForKey:@"topic_extra_array"]
+											objectForKey:@"answers"] ];
+	
+	countVote =  [[[topic_data  objectForKey:@"topic_extra_array"]objectForKey:@"count_vote"] integerValue] ;
+	topic_question.text = [topic_data  objectForKey:@"topic_title"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-	return [keys count];
+	return [answers count];
 	
 }
 
@@ -41,15 +46,16 @@
 		
     }
 	
-	;
-	/*
-	cell.textLabel.text = [[[topic_data  
-							objectForKey:@"topic_extra_array"]
-							objectForKey:@"answers"]
-						   objectForKey:@"text"]
-						   ;
 	
-	 */
+	float percent =([[[answers objectAtIndex:indexPath.row] objectForKey:@"count"] integerValue]*100)/countVote;
+	
+	cell.textLabel.text  = [NSString stringWithFormat:@"%1.1f%%  %@   "
+						 ,percent,[[answers objectAtIndex:indexPath.row] objectForKey:@"text"]
+						 ];
+	
+	//cell.textLabel.text = percent;// [[answers objectAtIndex:indexPath.row] objectForKey:@"text"];
+	
+		 
 	if (indexPath.row == selectedAnswer) {
 		
 		//cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -114,6 +120,7 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
 	topic_data = nil;
+	self.topic_question = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -121,8 +128,10 @@
 
 - (void)dealloc {
     [super dealloc];
+	[topic_question release];
 	[topic_data release];
-	[keys release];
+	
+	[answers release];
 }
 
 
