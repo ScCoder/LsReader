@@ -9,6 +9,7 @@
 #import "Communicator.h"
 #import "JSONKit.h"
 #import "SDURLCache.h"
+#import "lsReaderAppDelegate.h"
 
 
 @implementation Communicator
@@ -126,9 +127,13 @@ static JSONDecoder *decoder = nil;
 {
 	
 	
-	UIApplication *app = [UIApplication sharedApplication];
+
+
 	
-	app.networkActivityIndicatorVisible = YES;
+	//UIApplication* app = [UIApplication sharedApplication]; 
+	//app.networkActivityIndicatorVisible = YES;
+	
+
 	
 	NSString *api_command = [NSString stringWithFormat:@"http://%@/api/%@/%@/?%@&response_type=json",site,module,method,params];
 	
@@ -143,21 +148,28 @@ static JSONDecoder *decoder = nil;
 		
 	if (!tmpContainer) {
 	  NSLog(@"commandByModule ошибка tmpContainer = nill");
-	  app.networkActivityIndicatorVisible = NO;
+	//  app.networkActivityIndicatorVisible = NO;
 	  return nil;
 	}
 		
 		
-	if (!decoder) 
-		decoder=[[JSONDecoder alloc] init];
+	if (!decoder)  decoder = [[JSONDecoder alloc] init] ;
 	
-		
 	NSDictionary *response = [decoder objectWithData:tmpContainer error: nil ] ;
+	
+	[decoder release];
+	
+	decoder = nil;
+
+	
+
+
+	
+	//app.networkActivityIndicatorVisible = NO;
 	
 	
 	if (!response) {
 	  NSLog(@"commandByModule ошибка response = nill");
-	  app.networkActivityIndicatorVisible = NO;
 	  return nil;
 	}
 
@@ -181,16 +193,17 @@ static JSONDecoder *decoder = nil;
 	}
 	
 		
-	app.networkActivityIndicatorVisible = NO;
+
 		
 	[container removeAllObjects];
     [container addEntriesFromDictionary:response];
 	
-	[decoder release];
-	decoder = nil;
-
 	//NSLog(@"container = %@ ",container);
+	
+	
+	
 	return container ;		
+			
 	
 }
 

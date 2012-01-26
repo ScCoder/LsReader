@@ -15,6 +15,7 @@
 	UIScrollView *photosetScrollView;
 	UILabel *photosetImageTitle;
 	NSMutableArray *photosetImages;
+	NSMutableArray *photosetDescriptions;
 	
 	NSMutableDictionary *topic_data;
 }

@@ -35,6 +35,7 @@
 	
     // Set the navigation controller as the window's root view controller and display.
     self.window.rootViewController = self.navigationController;
+	
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -94,6 +95,7 @@
 
 
 - (void)dealloc {
+
 	[navigationController release];
 	[window release];
 	[super dealloc];

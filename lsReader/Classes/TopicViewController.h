@@ -23,7 +23,8 @@
 	NSMutableDictionary *topic_data;
 
 
-	
+	UIActivityIndicatorView *waitView;
+	NSOperationQueue *opQueue;
 	
 	UIView *contentView;
 	//UIActivityIndicatorView *activityIndicator;
@@ -50,6 +51,9 @@
 //@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 -(void) cutImagesFromText:(NSMutableString *) intext;
+
+-(void) loadData:(NSMutableDictionary*)data;
+- (void) done;
 
 -(IBAction) votingForTopic:(id) sender;
 -(IBAction) showTopicInfo;

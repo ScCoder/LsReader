@@ -58,7 +58,6 @@
 		 
 	if (indexPath.row == selectedAnswer) {
 		
-		//cell.accessoryType = UITableViewCellAccessoryCheckmark;
 		cell.imageView.image = [UIImage imageNamed:@"radiobutton_checked.png"];
 		
 	} else {

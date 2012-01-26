@@ -37,7 +37,7 @@
 
 
     photosetImages = [[NSMutableArray alloc] initWithCapacity:5];
-	
+	photosetDescriptions = [[NSMutableArray alloc] initWithCapacity:5];
 	
 	NSDictionary *photos = [topic_data objectForKey: @"photoset_photos"] ;
 	
@@ -51,7 +51,7 @@
 	
 	for (id photo in photos){
 		
-		UIButton *btn = [[UIButton alloc] initWithFrame: CGRectMake(x,0,btnWidth, btnHeight)];
+		UIButton *btn = [[UIButton alloc] initWithFrame: CGRectMake(x, 0, btnWidth, btnHeight)];
 		
 		x += btnWidth;
 		
@@ -76,6 +76,18 @@
 		[img_url_hq replaceOccurrencesOfString:@".png" withString:@"_500.png" options:0 range: NSMakeRange(0,[img_url_hq length])];
 		
 		[photosetImages addObject:img_url_hq];
+		
+		if ([photo objectForKey:@"description"] != [NSNull null] ){
+		
+			[photosetDescriptions addObject:[photo objectForKey:@"description"] ];
+			
+		} else {
+		 
+			[photosetDescriptions addObject:@"Фотосет" ];
+		}
+
+		
+		
 		
 		[img_url_hq release];
 		
@@ -108,11 +120,19 @@
 	
 	[image release];
 	
-	[self.photosetImageTitle setText:[mainPhoto objectForKey:@"description"] ];
+			  
+	if ([mainPhoto objectForKey:@"description"] != [NSNull null]){
+	
+		[self.photosetImageTitle setText:[mainPhoto objectForKey:@"description"] ];
+
+	}else {
+		
+		[self.photosetImageTitle setText:@"Фотосет"];
+		
+	}
 	
 	[self.photosetScrollView setContentSize:CGSizeMake(x, btnHeight)];
 	
-
 }
 
 
@@ -133,6 +153,8 @@
 	UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[photosetImages objectAtIndex:((UIButton *)sender).tag]]]];
 	
 	[self.photosetMainImage setImage:image];
+	
+	[self.photosetImageTitle setText:[photosetDescriptions objectAtIndex:((UIButton *)sender).tag]];
 	
 	[image release];
 	
@@ -157,7 +179,7 @@
 
 - (void)dealloc {
     [super dealloc];
-	
+	[photosetDescriptions release];
 	[photosetImages release];
 }
 

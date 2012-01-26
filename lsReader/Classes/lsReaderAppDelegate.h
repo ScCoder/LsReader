@@ -13,10 +13,12 @@
     UIWindow *window;
     UINavigationController *navigationController;
 	NSString *settingsFilePath;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 @property (nonatomic, retain) NSString *settingsFilePath;
+
 @end
 
