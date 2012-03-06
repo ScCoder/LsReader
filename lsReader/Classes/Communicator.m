@@ -6,6 +6,16 @@
 //  Copyright 2011 LiveStreet Developers Team. All rights reserved.
 //
 
+// Модуль реализующий методы API,  синглтон, в остальных модулях, в которых необходимо взаимодействие с сервером
+// использются методы этого класса
+// для работы с json используется opensource библиотека jsonrkit
+
+// TODO нужно доделать кеширование, удобнее всего добавить его в функции commandByModule
+// еще нужно доделать методы сохранения и загрузки контента для дальнейшего чтения в офлайне
+// предпологалось это совместить с кеше - т.е. сохранение может реализованно так - вызвать все методы,
+// которые тянут данные с сервера и они закешируются а дальше в офлайне данные будут браться из кеша
+// в конце есть пару методов для этих целей, но что бы работало нужно саначала сделать кешы
+
 #import "Communicator.h"
 #import "JSONKit.h"
 #import "SDURLCache.h"
@@ -28,6 +38,9 @@ static Communicator * communicator =  NULL;
 
 static JSONDecoder *decoder = nil;
 
+
+// Конструктор - реализуется синглтон и инициализируются статические списки
+
 +(Communicator *)sharedCommunicator {
 
 	if (!communicator || communicator == NULL) {
@@ -45,11 +58,10 @@ static JSONDecoder *decoder = nil;
 										 ,@"112-group.png",@"111-user.png",@"58-bookmark.png"
 										 ,@"81-dashboard.png",nil];
 		
-		
-		
 	}
 	return communicator;
 }
+
 
 
 -(Boolean *) isLogedIn {
@@ -57,6 +69,7 @@ static JSONDecoder *decoder = nil;
   if (!user_login_hash1) {
 	  
 	  NSLog(@"not logged");
+	  
 	  return NO;
 	  
   }	else {
@@ -104,6 +117,8 @@ static JSONDecoder *decoder = nil;
 	user_login_hash1 = [[NSMutableString alloc] initWithCapacity:10];
 }
 
+
+
 -(void) saveCache {
 		
 
@@ -122,23 +137,20 @@ static JSONDecoder *decoder = nil;
 }
 
 
+// Метод, который непосредственно взаимодействует с api остальные методы этого класса
+// используют этот со своими параметрами
 
 -(NSDictionary *)commandByModule:(NSString*)module site:(NSString*)site  method:(NSString*)method params:(NSString*)params
 {
 	
-	
-
-
-	
-	//UIApplication* app = [UIApplication sharedApplication]; 
-	//app.networkActivityIndicatorVisible = YES;
-	
-
+	// Формируем урл запроса к апи 
 	
 	NSString *api_command = [NSString stringWithFormat:@"http://%@/api/%@/%@/?%@&response_type=json",site,module,method,params];
 	
 	NSLog(@"api_comand=%@", api_command);
 	
+	
+	//TODO - здесь удобно добавить кеширование
 	
 	NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString:api_command]];
 		
@@ -148,11 +160,11 @@ static JSONDecoder *decoder = nil;
 		
 	if (!tmpContainer) {
 	  NSLog(@"commandByModule ошибка tmpContainer = nill");
-	//  app.networkActivityIndicatorVisible = NO;
 	  return nil;
 	}
 		
-		
+	// Декодирование полученного json в NSDictionary
+	
 	if (!decoder)  decoder = [[JSONDecoder alloc] init] ;
 	
 	NSDictionary *response = [decoder objectWithData:tmpContainer error: nil ] ;
@@ -162,16 +174,13 @@ static JSONDecoder *decoder = nil;
 	decoder = nil;
 
 	
-
-
-	
-	//app.networkActivityIndicatorVisible = NO;
-	
+	// Проверка ответа, и вывод ошибки в лог, если вернулась ошибка
 	
 	if (!response) {
 	  NSLog(@"commandByModule ошибка response = nill");
 	  return nil;
 	}
+
 
 	if (![response objectForKey:@"response"]) {
 			
@@ -193,21 +202,17 @@ static JSONDecoder *decoder = nil;
 	}
 	
 		
-
+   // Запись ответа в контейнер, в котором хранятся данные
 		
 	[container removeAllObjects];
     [container addEntriesFromDictionary:response];
-	
-	//NSLog(@"container = %@ ",container);
-	
-	
 	
 	return container ;		
 			
 	
 }
 
-
+// Проверка коннекта
 
 -(Boolean *)checkConnectionBySite:(NSString*)site  login:(NSString*)login password:(NSString*)password{
 	
@@ -254,6 +259,8 @@ static JSONDecoder *decoder = nil;
 
 }
 
+// Получение лучших публикаций за период
+
 -(NSDictionary *) topPublicationsByPeriod:(NSString*)period {
 	
 	NSString *tmpParams = [NSString stringWithFormat:@"period=%@&fields=%@",period,FIELDS_FILTER];
@@ -261,6 +268,8 @@ static JSONDecoder *decoder = nil;
 	return [self commandByModule:@"topic" site:self.siteURL method:@"top" params:tmpParams];
 	
 }
+
+// Новые публикации
 
 -(NSDictionary *) newPublications{
 	
@@ -273,7 +282,7 @@ static JSONDecoder *decoder = nil;
 	
 	if ( [tmp isEqualToString: @"0" ]) {
 	 
-		NSLog(@"good");
+		NSLog(@"count = 0");
 		return nil;
 	 
 	 }
@@ -285,6 +294,8 @@ static JSONDecoder *decoder = nil;
 	 
 	
 }
+
+// Перосональные публикации
 
 -(NSDictionary *) personalPublications:(NSString *) showType page:(NSInteger *)page{
 	
@@ -309,6 +320,8 @@ static JSONDecoder *decoder = nil;
 	
 }
 
+// Получениие токпика по id 
+
 -(NSDictionary *) readTopicById:(NSString*) topic_id {
 	
 	NSString *tmpParams = [NSString stringWithFormat:@"id=%@",topic_id];
@@ -321,6 +334,8 @@ static JSONDecoder *decoder = nil;
 
 }
 
+// Голосование за топик
+
 -(NSDictionary *) voteByTopicId:(NSString *) topic_id value: (NSInteger)value{
 
 
@@ -328,10 +343,13 @@ static JSONDecoder *decoder = nil;
 
 	NSString *tmpParams = [NSString stringWithFormat:@"id=%@&value=%i&hash=%@",topic_id,value,user_login_hash1];
 	
-	NSLog(@"tmpParams = %@",tmpParams);
+	//NSLog(@"tmpParams = %@",tmpParams);
+	
 	return  [self commandByModule:@"topic" site:self.siteURL method:@"vote" params:tmpParams];
 
 }
+
+// Коментарии к топику
 
 -(NSDictionary *) commentsByTopicId:(NSString *) topic_id{
 	
@@ -342,6 +360,8 @@ static JSONDecoder *decoder = nil;
 	
 }
 
+
+// Сохранение топиков в хранилище
 
 - (void) saveTopicsToStorage: (NSDictionary *) response  {
  
@@ -358,6 +378,8 @@ static JSONDecoder *decoder = nil;
 	[topics_collection release];
 
 }
+
+// Сохранение контента в хранилище( не доделан)
 
 -(void) saveContentToStorage{
 	
@@ -385,7 +407,11 @@ static JSONDecoder *decoder = nil;
 	 [self saveTopicsToStorage: 
 	  [[Communicator sharedCommunicator] personalPublications:@"good" page:10]];
 	
-	 NSLog(@"end load content");	
+	
+    //TODO здесь добавить вызов других методов получающих данные с сайта
+	
+	
+	 NSLog(@"end save content");	
 
 
 }
@@ -412,7 +438,14 @@ static JSONDecoder *decoder = nil;
 			NSLog(@"Error: Create folder failed");
 
 }
+
+
+// Кеширование картинок
+// Заменяет пути в тексте на локальные и копирует туда картинки
+
 -(void) cacheImages:(NSString*) topicContent {
+	
+	
 
 	NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern: @"<img[^>]src=\"([^>\"]+)\"[^>]*>"
 																			options:NSRegularExpressionCaseInsensitive
@@ -458,6 +491,8 @@ static JSONDecoder *decoder = nil;
 		
 }
 
+// Вырезаем html теги из текста, по хорошему данный метод нужно перенести в другой класс
+
 -(void)cutHtmlTagsFromText: (NSMutableString *) intext
 {
 	
@@ -479,6 +514,9 @@ static JSONDecoder *decoder = nil;
 
 }
 
+
+// Тоже вырезает теги 
+
 -(NSString *)cutHtmlTagsFromString: (NSString *) instring{
 	
 	NSError *error = NULL;
@@ -496,6 +534,8 @@ static JSONDecoder *decoder = nil;
 
 }
 
+
+// Вспомогательный методы
 -(void) testCache{
 	
 	

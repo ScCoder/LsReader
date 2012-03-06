@@ -49,6 +49,7 @@
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
 - (void)viewDidLoad {
 	
     [super viewDidLoad];
@@ -57,28 +58,19 @@
 	waitView = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge] autorelease];
 	
 	waitView.frame =  CGRectMake(self.view.frame.size.width/2-30, self.view.frame.size.height/2-60, 60, 60);
+	
 	[self.view addSubview: waitView];
+	
 	opQueue = [[NSOperationQueue alloc] init];
 	
-	
-	//UIApplication* app = [UIApplication sharedApplication]; 
-	
-	//app.networkActivityIndicatorVisible = YES;
 	
 	[waitView startAnimating];
 	
 	NSInvocationOperation *request = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadData:) object:self];
+	
 	[opQueue addOperation:request];
+	
 	[request release];
-
-	
-	
-	
-
-//	[opQueue waitUntilAllOperationsAreFinished];
-	
-	
-	
 
 	
 }
@@ -93,20 +85,16 @@
 -(void) loadData:(id)object{
 
 	topic_data = [[NSMutableDictionary alloc] initWithCapacity:1];
+	
 	[topic_data addEntriesFromDictionary:[SharedCommunicator readTopicById:self.topicId]];
-
-		
-		
 	
 	[(TopicViewController *)object done];
-	//[opQueue waitUntilAllOperationsAreFinished];
+	
 	[self performSelectorOnMainThread:@selector(costomizeView) withObject:nil waitUntilDone:YES];
 	
 }
 
 - (void) costomizeView {
-	
-	
 	
 	NSMutableString *topicContent = [[NSMutableString alloc] initWithCapacity:10];
 	
@@ -212,88 +200,6 @@
 			
 }
 -(void) viewWillAppear:(BOOL)animated{
-		
-	
-
-	
-	/*
-	NSMutableString *topicContent = [[NSMutableString alloc] initWithCapacity:10];
-	
-	[topicContent  appendString: [topic_data objectForKey: @"topic_text" ]];
-	
-
-	[self.ratingLabel setTitle:[NSString stringWithFormat:@"%@",[topic_data objectForKey: @"topic_rating" ]]];
-	
-	[self.comentsBtn setTitle:[NSString stringWithFormat:@"%@ коментариев", [topic_data objectForKey: @"topic_count_comment" ]]];
-	
-	[self.autorLabel setTitle:[(NSDictionary *)[topic_data objectForKey: @"user"] objectForKey:@"user_login"]];
-		
-	
-	if (SharedCommunicator.showPics) {
-	
-		//когда будут кешироватся нужно раскоментировать
-		//[self changeImageNamesToCashed:topicContent];
-	 	
-	} else {
-		
-		[self cutImagesFromText:topicContent];
-		
-	}
-
-	
-	if ( [((NSString*)[topic_data objectForKey: @"topic_type"]) isEqualToString: @"photoset" ]   ){
-				
-	
-		PhotosetTopicViewContoller *photosetView = [[PhotosetTopicViewContoller alloc] 
-													initWithNibName:@"PhotosetTopicViewContoller" bundle:nil];
-		photosetView.topic_data = topic_data;
-		
-		[self.contentView addSubview:photosetView.view];
-		
-	} 
-	else if ([((NSString*)[topic_data objectForKey: @"topic_type"]) isEqualToString: @"link" ] ) {
-			
-		linkTopicViewController *linkView = [[linkTopicViewController alloc] initWithNibName:@"linkTopicViewController" bundle:nil] ;
-		
-		linkView.topic_data = topic_data;
-		
-		[self.contentView addSubview:linkView.view];
-
-	}	
-	else if ([((NSString*)[topic_data objectForKey: @"topic_type"]) isEqualToString: @"question" ] ) {
-		
-		QuestionTopicViewController *questionView = [[QuestionTopicViewController alloc] initWithNibName:@"QuestionTopicViewController" bundle:nil] ;
-		
-		questionView.topic_data = topic_data;
-		
-		[self.contentView addSubview:questionView.view];
-		
-	}
-	else { //если не подошло то считаем что это просто топик
-		
-		NSURL *base_url = [NSURL URLWithString: [@"http://www." stringByAppendingString: SharedCommunicator.siteURL ]];	
-		
-		// Не удалять!!! Для кешированных картинок
-		 
-		// NSMutableString *imagePath = [NSMutableString stringWithString: DOCUMENTS];
-		// imagePath = [imagePath stringByReplacingOccurrencesOfString:@"/" withString:@"//"];
-		// imagePath = [imagePath stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-		 
-		 
-		 
-		// NSURL *base_url = [NSURL URLWithString: [NSString stringWithFormat:@"file:/%@//%@//%@//"
-		// ,imagePath,LS_READER_DIR,CACHE_IMAGES_DIR]];
-		 
-			
-		[webView loadHTMLString:topicContent baseURL:base_url];
-		
-	}
-	
-	[topicContent release];
-		
-	[self costomizeView];
-
-*/
     	
 }
 
@@ -466,8 +372,7 @@
 -(IBAction) showComents{
 	
 	commentsViewController *commentVC = [[commentsViewController alloc] initWithNibName:@"commentsViewController" bundle:nil];
-	
-		
+			
 	commentVC.topicId = self.topicId;
 	
 	NSNumber *nextLevel = [NSNumber numberWithInt: 0];
@@ -556,6 +461,7 @@
 }
 
 - (void)viewDidUnload {
+	
     [super viewDidUnload];
 	
     // Release any retained subviews of the main view.
